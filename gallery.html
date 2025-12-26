@@ -19,9 +19,72 @@
     
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+    
+    <!-- 新增：首页同款布局基础样式，确保页面铺满屏幕 -->
+    <style>
+        /* 基础布局样式 - 与首页保持一致 */
+        html, body {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            overflow-x: hidden;
+        }
+        
+        /* 页面加载器样式 - 与首页一致 */
+        .page-loader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: var(--dark-color);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 9999;
+            transition: opacity 0.5s ease;
+        }
+        
+        .loader-content {
+            text-align: center;
+        }
+        
+        .loader-content .logo-text {
+            font-size: 4rem;
+            margin-bottom: 2rem;
+        }
+        
+        .loader-content .loading {
+            width: 40px;
+            height: 40px;
+            border: 4px solid rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            border-top-color: var(--primary-color);
+            animation: spin 1s ease-in-out infinite;
+            margin: 0 auto;
+        }
+        
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+        
+        /* 主要内容适配顶部导航栏 */
+        .main-content {
+            margin-top: 80px;
+            width: 100%;
+            max-width: 100%;
+            margin: 80px 0 0 0;
+            padding: 0;
+        }
+        
+        /* 移动端菜单按钮默认隐藏 */
+        .mobile-menu-btn {
+            display: none;
+        }
+    </style>
 </head>
 <body>
-    <!-- 页面加载器 -->
+    <!-- 页面加载器（保留并优化） -->
     <div class="page-loader">
         <div class="loader-content">
             <div class="logo-text">PF</div>
@@ -29,80 +92,194 @@
         </div>
     </div>
 
-    <!-- 垂直导航栏 -->
-    <nav class="vertical-nav">
-        <div class="nav-logo">
-            <div class="logo-text">PF</div>
+    <!-- 修正：导航栏严格匹配首页的5个核心标签结构 -->
+    <nav class="top-nav">
+        <div class="top-nav-container">
+            <!-- 品牌标识区（与首页完全一致） -->
+            <div class="nav-brand-section">
+                <div class="brand-container">
+                    <div class="brand-logo">
+                        <div class="logo-text">PF</div>
+                    </div>
+                    <div class="brand-vertical-divider"></div>
+                    <div class="brand-text">
+                        <h1 class="brand-title">Playfluence</h1>
+                        <p class="brand-tagline">Redefining Recreation Marketing</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 导航菜单区（严格匹配首页的5个核心标签） -->
+            <div class="nav-center-section">
+                <div class="nav-menu-wrapper">
+                    <ul class="top-nav-menu">
+                        <!-- 1. HOME（首页） -->
+                        <li class="nav-item">
+                            <a href="index.html" class="nav-link" data-i18n="nav_home">
+                                <i class="fas fa-home nav-icon"></i>
+                                <span class="nav-text">HOME</span>
+                            </a>
+                        </li>
+                        <!-- 2. ABOUT US（关于我们） -->
+                        <li class="nav-item dropdown">
+                            <a href="about/index.html" class="nav-link" data-i18n="nav_about">
+                                <i class="fas fa-building nav-icon"></i>
+                                <span class="nav-text">ABOUT US</span>
+                                <i class="fas fa-chevron-down dropdown-arrow"></i>
+                            </a>
+                            <div class="dropdown-menu">
+                                <div class="dropdown-section">
+                                    <a href="about/company-profile.html">
+                                        <i class="fas fa-file-alt"></i>
+                                        <span>Company Profile</span>
+                                    </a>
+                                    <a href="about/leadership.html">
+                                        <i class="fas fa-users"></i>
+                                        <span>Leadership Team</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </li>
+                        <!-- 3. OUR SERVICES（我们的服务） -->
+                        <li class="nav-item dropdown">
+                            <a href="services/index.html" class="nav-link" data-i18n="nav_services">
+                                <i class="fas fa-concierge-bell nav-icon"></i>
+                                <span class="nav-text">OUR SERVICES</span>
+                                <i class="fas fa-chevron-down dropdown-arrow"></i>
+                            </a>
+                            <div class="dropdown-menu dropdown-wide">
+                                <div class="dropdown-grid">
+                                    <div class="dropdown-section">
+                                        <h4>Core Services</h4>
+                                        <a href="services/core-services.html">
+                                            <i class="fas fa-star"></i>
+                                            <span>Core Services</span>
+                                        </a>
+                                        <a href="services/value-proposition.html">
+                                            <i class="fas fa-bullseye"></i>
+                                            <span>Value Proposition</span>
+                                        </a>
+                                    </div>
+                                    <div class="dropdown-section">
+                                        <h4>Tour Experiences</h4>
+                                        <a href="services/golden-route.html">
+                                            <i class="fas fa-crown"></i>
+                                            <span>Golden Route Tour</span>
+                                        </a>
+                                        <a href="services/pricing.html">
+                                            <i class="fas fa-tag"></i>
+                                            <span>Pricing</span>
+                                        </a>
+                                    </div>
+                                    <div class="dropdown-section">
+                                        <h4>Business</h4>
+                                        <a href="services/partners.html">
+                                            <i class="fas fa-handshake"></i>
+                                            <span>Partnerships</span>
+                                        </a>
+                                        <a href="sustainability.html">
+                                            <i class="fas fa-leaf"></i>
+                                            <span>Sustainable Future</span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <!-- 4. INSIGHTS（洞察）- GALLERY归到此下拉菜单中 -->
+                        <li class="nav-item dropdown active">
+                            <a href="insights/index.html" class="nav-link" data-i18n="nav_insights">
+                                <i class="fas fa-chart-line nav-icon"></i>
+                                <span class="nav-text">INSIGHTS</span>
+                                <i class="fas fa-chevron-down dropdown-arrow"></i>
+                            </a>
+                            <div class="dropdown-menu">
+                                <div class="dropdown-section">
+                                    <a href="insights/audience.html">
+                                        <i class="fas fa-user-friends"></i>
+                                        <span>Target Audience</span>
+                                    </a>
+                                    <a href="insights/edeg.html">
+                                        <i class="fas fa-trophy"></i>
+                                        <span>Competitive Edge</span>
+                                    </a>
+                                    <a href="insights/trends.html">
+                                        <i class="fas fa-chart-bar"></i>
+                                        <span>Market Insights</span>
+                                    </a>
+                                    <a href="insights/marketing.html">
+                                        <i class="fas fa-chess-knight"></i>
+                                        <span>Marketing Strategy</span>
+                                    </a>
+                                    <a href="gallery.html" class="active">
+                                        <i class="fas fa-images"></i>
+                                        <span>Moments & Gallery</span>
+                                    </a>
+                                    <a href="services/partners.html">
+                                        <i class="fas fa-handshake"></i>
+                                        <span>Partnerships</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </li>
+                        <!-- 5. CONTACT（联系我们） -->
+                        <li class="nav-item">
+                            <a href="contact.html" class="nav-link" data-i18n="nav_contact">
+                                <i class="fas fa-envelope nav-icon"></i>
+                                <span class="nav-text">CONTACT</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- 语言切换器区（与首页完全一致） -->
+            <div class="nav-right-section">
+                <div class="action-container">
+                    <div class="language-switcher">
+                        <div class="language-current">
+                            <i class="fas fa-globe"></i>
+                            <span>EN</span>
+                        </div>
+                        <div class="language-options">
+                            <button class="lang-btn active" data-lang="en">
+                                <span>EN</span>
+                                <span class="lang-name">English</span>
+                            </button>
+                            <button class="lang-btn" data-lang="zh">
+                                <span>中文</span>
+                                <span class="lang-name">Chinese</span>
+                            </button>
+                            <button class="lang-btn" data-lang="ja">
+                                <span>日本語</span>
+                                <span class="lang-name">Japanese</span>
+                            </button>
+                        </div>
+                    </div>
+                    <a href="#contact" class="cta-button">
+                        <i class="fas fa-calendar-check"></i>
+                        <span>Book Now</span>
+                    </a>
+                </div>
+            </div>
         </div>
         
-        <ul class="nav-menu">
-            <li class="nav-item">
-                <a href="index.html" class="nav-link">
-                    <span class="nav-text" data-i18n="nav_home">HOME</span>
-                    <span class="nav-dot"></span>
-                </a>
-            </li>
-            <li class="nav-item">
-                <a href="about/index.html" class="nav-link">
-                    <span class="nav-text" data-i18n="nav_about">ABOUT</span>
-                    <span class="nav-dot"></span>
-                </a>
-            </li>
-            <li class="nav-item">
-                <a href="services/index.html" class="nav-link">
-                    <span class="nav-text" data-i18n="nav_services">SERVICES</span>
-                    <span class="nav-dot"></span>
-                </a>
-            </li>
-            <li class="nav-item">
-                <a href="insights/index.html" class="nav-link">
-                    <span class="nav-text" data-i18n="nav_insights">INSIGHTS</span>
-                    <span class="nav-dot"></span>
-                </a>
-            </li>
-            <li class="nav-item active">
-                <a href="gallery.html" class="nav-link">
-                    <span class="nav-text" data-i18n="nav_gallery">GALLERY</span>
-                    <span class="nav-dot"></span>
-                </a>
-            </li>
-            <li class="nav-item">
-                <a href="sustainability.html" class="nav-link">
-                    <span class="nav-text" data-i18n="nav_sustainability">SUSTAINABLE</span>
-                    <span class="nav-dot"></span>
-                </a>
-            </li>
-            <li class="nav-item">
-                <a href="contact.html" class="nav-link">
-                    <span class="nav-text" data-i18n="nav_contact">CONTACT</span>
-                    <span class="nav-dot"></span>
-                </a>
-            </li>
-        </ul>
-        
-        <!-- 语言切换器 -->
-        <div class="nav-language">
-            <div class="language-switcher">
-                <button class="lang-btn active" data-lang="en">EN</button>
-                <button class="lang-btn" data-lang="zh">中文</button>
-                <button class="lang-btn" data-lang="ja">日本語</button>
-            </div>
+        <!-- 导航栏底部装饰线（与首页完全一致） -->
+        <div class="nav-bottom-line">
+            <div class="line-gradient"></div>
         </div>
     </nav>
 
-    <!-- 主要内容 -->
+    <!-- 主要内容（图片部分已添加实际图片代码） -->
     <main class="main-content">
         <!-- 页面标题横幅 -->
         <section class="page-hero">
             <div class="bg-slider">
                 <div class="bg-slide active" style="background: linear-gradient(135deg, var(--primary-color), var(--dark-color));"></div>
-                <!-- TODO: 可以在此处添加一张图库相关的背景图 -->
-                <!-- <div class="bg-slide" style="background-image: url('images/backgrounds/gallery-bg.jpg');"></div> -->
             </div>
             
             <div class="page-hero-content">
                 <h1 class="page-title" data-i18n="gallery_title">Moments & Gallery</h1>
-                <p class="page-subtitle" data-i18n="gallery_subtitle">Capturing the essence of experiences curated by Playfluence</p>
+                <p class="page-subtitle" data-i18n="gallery_subtitle" style="color: white;">Capturing the essence of experiences curated by Playfluence</p>
             </div>
         </section>
 
@@ -139,12 +316,15 @@
                     <!-- 图片1: 家庭欢乐 -->
                     <div class="gallery-item" data-category="family">
                         <div class="gallery-image">
-                            <!-- TODO: 插入京都家庭茶道体验的图片 -->
-                            <img src="images/gallery/family-tea-ceremony-kyoto.jpg" alt="Three generations enjoying traditional Japanese tea ceremony together in Kyoto" class="gallery-img">
+                            <!-- ===== 修改这里：添加实际图片 ===== -->
+                            <img src="images/insights/gallery/1.png" alt="Family Happiness in Kyoto" class="gallery-img">
+                            <div class="image-overlay">
+                                <i class="fas fa-search-plus overlay-icon"></i>
+                            </div>
                         </div>
                         <div class="gallery-caption">
-                            <h3 data-i18n="gallery_family_kyoto">Family Happiness in Kyoto</h3>
-                            <p data-i18n="gallery_family_kyoto_desc">京都，私密茶道体验中的宁静一刻 | A moment of serenity during a private tea ceremony in Kyoto.</p>
+                            <h3>Family Happiness in Kyoto</h3>
+                            <p>Three generations enjoying traditional Japanese tea ceremony together in Kyoto</p>
                             <span class="photo-category">Family Joy</span>
                         </div>
                     </div>
@@ -152,12 +332,15 @@
                     <!-- 图片2: 文化沉浸 -->
                     <div class="gallery-item" data-category="cultural">
                         <div class="gallery-image">
-                            <!-- TODO: 插入传统茶道学习的图片 -->
-                            <img src="images/gallery/traditional-tea-ceremony.jpg" alt="Learning the art of Japanese tea preparation from a master tea ceremony practitioner" class="gallery-img">
+                            <!-- ===== 修改这里：添加实际图片 ===== -->
+                            <img src="images/insights/gallery/2.png" alt="Traditional Tea Ceremony" class="gallery-img">
+                            <div class="image-overlay">
+                                <i class="fas fa-search-plus overlay-icon"></i>
+                            </div>
                         </div>
                         <div class="gallery-caption">
-                            <h3 data-i18n="gallery_tea_ceremony">Traditional Tea Ceremony</h3>
-                            <p data-i18n="gallery_tea_ceremony_desc">Learning the ancient art of Japanese tea preparation from a master tea ceremony practitioner.</p>
+                            <h3>Traditional Tea Ceremony</h3>
+                            <p>Learning the art of Japanese tea preparation from a master tea ceremony practitioner</p>
                             <span class="photo-category">Cultural Immersion</span>
                         </div>
                     </div>
@@ -165,12 +348,15 @@
                     <!-- 图片3: 自然发现 -->
                     <div class="gallery-item" data-category="nature">
                         <div class="gallery-image">
-                            <!-- TODO: 插入岚山竹林的图片 -->
-                            <img src="images/gallery/arashiyama-bamboo-forest.jpg" alt="Walking through the mesmerizing bamboo groves of Arashiyama, Kyoto" class="gallery-img">
+                            <!-- ===== 修改这里：添加实际图片 ===== -->
+                            <img src="images/insights/gallery/3.png" alt="Arashiyama Bamboo Forest" class="gallery-img">
+                            <div class="image-overlay">
+                                <i class="fas fa-search-plus overlay-icon"></i>
+                            </div>
                         </div>
                         <div class="gallery-caption">
-                            <h3 data-i18n="gallery_arashiyama">Arashiyama Bamboo Forest</h3>
-                            <p data-i18n="gallery_arashiyama_desc">Walking through the mesmerizing bamboo groves of Arashiyama, Kyoto with family.</p>
+                            <h3>Arashiyama Bamboo Forest</h3>
+                            <p>Walking through the mesmerizing bamboo groves of Arashiyama, Kyoto</p>
                             <span class="photo-category">Nature & Discovery</span>
                         </div>
                     </div>
@@ -178,12 +364,15 @@
                     <!-- 图片4: 活动庆典 -->
                     <div class="gallery-item" data-category="events">
                         <div class="gallery-image">
-                            <!-- TODO: 插入大阪环球影城任天堂世界的图片 -->
-                            <img src="images/gallery/usj-nintendo-world.jpg" alt="Family fun at Nintendo World in Universal Studios Japan, Osaka" class="gallery-img">
+                            <!-- ===== 修改这里：添加实际图片 ===== -->
+                            <img src="images/insights/gallery/4.png" alt="Universal Studios Japan Celebration" class="gallery-img">
+                            <div class="image-overlay">
+                                <i class="fas fa-search-plus overlay-icon"></i>
+                            </div>
                         </div>
                         <div class="gallery-caption">
-                            <h3 data-i18n="gallery_nintendo_world">Universal Studios Japan Celebration</h3>
-                            <p data-i18n="gallery_nintendo_world_desc">Family fun at Nintendo World in Universal Studios Japan, Osaka.</p>
+                            <h3>Universal Studios Japan Celebration</h3>
+                            <p>Family fun at Nintendo World in Universal Studios Japan, Osaka</p>
                             <span class="photo-category">Events & Celebrations</span>
                         </div>
                     </div>
@@ -191,12 +380,15 @@
                     <!-- 图片5: 家庭欢乐 -->
                     <div class="gallery-item" data-category="family">
                         <div class="gallery-image">
-                            <!-- TODO: 插入东京城市观光中代际交流的图片 -->
-                            <img src="images/gallery/tokyo-generational-bonding.jpg" alt="Grandparents sharing stories with grandchildren during Tokyo city tour" class="gallery-img">
+                            <!-- ===== 修改这里：添加实际图片 ===== -->
+                            <img src="images/insights/gallery/5.png" alt="Generational Bonding" class="gallery-img">
+                            <div class="image-overlay">
+                                <i class="fas fa-search-plus overlay-icon"></i>
+                            </div>
                         </div>
                         <div class="gallery-caption">
-                            <h3 data-i18n="gallery_tokyo_bonding">Generational Bonding</h3>
-                            <p data-i18n="gallery_tokyo_bonding_desc">Grandparents sharing stories with grandchildren during Tokyo city tour.</p>
+                            <h3>Generational Bonding</h3>
+                            <p>Grandparents sharing stories with grandchildren during Tokyo city tour</p>
                             <span class="photo-category">Family Joy</span>
                         </div>
                     </div>
@@ -204,12 +396,15 @@
                     <!-- 图片6: 文化沉浸 -->
                     <div class="gallery-item" data-category="cultural">
                         <div class="gallery-image">
-                            <!-- TODO: 插入伏见稻荷大社鸟居的图片 -->
-                            <img src="images/gallery/fushimi-inari-shrine.jpg" alt="Walking through the iconic torii gates of Fushimi Inari Taisha in Kyoto" class="gallery-img">
+                            <!-- ===== 修改这里：添加实际图片 ===== -->
+                            <img src="images/insights/gallery/6.png" alt="Fushimi Inari Shrine" class="gallery-img">
+                            <div class="image-overlay">
+                                <i class="fas fa-search-plus overlay-icon"></i>
+                            </div>
                         </div>
                         <div class="gallery-caption">
-                            <h3 data-i18n="gallery_fushimi_inari">Fushimi Inari Shrine</h3>
-                            <p data-i18n="gallery_fushimi_inari_desc">Walking through the iconic torii gates of Fushimi Inari Taisha in Kyoto.</p>
+                            <h3>Fushimi Inari Shrine</h3>
+                            <p>Walking through the iconic torii gates of Fushimi Inari Taisha in Kyoto</p>
                             <span class="photo-category">Cultural Immersion</span>
                         </div>
                     </div>
@@ -217,12 +412,15 @@
                     <!-- 图片7: 自然发现 -->
                     <div class="gallery-item" data-category="nature">
                         <div class="gallery-image">
-                            <!-- TODO: 插入富士山景观的图片 -->
-                            <img src="images/gallery/mount-fuji-view.jpg" alt="Breathtaking view of Mount Fuji from the shores of Lake Kawaguchi" class="gallery-img">
+                            <!-- ===== 修改这里：添加实际图片 ===== -->
+                            <img src="images/insights/gallery/7.png" alt="Mount Fuji View" class="gallery-img">
+                            <div class="image-overlay">
+                                <i class="fas fa-search-plus overlay-icon"></i>
+                            </div>
                         </div>
                         <div class="gallery-caption">
-                            <h3 data-i18n="gallery_mount_fuji">Mount Fuji View</h3>
-                            <p data-i18n="gallery_mount_fuji_desc">Breathtaking view of Mount Fuji from the shores of Lake Kawaguchi.</p>
+                            <h3>Mount Fuji View</h3>
+                            <p>Breathtaking view of Mount Fuji from the shores of Lake Kawaguchi</p>
                             <span class="photo-category">Nature & Discovery</span>
                         </div>
                     </div>
@@ -230,12 +428,15 @@
                     <!-- 图片8: 活动庆典 -->
                     <div class="gallery-item" data-category="events">
                         <div class="gallery-image">
-                            <!-- TODO: 插入日本夏日祭典的图片 -->
-                            <img src="images/gallery/japanese-summer-festival.jpg" alt="Participating in traditional Japanese summer festival with yukata wearing" class="gallery-img">
+                            <!-- ===== 修改这里：添加实际图片 ===== -->
+                            <img src="images/insights/gallery/8.png" alt="Summer Festival Experience" class="gallery-img">
+                            <div class="image-overlay">
+                                <i class="fas fa-search-plus overlay-icon"></i>
+                            </div>
                         </div>
                         <div class="gallery-caption">
-                            <h3 data-i18n="gallery_summer_festival">Summer Festival Experience</h3>
-                            <p data-i18n="gallery_summer_festival_desc">Participating in traditional Japanese summer festival with yukata wearing.</p>
+                            <h3>Summer Festival Experience</h3>
+                            <p>Participating in traditional Japanese summer festival with yukata wearing</p>
                             <span class="photo-category">Events & Celebrations</span>
                         </div>
                     </div>
@@ -243,12 +444,15 @@
                     <!-- 图片9: 家庭欢乐 -->
                     <div class="gallery-item" data-category="family">
                         <div class="gallery-image">
-                            <!-- TODO: 插入大阪任天堂世界体验的图片 -->
-                            <img src="images/gallery/super-nintendo-world.jpg" alt="Children experiencing the magic of Super Nintendo World in Osaka" class="gallery-img">
+                            <!-- ===== 修改这里：添加实际图片 ===== -->
+                            <img src="images/insights/gallery/9.png" alt="Nintendo World Adventure" class="gallery-img">
+                            <div class="image-overlay">
+                                <i class="fas fa-search-plus overlay-icon"></i>
+                            </div>
                         </div>
                         <div class="gallery-caption">
-                            <h3 data-i18n="gallery_nintendo_adventure">Nintendo World Adventure</h3>
-                            <p data-i18n="gallery_nintendo_adventure_desc">Children experiencing the magic of Super Nintendo World in Osaka.</p>
+                            <h3>Nintendo World Adventure</h3>
+                            <p>Children experiencing the magic of Super Nintendo World in Osaka</p>
                             <span class="photo-category">Family Joy</span>
                         </div>
                     </div>
@@ -256,12 +460,15 @@
                     <!-- 图片10: 文化沉浸 -->
                     <div class="gallery-item" data-category="cultural">
                         <div class="gallery-image">
-                            <!-- TODO: 插入传统工艺工作坊的图片 -->
-                            <img src="images/gallery/traditional-craft-workshop.jpg" alt="Learning traditional Japanese drum making from local artisans" class="gallery-img">
+                            <!-- ===== 修改这里：添加实际图片 ===== -->
+                            <img src="images/insights/gallery/10.png" alt="Traditional Craft Workshop" class="gallery-img">
+                            <div class="image-overlay">
+                                <i class="fas fa-search-plus overlay-icon"></i>
+                            </div>
                         </div>
                         <div class="gallery-caption">
-                            <h3 data-i18n="gallery_craft_workshop">Traditional Craft Workshop</h3>
-                            <p data-i18n="gallery_craft_workshop_desc">Learning traditional Japanese drum making from local artisans.</p>
+                            <h3>Traditional Craft Workshop</h3>
+                            <p>Learning traditional Japanese drum making from local artisans</p>
                             <span class="photo-category">Cultural Immersion</span>
                         </div>
                     </div>
@@ -269,12 +476,15 @@
                     <!-- 图片11: 自然发现 -->
                     <div class="gallery-item" data-category="nature">
                         <div class="gallery-image">
-                            <!-- TODO: 插入大阪海游馆海洋生物学习的图片 -->
-                            <img src="images/gallery/osaka-aquarium-discovery.jpg" alt="Children learning about marine life at Osaka Aquarium Kaiyukan" class="gallery-img">
+                            <!-- ===== 修改这里：添加实际图片 ===== -->
+                            <img src="images/insights/gallery/11.png" alt="Ocean Park Discovery" class="gallery-img">
+                            <div class="image-overlay">
+                                <i class="fas fa-search-plus overlay-icon"></i>
+                            </div>
                         </div>
                         <div class="gallery-caption">
-                            <h3 data-i18n="gallery_ocean_discovery">Ocean Park Discovery</h3>
-                            <p data-i18n="gallery_ocean_discovery_desc">Children learning about marine life at Osaka Aquarium Kaiyukan.</p>
+                            <h3>Ocean Park Discovery</h3>
+                            <p>Children learning about marine life at Osaka Aquarium Kaiyukan</p>
                             <span class="photo-category">Nature & Discovery</span>
                         </div>
                     </div>
@@ -282,12 +492,15 @@
                     <!-- 图片12: 活动庆典 -->
                     <div class="gallery-item" data-category="events">
                         <div class="gallery-image">
-                            <!-- TODO: 插入文化学习证书授予仪式的图片 -->
-                            <img src="images/gallery/cultural-learning-ceremony.jpg" alt="Certificate presentation after completing traditional Japanese arts workshop" class="gallery-img">
+                            <!-- ===== 修改这里：添加实际图片 ===== -->
+                            <img src="images/insights/gallery/12.png" alt="Cultural Learning Ceremony" class="gallery-img">
+                            <div class="image-overlay">
+                                <i class="fas fa-search-plus overlay-icon"></i>
+                            </div>
                         </div>
                         <div class="gallery-caption">
-                            <h3 data-i18n="gallery_learning_ceremony">Cultural Learning Ceremony</h3>
-                            <p data-i18n="gallery_learning_ceremony_desc">Certificate presentation after completing traditional Japanese arts workshop.</p>
+                            <h3>Cultural Learning Ceremony</h3>
+                            <p>Certificate presentation after completing traditional Japanese arts workshop</p>
                             <span class="photo-category">Events & Celebrations</span>
                         </div>
                     </div>
@@ -362,7 +575,7 @@
                         <ul class="footer-links">
                             <li><a href="about/index.html" data-i18n="nav_company">Company Profile</a></li>
                             <li><a href="about/leadership.html" data-i18n="nav_leadership">Leadership Team</a></li>
-                            <li><a href="insights/partners.html" data-i18n="nav_partners">Partnerships</a></li>
+                            <li><a href="services/partners.html" data-i18n="nav_partners">Partnerships</a></li>
                         </ul>
                     </div>
                     
@@ -385,12 +598,12 @@
         </footer>
     </main>
 
-    <!-- 移动端菜单按钮 -->
+    <!-- 移动端菜单按钮（保留） -->
     <button class="mobile-menu-btn">
         <i class="fas fa-bars"></i>
     </button>
 
-    <!-- 图库模态框 -->
+    <!-- 图库模态框（保留） -->
     <div id="gallery-modal" class="gallery-modal">
         <div class="modal-content">
             <button class="modal-close">
@@ -407,11 +620,11 @@
         </div>
     </div>
 
-    <!-- JavaScript文件 -->
+    <!-- JavaScript文件（保留） -->
     <script src="js/language-manager.js"></script>
     <script src="js/main.js"></script>
     
-    <!-- 图库特定脚本和样式 -->
+    <!-- 图库特定脚本和样式（保留） -->
     <script>
         // 图库功能
         document.addEventListener('DOMContentLoaded', function() {
@@ -484,7 +697,8 @@
                     const category = caption.querySelector('.photo-category').textContent;
                     
                     // 设置模态框内容
-                    modalImage.src = galleryImg.src;
+                    modalImage.src = galleryImg.src || '';
+                    modalImage.alt = galleryImg.alt || '';
                     modalTitle.textContent = title;
                     modalDescription.textContent = description;
                     modalCategory.textContent = category;
@@ -517,18 +731,119 @@
                 }
             });
             
-            // 页面加载完成后移除加载器
+            // 页面加载完成后移除加载器（优化为首页同款逻辑）
             window.addEventListener('load', function() {
                 const loader = document.querySelector('.page-loader');
                 if (loader) {
-                    loader.style.display = 'none';
+                    setTimeout(() => {
+                        loader.style.opacity = '0';
+                        setTimeout(() => {
+                            loader.style.display = 'none';
+                        }, 500);
+                    }, 500);
                 }
+                
+                // 新增：顶部导航栏下拉菜单功能（与首页一致）
+                const dropdowns = document.querySelectorAll('.dropdown');
+                dropdowns.forEach(dropdown => {
+                    dropdown.addEventListener('mouseenter', function() {
+                        this.querySelector('.dropdown-menu').style.opacity = '1';
+                        this.querySelector('.dropdown-menu').style.visibility = 'visible';
+                        this.querySelector('.dropdown-menu').style.transform = 'translateY(0)';
+                    });
+                    
+                    dropdown.addEventListener('mouseleave', function() {
+                        this.querySelector('.dropdown-menu').style.opacity = '0';
+                        this.querySelector('.dropdown-menu').style.visibility = 'hidden';
+                        this.querySelector('.dropdown-menu').style.transform = 'translateY(10px)';
+                    });
+                });
+                
+                // 新增：语言切换器功能（与首页一致）
+                const langSwitcher = document.querySelector('.language-switcher');
+                if (langSwitcher) {
+                    langSwitcher.addEventListener('click', function(e) {
+                        e.stopPropagation();
+                        this.classList.toggle('active');
+                    });
+                    
+                    document.addEventListener('click', function() {
+                        langSwitcher.classList.remove('active');
+                    });
+                }
+                
+                document.querySelectorAll('.lang-btn').forEach(btn => {
+                    btn.addEventListener('click', function(e) {
+                        e.stopPropagation();
+                        const lang = this.getAttribute('data-lang');
+                        
+                        const current = document.querySelector('.language-current span');
+                        current.textContent = this.querySelector('span').textContent;
+                        
+                        document.querySelectorAll('.lang-btn').forEach(b => b.classList.remove('active'));
+                        this.classList.add('active');
+                        
+                        console.log('切换语言到:', lang);
+                    });
+                });
             });
         });
     </script>
     
     <style>
-        /* 图库特定样式 */
+        /* ===== 新增：图片美化CSS样式 ===== */
+        .gallery-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+            display: block;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+        }
+        
+        .gallery-image {
+            height: 250px;
+            overflow: hidden;
+            position: relative;
+            border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+        }
+        
+        .image-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(to bottom, 
+                rgba(45, 48, 71, 0) 0%,
+                rgba(45, 48, 71, 0.7) 100%);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .overlay-icon {
+            color: white;
+            font-size: 2rem;
+            transform: scale(0.8);
+            transition: transform 0.3s ease;
+        }
+        
+        .gallery-item:hover .gallery-img {
+            transform: scale(1.1);
+        }
+        
+        .gallery-item:hover .image-overlay {
+            opacity: 1;
+        }
+        
+        .gallery-item:hover .overlay-icon {
+            transform: scale(1);
+        }
+        
+        /* ===== 原有图库样式（部分修改）===== */
         .gallery-filters {
             margin-bottom: 3rem;
             text-align: center;
@@ -589,27 +904,10 @@
             box-shadow: var(--shadow-xl);
         }
         
-        .gallery-image {
-            height: 250px;
-            overflow: hidden;
-            position: relative;
-        }
-        
-        /* 图库图片样式 */
-        .gallery-img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform var(--transition-slow);
-        }
-        
-        .gallery-item:hover .gallery-img {
-            transform: scale(1.1);
-        }
-        
         .gallery-caption {
             padding: 1.5rem;
             position: relative;
+            background: white;
         }
         
         .gallery-caption h3 {
@@ -734,8 +1032,7 @@
         #modal-image {
             width: 100%;
             height: 100%;
-            object-fit: contain;
-            background: #f5f5f5;
+            object-fit: cover;
         }
         
         .modal-caption {
@@ -805,6 +1102,500 @@
             
             .modal-caption h3 {
                 font-size: 1.25rem;
+            }
+            
+            .gallery-image {
+                height: 200px;
+            }
+        }
+        
+        /* ===== 新增：图片占位符备用样式（当图片加载失败时显示）===== */
+        .gallery-img:before {
+            content: "";
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            z-index: -1;
+        }
+        
+        .gallery-img:after {
+            content: attr(alt);
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: var(--text-light);
+            font-size: 0.9rem;
+            text-align: center;
+            max-width: 80%;
+            display: none;
+        }
+        
+        .gallery-img[src=""]:after,
+        .gallery-img:not([src]):after {
+            display: block;
+        }
+        
+        /* 新增：顶部导航栏完整样式（与首页完全一致） */
+        .top-nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to right, 
+                rgba(255, 255, 255, 0.98) 0%,
+                rgba(255, 255, 255, 0.95) 30%,
+                rgba(255, 255, 255, 0.95) 70%,
+                rgba(255, 255, 255, 0.98) 100%);
+            backdrop-filter: blur(15px);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.08);
+            z-index: 1000;
+            padding: 0;
+        }
+        
+        .top-nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 40px;
+            display: grid;
+            grid-template-columns: 280px 1fr 300px;
+            align-items: center;
+            gap: 40px;
+            height: 80px;
+        }
+        
+        .nav-brand-section {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+        }
+        
+        .brand-container {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            padding: 10px 15px;
+            background: rgba(255, 255, 255, 0.7);
+            border-radius: 12px;
+            border: 1px solid rgba(78, 205, 196, 0.1);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+        }
+        
+        .brand-logo {
+            width: 45px;
+            height: 45px;
+            background: linear-gradient(135deg, #4ECDC4 0%, #2D3047 100%);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .brand-logo::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, transparent 50%, rgba(255, 255, 255, 0.1) 50%);
+            background-size: 5px 5px;
+        }
+        
+        .brand-logo .logo-text {
+            font-size: 22px;
+            font-weight: 900;
+            color: white;
+            font-family: 'Montserrat', sans-serif;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+        
+        .brand-vertical-divider {
+            width: 1px;
+            height: 30px;
+            background: linear-gradient(to bottom, transparent, rgba(78, 205, 196, 0.3), transparent);
+        }
+        
+        .brand-text {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        
+        .brand-title {
+            font-size: 20px;
+            font-weight: 800;
+            color: var(--dark-color);
+            margin: 0;
+            line-height: 1.2;
+            font-family: 'Montserrat', sans-serif;
+            letter-spacing: -0.5px;
+        }
+        
+        .brand-tagline {
+            font-size: 11px;
+            color: var(--secondary-color);
+            margin: 2px 0 0 0;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+            font-weight: 600;
+        }
+        
+        .nav-center-section {
+            display: flex;
+            justify-content: center;
+        }
+        
+        .nav-menu-wrapper {
+            background: rgba(255, 255, 255, 0.7);
+            border-radius: 12px;
+            padding: 5px 15px;
+            border: 1px solid rgba(78, 205, 196, 0.1);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+        }
+        
+        .top-nav-menu {
+            display: flex;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            gap: 25px;
+        }
+        
+        .nav-item {
+            position: relative;
+        }
+        
+        .nav-link {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--dark-color);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 13px;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+            padding: 12px 15px;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        
+        .nav-icon {
+            font-size: 14px;
+            color: var(--primary-color);
+            opacity: 0.8;
+            transition: all 0.3s ease;
+        }
+        
+        .nav-text {
+            position: relative;
+        }
+        
+        .nav-link:hover {
+            background: rgba(78, 205, 196, 0.08);
+            color: var(--primary-color);
+            transform: translateY(-1px);
+        }
+        
+        .nav-link:hover .nav-icon {
+            opacity: 1;
+            transform: scale(1.1);
+        }
+        
+        .nav-item.active .nav-link {
+            background: linear-gradient(135deg, rgba(78, 205, 196, 0.15) 0%, rgba(45, 48, 71, 0.08) 100%);
+            color: var(--primary-color);
+        }
+        
+        .nav-item.active .nav-link::before {
+            content: '';
+            position: absolute;
+            bottom: -3px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 20px;
+            height: 3px;
+            background: var(--primary-color);
+            border-radius: 2px;
+        }
+        
+        .dropdown-arrow {
+            font-size: 10px;
+            margin-left: 3px;
+            opacity: 0.6;
+            transition: transform 0.3s ease;
+        }
+        
+        .dropdown:hover .dropdown-arrow {
+            transform: rotate(180deg);
+        }
+        
+        .dropdown-menu {
+            position: absolute;
+            top: calc(100% + 10px);
+            left: 50%;
+            transform: translateX(-50%) translateY(10px);
+            background: white;
+            min-width: 220px;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+            border-radius: 12px;
+            padding: 20px;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            z-index: 1001;
+            border: 1px solid rgba(78, 205, 196, 0.1);
+        }
+        
+        .dropdown-wide {
+            min-width: 450px;
+        }
+        
+        .dropdown-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+        
+        .dropdown-section {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+        
+        .dropdown-section h4 {
+            font-size: 12px;
+            color: var(--secondary-color);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin: 0 0 10px 0;
+            font-weight: 600;
+        }
+        
+        .dropdown-menu a {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            color: var(--dark-color);
+            text-decoration: none;
+            font-size: 13px;
+            padding: 10px 12px;
+            border-radius: 6px;
+            transition: all 0.3s ease;
+        }
+        
+        .dropdown-menu a i {
+            color: var(--primary-color);
+            font-size: 14px;
+            width: 16px;
+            text-align: center;
+        }
+        
+        .dropdown-menu a:hover {
+            background: rgba(78, 205, 196, 0.08);
+            color: var(--primary-color);
+            transform: translateX(3px);
+        }
+        
+        .dropdown-menu a.active {
+            background: rgba(78, 205, 196, 0.1);
+            color: var(--primary-color);
+        }
+        
+        .nav-right-section {
+            display: flex;
+            justify-content: flex-end;
+        }
+        
+        .action-container {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            background: rgba(255, 255, 255, 0.7);
+            border-radius: 12px;
+            padding: 10px 15px;
+            border: 1px solid rgba(78, 205, 196, 0.1);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+        }
+        
+        .language-switcher {
+            position: relative;
+        }
+        
+        .language-current {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 15px;
+            background: rgba(78, 205, 196, 0.1);
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .language-current:hover {
+            background: rgba(78, 205, 196, 0.15);
+        }
+        
+        .language-current i {
+            color: var(--primary-color);
+            font-size: 14px;
+        }
+        
+        .language-current span {
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--dark-color);
+        }
+        
+        .language-options {
+            position: absolute;
+            top: calc(100% + 10px);
+            left: 0;
+            background: white;
+            min-width: 180px;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+            border-radius: 12px;
+            padding: 15px;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(10px);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            z-index: 1001;
+            border: 1px solid rgba(78, 205, 196, 0.1);
+        }
+        
+        .language-switcher.active .language-options {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+        
+        .lang-btn {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+            padding: 10px 12px;
+            border: none;
+            background: transparent;
+            color: var(--dark-color);
+            font-size: 13px;
+            font-weight: 500;
+            cursor: pointer;
+            border-radius: 6px;
+            transition: all 0.3s ease;
+            text-align: left;
+        }
+        
+        .lang-name {
+            opacity: 0.6;
+            font-size: 12px;
+        }
+        
+        .lang-btn.active,
+        .lang-btn:hover {
+            background: rgba(78, 205, 196, 0.08);
+            color: var(--primary-color);
+        }
+        
+        .cta-button {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 20px;
+            background: linear-gradient(135deg, #4ECDC4 0%, #2D3047 100%);
+            color: white;
+            text-decoration: none;
+            font-size: 13px;
+            font-weight: 600;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(78, 205, 196, 0.3);
+        }
+        
+        .nav-bottom-line {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 2px;
+            overflow: hidden;
+        }
+        
+        .line-gradient {
+            height: 2px;
+            background: linear-gradient(90deg, 
+                transparent 0%,
+                #4ECDC4 20%,
+                #2D3047 50%,
+                #4ECDC4 80%,
+                transparent 100%);
+            animation: lineFlow 8s linear infinite;
+        }
+        
+        @keyframes lineFlow {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(100%); }
+        }
+        
+        /* 响应式调整 */
+        @media (max-width: 1200px) {
+            .top-nav-container {
+                grid-template-columns: 250px 1fr 280px;
+                gap: 20px;
+                padding: 0 20px;
+            }
+            
+            .top-nav-menu {
+                gap: 15px;
+            }
+            
+            .nav-link {
+                padding: 10px 12px;
+                font-size: 12px;
+            }
+            
+            .dropdown-wide {
+                min-width: 380px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .top-nav-container {
+                grid-template-columns: 1fr;
+                height: auto;
+                padding: 10px 20px;
+            }
+            
+            .nav-brand-section,
+            .nav-center-section,
+            .nav-right-section {
+                justify-content: center;
+                margin-bottom: 10px;
+            }
+            
+            .top-nav-menu {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            .main-content {
+                margin-top: 180px;
             }
         }
     </style>

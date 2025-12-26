@@ -1,0 +1,1256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-i18n="nav_partners">Partnerships - Playfluence</title>
+    <meta name="description" content="Discover our strategic partnerships across the recreation industry">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/design.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+    
+    <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+    
+    <!-- 合作伙伴页面专用样式（完全保留原有内容，仅放大Logo尺寸） -->
+    <style>
+        /* 合作伙伴分类样式 */
+        .partner-category {
+            margin-bottom: 4rem;
+        }
+        
+        .category-header {
+            text-align: center;
+            margin-bottom: 2rem;
+            position: relative;
+            padding-bottom: 1rem;
+        }
+        
+        .category-header:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 3px;
+            background: linear-gradient(90deg, #00b4d8 0%, #ff9500 100%);
+            border-radius: 2px;
+        }
+        
+        /* Logo墙样式（放大版） */
+        .logo-wall {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 2.5rem;
+            padding: 2rem;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            border-radius: 16px;
+            margin: 2rem 0;
+        }
+        
+        .logo-item {
+            flex: 0 1 220px; /* 放大容器宽度（原180px→220px） */
+            text-align: center;
+            padding: 2rem; /* 增加内边距（原1.5rem→2rem） */
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+        }
+        
+        .logo-item:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.1);
+        }
+        
+        .partner-logo {
+            max-width: 160px; /* 放大Logo最大宽度（原120px→160px） */
+            height: 100px; /* 放大Logo高度（原80px→100px） */
+            object-fit: contain;
+            filter: grayscale(20%);
+            transition: filter 0.3s ease;
+        }
+        
+        .logo-item:hover .partner-logo {
+            filter: grayscale(0%);
+        }
+        
+        .partner-name {
+            margin-top: 1.2rem; /* 增加文字与Logo的间距 */
+            font-weight: 600;
+            color: #333;
+            font-size: 1rem; /* 放大文字大小（原0.9rem→1rem） */
+        }
+        
+        /* 合作场景图样式 */
+        .partnership-scenes {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+        
+        .scene-card {
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .scene-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .scene-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        
+        .scene-content {
+            padding: 1.5rem;
+            background: white;
+        }
+        
+        .scene-title {
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: #333;
+        }
+        
+        .scene-description {
+            font-size: 0.9rem;
+            color: #666;
+            line-height: 1.5;
+        }
+        
+        /* 合作伙伴价值主张 */
+        .partnership-value {
+            background: linear-gradient(135deg, rgba(0, 180, 216, 0.1) 0%, rgba(255, 149, 0, 0.1) 100%);
+            padding: 3rem;
+            border-radius: 16px;
+            margin: 3rem 0;
+            text-align: center;
+        }
+        
+        /* 响应式设计 */
+        @media (max-width: 768px) {
+            .logo-wall {
+                gap: 1.5rem;
+                padding: 1.5rem;
+            }
+            
+            .logo-item {
+                flex: 0 1 180px; /* 移动端容器宽度同步放大（原140px→180px） */
+                padding: 1.5rem; /* 移动端内边距同步放大（原1rem→1.5rem） */
+            }
+            
+            .partner-logo {
+                max-width: 140px; /* 移动端Logo宽度同步放大（原100px→140px） */
+                height: 80px; /* 移动端Logo高度同步放大（原60px→80px） */
+            }
+            
+            .partnership-scenes {
+                grid-template-columns: 1fr;
+            }
+            
+            .partnership-value {
+                padding: 2rem 1rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .logo-wall {
+                gap: 1rem;
+                padding: 1rem;
+            }
+            
+            .logo-item {
+                flex: 0 1 150px; /* 小屏容器宽度同步放大（原110px→150px） */
+                padding: 0.75rem;
+            }
+            
+            .partner-logo {
+                max-width: 120px; /* 小屏Logo宽度同步放大（原80px→120px） */
+                height: 70px; /* 小屏Logo高度同步放大（原50px→70px） */
+            }
+        }
+        
+        /* 动画效果 */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .logo-item, .scene-card, .partnership-value {
+            animation: fadeInUp 0.6s ease-out forwards;
+            opacity: 0;
+        }
+        
+        .logo-item:nth-child(1) { animation-delay: 0.1s; }
+        .logo-item:nth-child(2) { animation-delay: 0.2s; }
+        .logo-item:nth-child(3) { animation-delay: 0.3s; }
+        .logo-item:nth-child(4) { animation-delay: 0.4s; }
+        .logo-item:nth-child(5) { animation-delay: 0.5s; }
+        .logo-item:nth-child(6) { animation-delay: 0.6s; }
+        .scene-card:nth-child(1) { animation-delay: 0.7s; }
+        .scene-card:nth-child(2) { animation-delay: 0.8s; }
+        .partnership-value { animation-delay: 0.9s; }
+        
+        /* 合作伙伴分类颜色标识 */
+        .category-sales {
+            border-left: 4px solid #0077b6;
+        }
+        
+        .category-operations {
+            border-left: 4px solid #00b4d8;
+        }
+        
+        .category-experience {
+            border-left: 4px solid #ff9500;
+        }
+        
+        .category-strategic {
+            border-left: 4px solid #2a9d8f;
+        }
+        
+        /* 新增：首页同款布局基础样式 */
+        html, body {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            overflow-x: hidden;
+        }
+        
+        /* 页面加载器样式 - 与首页一致 */
+        .page-loader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: var(--dark-color);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 9999;
+            transition: opacity 0.5s ease;
+        }
+        
+        .loader-content {
+            text-align: center;
+        }
+        
+        .loader-content .logo-text {
+            font-size: 4rem;
+            margin-bottom: 2rem;
+        }
+        
+        .loader-content .loading {
+            width: 40px;
+            height: 40px;
+            border: 4px solid rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            border-top-color: var(--primary-color);
+            animation: spin 1s ease-in-out infinite;
+            margin: 0 auto;
+        }
+        
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+        
+        /* 主要内容适配顶部导航栏 */
+        .main-content {
+            margin-top: 80px;
+            width: 100%;
+            max-width: 100%;
+            margin: 80px 0 0 0;
+            padding: 0;
+        }
+        
+        /* 移动端菜单按钮默认隐藏 */
+        .mobile-menu-btn {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="page-loader">
+        <div class="loader-content">
+            <div class="logo-text">PF</div>
+            <div class="loading"></div>
+        </div>
+    </div>
+
+    <!-- 替换：顶部导航栏（严格匹配首页的5个核心标签结构） -->
+    <nav class="top-nav">
+        <div class="top-nav-container">
+            <!-- 品牌标识区（与首页完全一致） -->
+            <div class="nav-brand-section">
+                <div class="brand-container">
+                    <div class="brand-logo">
+                        <div class="logo-text">PF</div>
+                    </div>
+                    <div class="brand-vertical-divider"></div>
+                    <div class="brand-text">
+                        <h1 class="brand-title">Playfluence</h1>
+                        <p class="brand-tagline">Redefining Recreation Marketing</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 导航菜单区（严格匹配首页的5个核心标签） -->
+            <div class="nav-center-section">
+                <div class="nav-menu-wrapper">
+                    <ul class="top-nav-menu">
+                        <!-- 1. HOME（首页） -->
+                        <li class="nav-item">
+                            <a href="../index.html" class="nav-link" data-i18n="nav_home">
+                                <i class="fas fa-home nav-icon"></i>
+                                <span class="nav-text">HOME</span>
+                            </a>
+                        </li>
+                        <!-- 2. ABOUT US（关于我们） -->
+                        <li class="nav-item dropdown">
+                            <a href="../about/index.html" class="nav-link" data-i18n="nav_about">
+                                <i class="fas fa-building nav-icon"></i>
+                                <span class="nav-text">ABOUT US</span>
+                                <i class="fas fa-chevron-down dropdown-arrow"></i>
+                            </a>
+                            <div class="dropdown-menu">
+                                <div class="dropdown-section">
+                                    <a href="../about/company-profile.html">
+                                        <i class="fas fa-file-alt"></i>
+                                        <span>Company Profile</span>
+                                    </a>
+                                    <a href="../about/leadership.html">
+                                        <i class="fas fa-users"></i>
+                                        <span>Leadership Team</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </li>
+                        <!-- 3. OUR SERVICES（我们的服务） -->
+                        <li class="nav-item dropdown">
+                            <a href="../services/index.html" class="nav-link" data-i18n="nav_services">
+                                <i class="fas fa-concierge-bell nav-icon"></i>
+                                <span class="nav-text">OUR SERVICES</span>
+                                <i class="fas fa-chevron-down dropdown-arrow"></i>
+                            </a>
+                            <div class="dropdown-menu dropdown-wide">
+                                <div class="dropdown-grid">
+                                    <div class="dropdown-section">
+                                        <h4>Core Services</h4>
+                                        <a href="../services/index.html">
+                                            <i class="fas fa-star"></i>
+                                            <span>Core Services</span>
+                                        </a>
+                                        <a href="../services/value-proposition.html">
+                                            <i class="fas fa-bullseye"></i>
+                                            <span>Value Proposition</span>
+                                        </a>
+                                    </div>
+                                    <div class="dropdown-section">
+                                        <h4>Tour Experiences</h4>
+                                        <a href="../services/golden-route.html">
+                                            <i class="fas fa-crown"></i>
+                                            <span>Golden Route Tour</span>
+                                        </a>
+                                        <a href="../services/pricing.html">
+                                            <i class="fas fa-tag"></i>
+                                            <span>Pricing</span>
+                                        </a>
+                                    </div>
+                                    <div class="dropdown-section">
+                                        <h4>Business</h4>
+                                        <a href="../services/partners.html" class="active">
+                                            <i class="fas fa-handshake"></i>
+                                            <span>Partnerships</span>
+                                        </a>
+                                        <a href="../sustainability.html">
+                                            <i class="fas fa-leaf"></i>
+                                            <span>Sustainable Future</span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <!-- 4. INSIGHTS（洞察）- 当前分类，设为active -->
+                        <li class="nav-item dropdown active">
+                            <a href="../insights/index.html" class="nav-link" data-i18n="nav_insights">
+                                <i class="fas fa-chart-line nav-icon"></i>
+                                <span class="nav-text">INSIGHTS</span>
+                                <i class="fas fa-chevron-down dropdown-arrow"></i>
+                            </a>
+                            <div class="dropdown-menu">
+                                <div class="dropdown-section">
+                                    <a href="../insights/audience.html">
+                                        <i class="fas fa-user-friends"></i>
+                                        <span>Target Audience</span>
+                                    </a>
+                                    <a href="../insights/edeg.html">
+                                        <i class="fas fa-trophy"></i>
+                                        <span>Competitive Edge</span>
+                                    </a>
+                                    <a href="../insights/trends.html">
+                                        <i class="fas fa-chart-bar"></i>
+                                        <span>Market Insights</span>
+                                    </a>
+                                    <a href="../insights/marketing.html">
+                                        <i class="fas fa-chess-knight"></i>
+                                        <span>Marketing Strategy</span>
+                                    </a>
+                                    <a href="../gallery.html">
+                                        <i class="fas fa-images"></i>
+                                        <span>Moments & Gallery</span>
+                                    </a>
+                                    <a href="../services/partners.html" class="active">
+                                        <i class="fas fa-handshake"></i>
+                                        <span>Partnerships</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </li>
+                        <!-- 5. CONTACT（联系我们） -->
+                        <li class="nav-item">
+                            <a href="../contact.html" class="nav-link" data-i18n="nav_contact">
+                                <i class="fas fa-envelope nav-icon"></i>
+                                <span class="nav-text">CONTACT</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- 语言切换器区（与首页完全一致） -->
+            <div class="nav-right-section">
+                <div class="action-container">
+                    <div class="language-switcher">
+                        <div class="language-current">
+                            <i class="fas fa-globe"></i>
+                            <span>EN</span>
+                        </div>
+                        <div class="language-options">
+                            <button class="lang-btn active" data-lang="en">
+                                <span>EN</span>
+                                <span class="lang-name">English</span>
+                            </button>
+                            <button class="lang-btn" data-lang="zh">
+                                <span>中文</span>
+                                <span class="lang-name">Chinese</span>
+                            </button>
+                            <button class="lang-btn" data-lang="ja">
+                                <span>日本語</span>
+                                <span class="lang-name">Japanese</span>
+                            </button>
+                        </div>
+                    </div>
+                    <a href="#contact" class="cta-button">
+                        <i class="fas fa-calendar-check"></i>
+                        <span>Book Now</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- 导航栏底部装饰线（与首页完全一致） -->
+        <div class="nav-bottom-line">
+            <div class="line-gradient"></div>
+        </div>
+    </nav>
+
+    <!-- 主要内容（完全保留原有内容，无修改） -->
+    <main class="main-content">
+        <!-- 页面标题横幅 -->
+        <section class="page-hero">
+            <div class="bg-slider">
+                <div class="bg-slide active" style="background-image: url('../images/services/partner/all.png');"></div>
+            </div>
+            
+            <div class="page-hero-content">
+                <h1 class="page-title" data-i18n="partners_title">Strategic Partnerships</h1>
+                <p class="page-subtitle" data-i18n="partners_subtitle" style="color: white;">Building excellence through trusted collaborations</p>
+            </div>
+        </section>
+
+        <!-- 合作伙伴介绍 -->
+        <section class="section">
+            <div class="container">
+                <div class="text-center mb-5">
+                    <h2 class="section-title">Our Network of Excellence</h2>
+                    <p class="section-subtitle" style="max-width: 800px; margin: 0 auto;">
+                        We collaborate with industry leaders to deliver exceptional experiences. Each partnership is carefully selected to ensure the highest quality standards for our clients.
+                    </p>
+                </div>
+                
+                <!-- 销售与分销渠道 -->
+                <div class="partner-category animate-on-scroll category-sales">
+                    <div class="category-header">
+                        <h3>Sales & Distribution Channels</h3>
+                        <p class="text-muted">Premium travel distribution partners for exclusive access</p>
+                    </div>
+                    
+                    <!-- 插入图片：销售渠道合作伙伴Logo墙 -->
+                    <div class="logo-wall">
+                        <div class="logo-item">
+                            <img src="../images/services/partner/ctg.png" alt="China Tourism Group (CTG) VIP Services" class="partner-logo">
+                            <div class="partner-name">CTG VIP Services</div>
+                        </div>
+                        <div class="logo-item">
+                            <img src="../images/services/partner/cttp.png" alt="Ctrip Premium Private Tours" class="partner-logo">
+                            <div class="partner-name">Ctrip Premium Tours</div>
+                        </div>
+                        <div class="logo-item">
+                            <img src="../images/services/partner/1.png" alt="Fliggy Alibaba Travel" class="partner-logo">
+                            <div class="partner-name">Fliggy</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 地面执行网络 -->
+                <div class="partner-category animate-on-scroll category-operations">
+                    <div class="category-header">
+                        <h3>Ground Operations Network</h3>
+                        <p class="text-muted">Reliable partners for seamless travel execution in Japan</p>
+                    </div>
+                    
+                    <!-- 插入图片：地面执行合作伙伴Logo墙 -->
+                    <div class="logo-wall">
+                        <div class="logo-item">
+                            <img src="../images/services/partner/jn.png" alt="Japan National Tourism Organization" class="partner-logo">
+                            <div class="partner-name">JNTO</div>
+                        </div>
+                        <div class="logo-item">
+                            <img src="../images/services/partner/jr.png" alt="Japan Railways (JR)" class="partner-logo">
+                            <div class="partner-name">Japan Railways</div>
+                        </div>
+                        <div class="logo-item">
+                            <img src="../images/services/partner/pc.png" alt="Premium Chartered Coach Companies" class="partner-logo">
+                            <div class="partner-name">Premium Coaches</div>
+                        </div>
+                        <div class="logo-item">
+                            <img src="../images/services/partner/al.png" alt="Allianz Travel Insurance" class="partner-logo">
+                            <div class="partner-name">Allianz Insurance</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 体验内容供应商 -->
+                <div class="partner-category animate-on-scroll category-experience">
+                    <div class="category-header">
+                        <h3>Experience Providers</h3>
+                        <p class="text-muted">Premium partners for unforgettable experiences</p>
+                    </div>
+                    
+                    <!-- 插入图片：体验提供商合作伙伴Logo墙 -->
+                    <div class="logo-wall">
+                        <div class="logo-item">
+                            <img src="../images/services/partner/tt.png" alt="The Peninsula Tokyo" class="partner-logo">
+                            <div class="partner-name">The Peninsula</div>
+                        </div>
+                        <div class="logo-item">
+                            <img src="../images/services/partner/yk.png" alt="The Ritz-Carlton Kyoto" class="partner-logo">
+                            <div class="partner-name">Ritz-Carlton</div>
+                        </div>
+                        <div class="logo-item">
+                            <img src="../images/services/partner/io.png" alt="InterContinental Osaka" class="partner-logo">
+                            <div class="partner-name">InterContinental</div>
+                        </div>
+                        <div class="logo-item">
+                            <img src="../images/services/partner/tl.png" alt="teamLab Planets" class="partner-logo">
+                            <div class="partner-name">teamLab</div>
+                        </div>
+                        <div class="logo-item">
+                            <img src="../images/services/partner/us.png" alt="Universal Studios Japan" class="partner-logo">
+                            <div class="partner-name">Universal Studios</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 战略与信誉伙伴 -->
+                <div class="partner-category animate-on-scroll category-strategic">
+                    <div class="category-header">
+                        <h3>Strategic & Credibility Partners</h3>
+                        <p class="text-muted">Organizations that enhance our credibility and impact</p>
+                    </div>
+                    
+                    <!-- 插入图片：战略合作伙伴Logo墙 -->
+                    <div class="logo-wall">
+                        <div class="logo-item">
+                            <img src="../images/services/partner/wwf.png" alt="WWF China" class="partner-logo">
+                            <div class="partner-name">WWF China</div>
+                        </div>
+                        <div class="logo-item">
+                            <img src="../images/services/partner/lct.png" alt="Local Culture & Tourism Bureaus" class="partner-logo">
+                            <div class="partner-name">Tourism Bureaus</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 插入图片：合作场景图 -->
+                <div class="partnership-scenes animate-on-scroll">
+                    <div class="scene-card">
+                        <div class="scene-content">
+                            <div class="scene-title">Exclusive Hotel Partnerships</div>
+                            <div class="scene-description">
+                                Strategic collaborations with 5-star hotels across Japan ensure premium accommodations and exclusive amenities for our Golden Route Tour guests.
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="scene-card">
+                            <div class="scene-title">JNTO Collaboration</div>
+                            <div class="scene-description">
+                                Working closely with Japan National Tourism Organization to promote authentic cultural experiences and ensure smooth travel operations throughout Japan.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 合作伙伴价值主张 -->
+                <div class="partnership-value animate-on-scroll">
+                    <h3 class="mb-3">Why Our Partnerships Matter</h3>
+                    <p style="max-width: 800px; margin: 0 auto 2rem;">
+                        Each partnership is more than just a business arrangement. We collaborate with organizations that share our values of excellence, sustainability, and exceptional customer experience. Our network ensures that every aspect of your journey meets the highest standards of quality and reliability.
+                    </p>
+                    
+                    <div class="grid grid-3 gap-4">
+                        <div class="value-point">
+                            <i class="fas fa-shield-alt fa-2x mb-3" style="color: #0077b6;"></i>
+                            <h5>Quality Assurance</h5>
+                            <p>Every partner is vetted for quality and reliability</p>
+                        </div>
+                        <div class="value-point">
+                            <i class="fas fa-handshake fa-2x mb-3" style="color: #00b4d8;"></i>
+                            <h5>Strategic Alignment</h5>
+                            <p>Partners share our commitment to excellence</p>
+                        </div>
+                        <div class="value-point">
+                            <i class="fas fa-users fa-2x mb-3" style="color: #ff9500;"></i>
+                            <h5>Enhanced Experience</h5>
+                            <p>Collaborations provide exclusive benefits for our clients</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 合作邀请 -->
+                <div class="text-center mt-5 animate-on-scroll">
+                    <h3>Interested in Partnering with Us?</h3>
+                    <p class="mb-4" style="max-width: 700px; margin: 0 auto;">
+                        We're always looking for exceptional partners who share our vision for premium recreation experiences. If your organization aligns with our values, let's explore collaboration opportunities.
+                    </p>
+                    <a href="../contact.html" class="btn btn-primary" style="
+                        display: inline-block;
+                        padding: 12px 32px;
+                        background: linear-gradient(135deg, #00b4d8 0%, #0077b6 100%);
+                        color: white;
+                        text-decoration: none;
+                        border-radius: 50px;
+                        font-weight: 600;
+                        font-size: 16px;
+                        transition: all 0.3s ease;
+                    ">Become a Partner</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- 页脚 -->
+        <footer class="main-footer">
+            <div class="container">
+                <div class="footer-grid">
+                    <div class="footer-col">
+                        <div class="footer-logo">Playfluence</div>
+                        <p data-i18n="hero_description">Pioneering recreation marketing through creativity and data intelligence</p>
+                        <div class="social-links">
+                            <a href="#" class="social-link"><i class="fab fa-weixin"></i></a>
+                            <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                        </div>
+                    </div>
+                    
+                    <div class="footer-col">
+                        <h4 data-i18n="nav_services">Our Services</h4>
+                        <ul class="footer-links">
+                            <li><a href="../services/index.html" data-i18n="nav_core_services">Core Services</a></li>
+                            <li><a href="../services/golden-route.html" data-i18n="nav_golden_route">Golden Route Tour</a></li>
+                            <li><a href="../services/pricing.html" data-i18n="nav_pricing">Pricing</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-col">
+                        <h4 data-i18n="nav_insights">Insights</h4>
+                        <ul class="footer-links">
+                            <li><a href="../insights/audience.html" data-i18n="nav_audience">Target Audience</a></li>
+                            <li><a href="../insights/edeg.html" data-i18n="nav_edge">Competitive Edge</a></li>
+                            <li><a href="partners.html" data-i18n="nav_partners">Partnerships</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-col">
+                        <h4 data-i18n="nav_contact">Contact</h4>
+                        <p><i class="fas fa-envelope"></i> info@playfluence.com</p>
+                        <p><i class="fas fa-map-marker-alt"></i> Shanghai, China</p>
+                        <p><i class="fas fa-globe"></i> Global Focus</p>
+                    </div>
+                </div>
+                
+                <div class="footer-bottom">
+                    <p data-i18n="footer_rights">© 2023 Playfluence. All rights reserved.</p>
+                    <p>
+                        <a href="#" data-i18n="footer_privacy">Privacy Policy</a> | 
+                        <a href="#" data-i18n="footer_terms">Terms of Service</a>
+                    </p>
+                </div>
+            </div>
+        </footer>
+    </main>
+
+    <!-- 移动端菜单按钮（保留） -->
+    <button class="mobile-menu-btn">
+        <i class="fas fa-bars"></i>
+    </button>
+
+    <!-- JavaScript文件 -->
+    <script src="../js/language-manager.js"></script>
+    <script src="../js/background-slider.js"></script>
+    <script src="../js/main.js"></script>
+    
+    <!-- 新增：顶部导航栏交互脚本（与首页一致） -->
+    <script>
+        // 页面加载完成后初始化导航栏交互
+        window.addEventListener('load', function() {
+            // 加载器渐变消失效果
+            const loader = document.querySelector('.page-loader');
+            if (loader) {
+                setTimeout(() => {
+                    loader.style.opacity = '0';
+                    setTimeout(() => {
+                        loader.style.display = 'none';
+                    }, 500);
+                }, 500);
+            }
+            
+            // 下拉菜单交互
+            const dropdowns = document.querySelectorAll('.dropdown');
+            dropdowns.forEach(dropdown => {
+                dropdown.addEventListener('mouseenter', function() {
+                    this.querySelector('.dropdown-menu').style.opacity = '1';
+                    this.querySelector('.dropdown-menu').style.visibility = 'visible';
+                    this.querySelector('.dropdown-menu').style.transform = 'translateY(0)';
+                });
+                
+                dropdown.addEventListener('mouseleave', function() {
+                    this.querySelector('.dropdown-menu').style.opacity = '0';
+                    this.querySelector('.dropdown-menu').style.visibility = 'hidden';
+                    this.querySelector('.dropdown-menu').style.transform = 'translateY(10px)';
+                });
+            });
+            
+            // 语言切换器交互
+            const langSwitcher = document.querySelector('.language-switcher');
+            if (langSwitcher) {
+                langSwitcher.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                    this.classList.toggle('active');
+                });
+                
+                document.addEventListener('click', function() {
+                    langSwitcher.classList.remove('active');
+                });
+            }
+            
+            document.querySelectorAll('.lang-btn').forEach(btn => {
+                btn.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                    const lang = this.getAttribute('data-lang');
+                    
+                    const current = document.querySelector('.language-current span');
+                    current.textContent = this.querySelector('span').textContent;
+                    
+                    document.querySelectorAll('.lang-btn').forEach(b => b.classList.remove('active'));
+                    this.classList.add('active');
+                    
+                    console.log('切换语言到:', lang);
+                });
+            });
+        });
+        
+        // 顶部导航栏完整样式（与首页完全一致）
+        const style = document.createElement('style');
+        style.textContent = `
+            .top-nav {
+                position: fixed;
+                top: 0;
+                left: 0;
+                right: 0;
+                background: linear-gradient(to right, 
+                    rgba(255, 255, 255, 0.98) 0%,
+                    rgba(255, 255, 255, 0.95) 30%,
+                    rgba(255, 255, 255, 0.95) 70%,
+                    rgba(255, 255, 255, 0.98) 100%);
+                backdrop-filter: blur(15px);
+                box-shadow: 0 4px 30px rgba(0, 0, 0, 0.08);
+                z-index: 1000;
+                padding: 0;
+            }
+            
+            .top-nav-container {
+                max-width: 1400px;
+                margin: 0 auto;
+                padding: 0 40px;
+                display: grid;
+                grid-template-columns: 280px 1fr 300px;
+                align-items: center;
+                gap: 40px;
+                height: 80px;
+            }
+            
+            .nav-brand-section {
+                display: flex;
+                align-items: center;
+                justify-content: flex-start;
+            }
+            
+            .brand-container {
+                display: flex;
+                align-items: center;
+                gap: 15px;
+                padding: 10px 15px;
+                background: rgba(255, 255, 255, 0.7);
+                border-radius: 12px;
+                border: 1px solid rgba(78, 205, 196, 0.1);
+                box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            }
+            
+            .brand-logo {
+                width: 45px;
+                height: 45px;
+                background: linear-gradient(135deg, #4ECDC4 0%, #2D3047 100%);
+                border-radius: 10px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                position: relative;
+                overflow: hidden;
+            }
+            
+            .brand-logo::after {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background: linear-gradient(45deg, transparent 50%, rgba(255, 255, 255, 0.1) 50%);
+                background-size: 5px 5px;
+            }
+            
+            .brand-logo .logo-text {
+                font-size: 22px;
+                font-weight: 900;
+                color: white;
+                font-family: 'Montserrat', sans-serif;
+                text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+            }
+            
+            .brand-vertical-divider {
+                width: 1px;
+                height: 30px;
+                background: linear-gradient(to bottom, transparent, rgba(78, 205, 196, 0.3), transparent);
+            }
+            
+            .brand-text {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+            }
+            
+            .brand-title {
+                font-size: 20px;
+                font-weight: 800;
+                color: var(--dark-color);
+                margin: 0;
+                line-height: 1.2;
+                font-family: 'Montserrat', sans-serif;
+                letter-spacing: -0.5px;
+            }
+            
+            .brand-tagline {
+                font-size: 11px;
+                color: var(--secondary-color);
+                margin: 2px 0 0 0;
+                text-transform: uppercase;
+                letter-spacing: 0.8px;
+                font-weight: 600;
+            }
+            
+            .nav-center-section {
+                display: flex;
+                justify-content: center;
+            }
+            
+            .nav-menu-wrapper {
+                background: rgba(255, 255, 255, 0.7);
+                border-radius: 12px;
+                padding: 5px 15px;
+                border: 1px solid rgba(78, 205, 196, 0.1);
+                box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            }
+            
+            .top-nav-menu {
+                display: flex;
+                list-style: none;
+                margin: 0;
+                padding: 0;
+                gap: 25px;
+            }
+            
+            .nav-item {
+                position: relative;
+            }
+            
+            .nav-link {
+                display: flex;
+                align-items: center;
+                gap: 8px;
+                color: var(--dark-color);
+                text-decoration: none;
+                font-weight: 600;
+                font-size: 13px;
+                text-transform: uppercase;
+                letter-spacing: 0.8px;
+                padding: 12px 15px;
+                border-radius: 8px;
+                transition: all 0.3s ease;
+                position: relative;
+            }
+            
+            .nav-icon {
+                font-size: 14px;
+                color: var(--primary-color);
+                opacity: 0.8;
+                transition: all 0.3s ease;
+            }
+            
+            .nav-text {
+                position: relative;
+            }
+            
+            .nav-link:hover {
+                background: rgba(78, 205, 196, 0.08);
+                color: var(--primary-color);
+                transform: translateY(-1px);
+            }
+            
+            .nav-link:hover .nav-icon {
+                opacity: 1;
+                transform: scale(1.1);
+            }
+            
+            .nav-item.active .nav-link {
+                background: linear-gradient(135deg, rgba(78, 205, 196, 0.15) 0%, rgba(45, 48, 71, 0.08) 100%);
+                color: var(--primary-color);
+            }
+            
+            .nav-item.active .nav-link::before {
+                content: '';
+                position: absolute;
+                bottom: -3px;
+                left: 50%;
+                transform: translateX(-50%);
+                width: 20px;
+                height: 3px;
+                background: var(--primary-color);
+                border-radius: 2px;
+            }
+            
+            .dropdown-arrow {
+                font-size: 10px;
+                margin-left: 3px;
+                opacity: 0.6;
+                transition: transform 0.3s ease;
+            }
+            
+            .dropdown:hover .dropdown-arrow {
+                transform: rotate(180deg);
+            }
+            
+            .dropdown-menu {
+                position: absolute;
+                top: calc(100% + 10px);
+                left: 50%;
+                transform: translateX(-50%) translateY(10px);
+                background: white;
+                min-width: 220px;
+                box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+                border-radius: 12px;
+                padding: 20px;
+                opacity: 0;
+                visibility: hidden;
+                transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+                z-index: 1001;
+                border: 1px solid rgba(78, 205, 196, 0.1);
+            }
+            
+            .dropdown-wide {
+                min-width: 450px;
+            }
+            
+            .dropdown-grid {
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                gap: 20px;
+            }
+            
+            .dropdown-section {
+                display: flex;
+                flex-direction: column;
+                gap: 8px;
+            }
+            
+            .dropdown-section h4 {
+                font-size: 12px;
+                color: var(--secondary-color);
+                text-transform: uppercase;
+                letter-spacing: 1px;
+                margin: 0 0 10px 0;
+                font-weight: 600;
+            }
+            
+            .dropdown-menu a {
+                display: flex;
+                align-items: center;
+                gap: 12px;
+                color: var(--dark-color);
+                text-decoration: none;
+                font-size: 13px;
+                padding: 10px 12px;
+                border-radius: 6px;
+                transition: all 0.3s ease;
+            }
+            
+            .dropdown-menu a i {
+                color: var(--primary-color);
+                font-size: 14px;
+                width: 16px;
+                text-align: center;
+            }
+            
+            .dropdown-menu a:hover {
+                background: rgba(78, 205, 196, 0.08);
+                color: var(--primary-color);
+                transform: translateX(3px);
+            }
+            
+            .dropdown-menu a.active {
+                background: rgba(78, 205, 196, 0.1);
+                color: var(--primary-color);
+            }
+            
+            .nav-right-section {
+                display: flex;
+                justify-content: flex-end;
+            }
+            
+            .action-container {
+                display: flex;
+                align-items: center;
+                gap: 15px;
+                background: rgba(255, 255, 255, 0.7);
+                border-radius: 12px;
+                padding: 10px 15px;
+                border: 1px solid rgba(78, 205, 196, 0.1);
+                box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            }
+            
+            .language-switcher {
+                position: relative;
+            }
+            
+            .language-current {
+                display: flex;
+                align-items: center;
+                gap: 8px;
+                padding: 8px 15px;
+                background: rgba(78, 205, 196, 0.1);
+                border-radius: 8px;
+                cursor: pointer;
+                transition: all 0.3s ease;
+            }
+            
+            .language-current:hover {
+                background: rgba(78, 205, 196, 0.15);
+            }
+            
+            .language-current i {
+                color: var(--primary-color);
+                font-size: 14px;
+            }
+            
+            .language-current span {
+                font-size: 13px;
+                font-weight: 600;
+                color: var(--dark-color);
+            }
+            
+            .language-options {
+                position: absolute;
+                top: calc(100% + 10px);
+                left: 0;
+                background: white;
+                min-width: 180px;
+                box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+                border-radius: 12px;
+                padding: 15px;
+                opacity: 0;
+                visibility: hidden;
+                transform: translateY(10px);
+                transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+                z-index: 1001;
+                border: 1px solid rgba(78, 205, 196, 0.1);
+            }
+            
+            .language-switcher.active .language-options {
+                opacity: 1;
+                visibility: visible;
+                transform: translateY(0);
+            }
+            
+            .lang-btn {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                width: 100%;
+                padding: 10px 12px;
+                border: none;
+                background: transparent;
+                color: var(--dark-color);
+                font-size: 13px;
+                font-weight: 500;
+                cursor: pointer;
+                border-radius: 6px;
+                transition: all 0.3s ease;
+                text-align: left;
+            }
+            
+            .lang-name {
+                opacity: 0.6;
+                font-size: 12px;
+            }
+            
+            .lang-btn.active,
+            .lang-btn:hover {
+                background: rgba(78, 205, 196, 0.08);
+                color: var(--primary-color);
+            }
+            
+            .cta-button {
+                display: flex;
+                align-items: center;
+                gap: 8px;
+                padding: 10px 20px;
+                background: linear-gradient(135deg, #4ECDC4 0%, #2D3047 100%);
+                color: white;
+                text-decoration: none;
+                font-size: 13px;
+                font-weight: 600;
+                border-radius: 8px;
+                transition: all 0.3s ease;
+                text-transform: uppercase;
+                letter-spacing: 0.8px;
+            }
+            
+            .cta-button:hover {
+                transform: translateY(-2px);
+                box-shadow: 0 8px 20px rgba(78, 205, 196, 0.3);
+            }
+            
+            .nav-bottom-line {
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                height: 2px;
+                overflow: hidden;
+            }
+            
+            .line-gradient {
+                height: 2px;
+                background: linear-gradient(90deg, 
+                    transparent 0%,
+                    #4ECDC4 20%,
+                    #2D3047 50%,
+                    #4ECDC4 80%,
+                    transparent 100%);
+                animation: lineFlow 8s linear infinite;
+            }
+            
+            @keyframes lineFlow {
+                0% { transform: translateX(-100%); }
+                100% { transform: translateX(100%); }
+            }
+            
+            /* 响应式调整 */
+            @media (max-width: 1200px) {
+                .top-nav-container {
+                    grid-template-columns: 250px 1fr 280px;
+                    gap: 20px;
+                    padding: 0 20px;
+                }
+                
+                .top-nav-menu {
+                    gap: 15px;
+                }
+                
+                .nav-link {
+                    padding: 10px 12px;
+                    font-size: 12px;
+                }
+                
+                .dropdown-wide {
+                    min-width: 380px;
+                }
+            }
+            
+            @media (max-width: 768px) {
+                .top-nav-container {
+                    grid-template-columns: 1fr;
+                    height: auto;
+                    padding: 10px 20px;
+                }
+                
+                .nav-brand-section,
+                .nav-center-section,
+                .nav-right-section {
+                    justify-content: center;
+                    margin-bottom: 10px;
+                }
+                
+                .top-nav-menu {
+                    flex-wrap: wrap;
+                    justify-content: center;
+                }
+                
+                .main-content {
+                    margin-top: 180px;
+                }
+            }
+        `;
+        document.head.appendChild(style);
+    </script>
+</body>
+</html>

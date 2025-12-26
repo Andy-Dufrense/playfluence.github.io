@@ -19,6 +19,162 @@
     
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+    
+    <!-- 新增：适配顶部导航栏的基础样式 -->
+    <style>
+        html, body {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            overflow-x: hidden;
+        }
+        
+        /* 页面加载器样式 - 统一风格 */
+        .page-loader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: var(--dark-color);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 9999;
+            transition: opacity 0.5s ease;
+        }
+        
+        .loader-content {
+            text-align: center;
+        }
+        
+        .loader-content .logo-text {
+            font-size: 4rem;
+            margin-bottom: 2rem;
+            color: white;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 900;
+        }
+        
+        .loader-content .loading {
+            width: 40px;
+            height: 40px;
+            border: 4px solid rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            border-top-color: #4ECDC4;
+            animation: spin 1s ease-in-out infinite;
+            margin: 0 auto;
+        }
+        
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+        
+        /* 主要内容适配顶部导航栏 */
+        .main-content {
+            margin-top: 80px;
+            width: 100%;
+            max-width: 100%;
+            margin: 80px 0 0 0;
+            padding: 0;
+        }
+        
+        /* 移动端菜单按钮默认隐藏 */
+        .mobile-menu-btn {
+            display: none;
+        }
+
+        /* 变量定义（兼容无main.css的情况） */
+        :root {
+            --primary-color: #4ECDC4;
+            --dark-color: #2D3047;
+            --text-light: #6c757d;
+            --border-color: #e9ecef;
+            --radius-sm: 4px;
+            --radius-md: 8px;
+            --radius-lg: 12px;
+            --radius-full: 999px;
+            --shadow-sm: 0 2px 5px rgba(0,0,0,0.05);
+            --shadow-md: 0 4px 15px rgba(0,0,0,0.08);
+            --shadow-xl: 0 10px 30px rgba(0,0,0,0.12);
+            --transition-normal: 0.3s ease;
+        }
+        
+        /* 基础布局样式 */
+        .container {
+            width: 100%;
+            padding-right: 15px;
+            padding-left: 15px;
+            margin-right: auto;
+            margin-left: auto;
+        }
+        
+        @media (min-width: 576px) {
+            .container {
+                max-width: 540px;
+            }
+        }
+        
+        @media (min-width: 768px) {
+            .container {
+                max-width: 720px;
+            }
+        }
+        
+        @media (min-width: 992px) {
+            .container {
+                max-width: 960px;
+            }
+        }
+        
+        @media (min-width: 1200px) {
+            .container {
+                max-width: 1140px;
+            }
+        }
+        
+        .grid {
+            display: grid;
+            gap: 1.5rem;
+        }
+        
+        .grid-2 {
+            grid-template-columns: repeat(2, 1fr);
+        }
+        
+        .grid-3 {
+            grid-template-columns: repeat(3, 1fr);
+        }
+        
+        .section {
+            padding: 4rem 0;
+        }
+        
+        .bg-light {
+            background-color: #f8f9fa;
+        }
+        
+        .section-title {
+            font-size: 2rem;
+            font-weight: 800;
+            color: var(--dark-color);
+            margin-bottom: 1rem;
+            font-family: 'Montserrat', sans-serif;
+        }
+        
+        .section-subtitle {
+            font-size: 1.1rem;
+            color: var(--text-light);
+            margin-bottom: 2rem;
+        }
+        
+        .section-description {
+            font-size: 1.1rem;
+            color: var(--text-light);
+            margin-bottom: 2rem;
+            line-height: 1.6;
+        }
+    </style>
 </head>
 <body>
     <!-- 页面加载器 -->
@@ -29,68 +185,184 @@
         </div>
     </div>
 
-    <!-- 垂直导航栏 -->
-    <nav class="vertical-nav">
-        <div class="nav-logo">
-            <div class="logo-text">PF</div>
+    <!-- 替换：顶部导航栏（统一风格） -->
+    <nav class="top-nav">
+        <div class="top-nav-container">
+            <!-- 品牌标识区 -->
+            <div class="nav-brand-section">
+                <div class="brand-container">
+                    <div class="brand-logo">
+                        <div class="logo-text">PF</div>
+                    </div>
+                    <div class="brand-vertical-divider"></div>
+                    <div class="brand-text">
+                        <h1 class="brand-title">Playfluence</h1>
+                        <p class="brand-tagline">Redefining Recreation Marketing</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 导航菜单区 -->
+            <div class="nav-center-section">
+                <div class="nav-menu-wrapper">
+                    <ul class="top-nav-menu">
+                        <!-- 1. HOME（首页） -->
+                        <li class="nav-item">
+                            <a href="../index.html" class="nav-link" data-i18n="nav_home">
+                                <i class="fas fa-home nav-icon"></i>
+                                <span class="nav-text">HOME</span>
+                            </a>
+                        </li>
+                        <!-- 2. ABOUT US（关于我们） -->
+                        <li class="nav-item dropdown">
+                            <a href="../about/index.html" class="nav-link" data-i18n="nav_about">
+                                <i class="fas fa-building nav-icon"></i>
+                                <span class="nav-text">ABOUT US</span>
+                                <i class="fas fa-chevron-down dropdown-arrow"></i>
+                            </a>
+                            <div class="dropdown-menu">
+                                <div class="dropdown-section">
+                                    <a href="../about/index.html">
+                                        <i class="fas fa-file-alt"></i>
+                                        <span>Company Profile</span>
+                                    </a>
+                                    <a href="../about/leadership.html">
+                                        <i class="fas fa-users"></i>
+                                        <span>Leadership Team</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </li>
+                        <!-- 3. OUR SERVICES（我们的服务） -->
+                        <li class="nav-item dropdown">
+                            <a href="../services/index.html" class="nav-link" data-i18n="nav_services">
+                                <i class="fas fa-concierge-bell nav-icon"></i>
+                                <span class="nav-text">OUR SERVICES</span>
+                                <i class="fas fa-chevron-down dropdown-arrow"></i>
+                            </a>
+                            <div class="dropdown-menu dropdown-wide">
+                                <div class="dropdown-grid">
+                                    <div class="dropdown-section">
+                                        <h4>Core Services</h4>
+                                        <a href="../services/index.html">
+                                            <i class="fas fa-star"></i>
+                                            <span>Core Services</span>
+                                        </a>
+                                        <a href="../services/value-proposition.html">
+                                            <i class="fas fa-bullseye"></i>
+                                            <span>Value Proposition</span>
+                                        </a>
+                                    </div>
+                                    <div class="dropdown-section">
+                                        <h4>Tour Experiences</h4>
+                                        <a href="../services/golden-route.html">
+                                            <i class="fas fa-crown"></i>
+                                            <span>Golden Route Tour</span>
+                                        </a>
+                                        <a href="../services/pricing.html">
+                                            <i class="fas fa-tag"></i>
+                                            <span>Pricing</span>
+                                        </a>
+                                    </div>
+                                    <div class="dropdown-section">
+                                        <h4>Business</h4>
+                                        <a href="../services/partners.html">
+                                            <i class="fas fa-handshake"></i>
+                                            <span>Partnerships</span>
+                                        </a>
+                                        <a href="../sustainability.html">
+                                            <i class="fas fa-leaf"></i>
+                                            <span>Sustainable Future</span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <!-- 4. INSIGHTS（洞察）- 主标签+子选项双Active -->
+                        <li class="nav-item dropdown active">
+                            <a href="index.html" class="nav-link" data-i18n="nav_insights">
+                                <i class="fas fa-chart-line nav-icon"></i>
+                                <span class="nav-text">INSIGHTS</span>
+                                <i class="fas fa-chevron-down dropdown-arrow"></i>
+                            </a>
+                            <div class="dropdown-menu">
+                                <div class="dropdown-section">
+                                    <a href="audience.html">
+                                        <i class="fas fa-user-friends"></i>
+                                        <span>Target Audience</span>
+                                    </a>
+                                    <a href="edeg.html">
+                                        <i class="fas fa-trophy"></i>
+                                        <span>Competitive Edge</span>
+                                    </a>
+                                    <a href="trends.html" class="active">
+                                        <i class="fas fa-chart-bar"></i>
+                                        <span>Market Insights</span>
+                                    </a>
+                                    <a href="marketing.html">
+                                        <i class="fas fa-chess-knight"></i>
+                                        <span>Marketing Strategy</span>
+                                    </a>
+                                    <a href="../gallery.html">
+                                        <i class="fas fa-images"></i>
+                                        <span>Moments & Gallery</span>
+                                    </a>
+                                    <a href="../services/partners.html">
+                                        <i class="fas fa-handshake"></i>
+                                        <span>Partnerships</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </li>
+                        <!-- 5. CONTACT（联系我们） -->
+                        <li class="nav-item">
+                            <a href="../contact.html" class="nav-link" data-i18n="nav_contact">
+                                <i class="fas fa-envelope nav-icon"></i>
+                                <span class="nav-text">CONTACT</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- 语言切换器区 -->
+            <div class="nav-right-section">
+                <div class="action-container">
+                    <div class="language-switcher">
+                        <div class="language-current">
+                            <i class="fas fa-globe"></i>
+                            <span>EN</span>
+                        </div>
+                        <div class="language-options">
+                            <button class="lang-btn active" data-lang="en">
+                                <span>EN</span>
+                                <span class="lang-name">English</span>
+                            </button>
+                            <button class="lang-btn" data-lang="zh">
+                                <span>中文</span>
+                                <span class="lang-name">Chinese</span>
+                            </button>
+                            <button class="lang-btn" data-lang="ja">
+                                <span>日本語</span>
+                                <span class="lang-name">Japanese</span>
+                            </button>
+                        </div>
+                    </div>
+                    <a href="#contact" class="cta-button">
+                        <i class="fas fa-calendar-check"></i>
+                        <span>Book Now</span>
+                    </a>
+                </div>
+            </div>
         </div>
         
-        <ul class="nav-menu">
-            <li class="nav-item">
-                <a href="../index.html" class="nav-link">
-                    <span class="nav-text" data-i18n="nav_home">HOME</span>
-                    <span class="nav-dot"></span>
-                </a>
-            </li>
-            <li class="nav-item">
-                <a href="../about/index.html" class="nav-link">
-                    <span class="nav-text" data-i18n="nav_about">ABOUT</span>
-                    <span class="nav-dot"></span>
-                </a>
-            </li>
-            <li class="nav-item">
-                <a href="../services/index.html" class="nav-link">
-                    <span class="nav-text" data-i18n="nav_services">SERVICES</span>
-                    <span class="nav-dot"></span>
-                </a>
-            </li>
-            <li class="nav-item active">
-                <a href="index.html" class="nav-link">
-                    <span class="nav-text" data-i18n="nav_insights">INSIGHTS</span>
-                    <span class="nav-dot"></span>
-                </a>
-            </li>
-            <li class="nav-item">
-                <a href="../gallery.html" class="nav-link">
-                    <span class="nav-text" data-i18n="nav_gallery">GALLERY</span>
-                    <span class="nav-dot"></span>
-                </a>
-            </li>
-            <li class="nav-item">
-                <a href="../sustainability.html" class="nav-link">
-                    <span class="nav-text" data-i18n="nav_sustainability">SUSTAINABLE</span>
-                    <span class="nav-dot"></span>
-                </a>
-            </li>
-            <li class="nav-item">
-                <a href="../contact.html" class="nav-link">
-                    <span class="nav-text" data-i18n="nav_contact">CONTACT</span>
-                    <span class="nav-dot"></span>
-                </a>
-            </li>
-        </ul>
-        
-        <!-- 语言切换器 -->
-        <div class="nav-language">
-            <div class="language-switcher">
-                <button class="lang-btn active" data-lang="en">EN</button>
-                <button class="lang-btn" data-lang="zh">中文</button>
-                <button class="lang-btn" data-lang="ja">日本語</button>
-            </div>
+        <!-- 导航栏底部装饰线 -->
+        <div class="nav-bottom-line">
+            <div class="line-gradient"></div>
         </div>
     </nav>
 
-    <!-- 主要内容 -->
+    <!-- 主要内容（保留原有内容） -->
     <main class="main-content">
         <!-- 页面标题横幅 -->
         <section class="page-hero">
@@ -102,7 +374,7 @@
             
             <div class="page-hero-content">
                 <h1 class="page-title" data-i18n="trends_title">Market Trends & Insights</h1>
-                <p class="page-subtitle" data-i18n="trends_subtitle">Understanding the evolving landscape of recreation and family travel</p>
+                <p class="page-subtitle" data-i18n="trends_subtitle" style="color: white;">Understanding the evolving landscape of recreation and family travel</p>
             </div>
         </section>
 
@@ -118,7 +390,7 @@
                     <!-- 市场趋势数据图表 -->
                     <div class="trends-chart mb-4">
                         <!-- TODO: 插入反映趋势的数据图表（如家庭旅游支出增长图） -->
-                        <img src="../images/insights/family-travel-spending-chart.jpg" alt="Family travel spending growth trends over the past 5 years" class="img-fluid rounded shadow">
+                        
                         <p class="text-center text-muted mt-2">Family travel spending has shifted significantly towards experiential and premium offerings</p>
                     </div>
                     
@@ -220,7 +492,7 @@
                         <!-- 文旅融合政策相关图片 -->
                         <div class="policy-image mt-4">
                             <!-- TODO: 插入家庭参与文化活动的图片 -->
-                            <img src="../images/insights/cultural-tourism-activities.jpg" alt="Family participating in cultural tourism activities" class="img-fluid rounded shadow">
+                            <img src="../images/insights/6.png" alt="Family participating in cultural tourism activities" class="img-fluid rounded shadow">
                             <p class="text-center text-muted mt-2">Families engaging in educational cultural experiences supported by government policies</p>
                         </div>
                     </div>
@@ -235,7 +507,7 @@
                         <div class="tech-showcase mb-4">
                             <!-- TODO: 插入科技应用场景图片（如VR预览体验） -->
                             <div class="tech-visual">
-                                <img src="../images/insights/vr-travel-preview.jpg" alt="Tourist using VR headset for destination preview" class="img-fluid rounded shadow">
+                                <img src="../images/insights/7.png" alt="Tourist using VR headset for destination preview" class="img-fluid rounded shadow">
                                 <p class="text-center text-muted mt-2">VR technology allowing immersive destination previews before booking</p>
                             </div>
                         </div>
@@ -275,7 +547,7 @@
                         <div class="social-visualization mb-4">
                             <!-- TODO: 插入社交媒体影响力数据图表 -->
                             <div class="social-chart">
-                                <img src="../images/insights/social-media-influence-chart.jpg" alt="Social media platform influence on travel decisions" class="img-fluid rounded shadow">
+                                <img src="../images/insights/8.png" alt="Social media platform influence on travel decisions" class="img-fluid rounded shadow">
                                 <p class="text-center text-muted mt-2">Comparison of different social media platforms' impact on travel planning and booking</p>
                             </div>
                         </div>
@@ -309,7 +581,7 @@
                     <div class="family-trend-visual mb-4">
                         <!-- TODO: 插入家庭旅行模式变化图表 -->
                         <div class="trend-visual">
-                            <img src="../images/insights/family-travel-evolution-chart.jpg" alt="Evolution of family travel preferences and patterns" class="img-fluid rounded shadow">
+                            <img src="../images/insights/7.png" alt="Evolution of family travel preferences and patterns" class="img-fluid rounded shadow">
                             <p class="text-center text-muted mt-2">How family travel preferences have evolved from traditional to experiential focus</p>
                         </div>
                     </div>
@@ -368,7 +640,7 @@
                     <div class="consumer-data-visual mb-4">
                         <!-- TODO: 插入消费行为数据图表 -->
                         <div class="consumer-chart">
-                            <img src="../images/insights/consumer-behavior-chart.jpg" alt="Consumer behavior patterns in travel decision-making" class="img-fluid rounded shadow">
+                            <img src="../images/insights/8.png" alt="Consumer behavior patterns in travel decision-making" class="img-fluid rounded shadow">
                             <p class="text-center text-muted mt-2">Analysis of how consumers research, evaluate, and book travel experiences</p>
                         </div>
                     </div>
@@ -414,7 +686,7 @@
                     <div class="future-visual mb-4">
                         <!-- TODO: 插入未来旅行趋势预测图表 -->
                         <div class="future-chart">
-                            <img src="../images/insights/future-travel-trends-chart.jpg" alt="Predicted trends in family travel and recreation tourism" class="img-fluid rounded shadow">
+                            <img src="../images/insights/55.png" alt="Predicted trends in family travel and recreation tourism" class="img-fluid rounded shadow">
                             <p class="text-center text-muted mt-2">Projected growth areas and emerging opportunities in the recreation tourism sector</p>
                         </div>
                     </div>
@@ -500,7 +772,7 @@
                         <ul class="footer-links">
                             <li><a href="../about/index.html" data-i18n="nav_company">Company Profile</a></li>
                             <li><a href="../about/leadership.html" data-i18n="nav_leadership">Leadership Team</a></li>
-                            <li><a href="partners.html" data-i18n="nav_partners">Partnerships</a></li>
+                            <li><a href="../services/partners.html" data-i18n="nav_partners">Partnerships</a></li>
                         </ul>
                     </div>
                     
@@ -532,8 +804,65 @@
     <script src="../js/language-manager.js"></script>
     <script src="../js/main.js"></script>
     
+    <!-- 导航栏样式和交互脚本 -->
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
+        // 页面加载完成后初始化
+        window.addEventListener('load', function() {
+            // 加载器渐变消失效果
+            const loader = document.querySelector('.page-loader');
+            if (loader) {
+                setTimeout(() => {
+                    loader.style.opacity = '0';
+                    setTimeout(() => {
+                        loader.style.display = 'none';
+                    }, 500);
+                }, 500);
+            }
+            
+            // 下拉菜单交互
+            const dropdowns = document.querySelectorAll('.dropdown');
+            dropdowns.forEach(dropdown => {
+                dropdown.addEventListener('mouseenter', function() {
+                    this.querySelector('.dropdown-menu').style.opacity = '1';
+                    this.querySelector('.dropdown-menu').style.visibility = 'visible';
+                    this.querySelector('.dropdown-menu').style.transform = 'translateY(0)';
+                });
+                
+                dropdown.addEventListener('mouseleave', function() {
+                    this.querySelector('.dropdown-menu').style.opacity = '0';
+                    this.querySelector('.dropdown-menu').style.visibility = 'hidden';
+                    this.querySelector('.dropdown-menu').style.transform = 'translateY(10px)';
+                });
+            });
+            
+            // 语言切换器交互
+            const langSwitcher = document.querySelector('.language-switcher');
+            if (langSwitcher) {
+                langSwitcher.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                    this.classList.toggle('active');
+                });
+                
+                document.addEventListener('click', function() {
+                    langSwitcher.classList.remove('active');
+                });
+            }
+            
+            document.querySelectorAll('.lang-btn').forEach(btn => {
+                btn.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                    const lang = this.getAttribute('data-lang');
+                    
+                    const current = document.querySelector('.language-current span');
+                    current.textContent = this.querySelector('span').textContent;
+                    
+                    document.querySelectorAll('.lang-btn').forEach(b => b.classList.remove('active'));
+                    this.classList.add('active');
+                    
+                    console.log('切换语言到:', lang);
+                });
+            });
+
             // 标签切换功能
             const tabs = document.querySelectorAll('.driver-tab');
             const contents = document.querySelectorAll('.driver-content');
@@ -551,588 +880,1093 @@
                     document.getElementById(`${tabId}-content`).classList.add('active');
                 });
             });
+
+            // 滚动动画
+            const animateOnScroll = function() {
+                const elements = document.querySelectorAll('.animate-on-scroll');
+                
+                elements.forEach(element => {
+                    const elementPosition = element.getBoundingClientRect().top;
+                    const screenPosition = window.innerHeight / 1.2;
+                    
+                    if (elementPosition < screenPosition) {
+                        element.classList.add('animate-active');
+                    }
+                });
+            };
             
-            // 页面加载完成后移除加载器
-            window.addEventListener('load', function() {
-                const loader = document.querySelector('.page-loader');
-                if (loader) {
-                    loader.style.display = 'none';
-                }
+            // 初始加载执行一次
+            animateOnScroll();
+            
+            // 滚动时执行
+            window.addEventListener('scroll', animateOnScroll);
+
+            // 趋势卡片hover效果
+            const trendCards = document.querySelectorAll('.trend-card');
+            trendCards.forEach(card => {
+                card.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateY(-10px)';
+                    this.style.boxShadow = '0 20px 40px rgba(0, 0, 0, 0.1)';
+                });
+                
+                card.addEventListener('mouseleave', function() {
+                    this.style.transform = 'translateY(0)';
+                    this.style.boxShadow = '0 10px 20px rgba(0, 0, 0, 0.05)';
+                });
             });
         });
-    </script>
-    
-    <style>
-        /* 市场趋势页面特定样式 */
-        .trends-grid {
-            margin-top: 3rem;
-            gap: 2rem;
-        }
         
-        .trend-card {
-            background: white;
-            padding: 2rem;
-            border-radius: var(--radius-lg);
-            box-shadow: var(--shadow-md);
-            transition: all var(--transition-normal);
-        }
-        
-        .trend-card:hover {
-            transform: translateY(-10px);
-            box-shadow: var(--shadow-xl);
-        }
-        
-        .trend-icon {
-            width: 70px;
-            height: 70px;
-            background: linear-gradient(135deg, #2D3047, #4ECDC4);
-            border-radius: var(--radius-lg);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 1.5rem;
-        }
-        
-        .trend-icon i {
-            font-size: 2rem;
-            color: white;
-        }
-        
-        .trend-card h3 {
-            font-size: 1.4rem;
-            margin-bottom: 1rem;
-            color: var(--dark-color);
-        }
-        
-        .trend-card p {
-            color: var(--text-light);
-            margin-bottom: 1.5rem;
-            line-height: 1.6;
-        }
-        
-        .trend-stats {
-            border-top: 1px solid var(--border-color);
-            padding-top: 1rem;
-        }
-        
-        .stat-number {
-            font-size: 2.2rem;
-            font-weight: 800;
-            color: #2D3047;
-            margin-bottom: 0.25rem;
-        }
-        
-        .stat-label {
-            font-size: 0.9rem;
-            color: var(--text-light);
-        }
-        
-        /* 图表样式 */
-        .trends-chart img,
-        .policy-image img,
-        .tech-visual img,
-        .social-chart img,
-        .trend-visual img,
-        .consumer-chart img,
-        .future-chart img {
-            width: 100%;
-            height: auto;
-            border-radius: var(--radius-lg);
-            box-shadow: var(--shadow-md);
-        }
-        
-        .text-center {
-            text-align: center;
-        }
-        
-        .text-muted {
-            color: #6c757d;
-        }
-        
-        .mt-2 {
-            margin-top: 0.5rem;
-        }
-        
-        .mt-4 {
-            margin-top: 1.5rem;
-        }
-        
-        .mb-4 {
-            margin-bottom: 1.5rem;
-        }
-        
-        .img-fluid {
-            max-width: 100%;
-            height: auto;
-        }
-        
-        .rounded {
-            border-radius: var(--radius-lg);
-        }
-        
-        .shadow {
-            box-shadow: var(--shadow-md);
-        }
-        
-        /* 驱动力标签页 */
-        .driver-tabs {
-            display: flex;
-            gap: 1rem;
-            margin-bottom: 2rem;
-            flex-wrap: wrap;
-        }
-        
-        .driver-tab {
-            padding: 1rem 1.5rem;
-            background: white;
-            border: 2px solid var(--border-color);
-            border-radius: var(--radius-lg);
-            font-weight: 600;
-            color: var(--text-light);
-            cursor: pointer;
-            transition: all var(--transition-normal);
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
-            flex: 1;
-            min-width: 200px;
-            justify-content: center;
-        }
-        
-        .driver-tab:hover {
-            border-color: var(--primary-color);
-            color: var(--primary-color);
-        }
-        
-        .driver-tab.active {
-            background: linear-gradient(135deg, #2D3047, #4ECDC4);
-            color: white;
-            border-color: transparent;
-        }
-        
-        .driver-tab i {
-            font-size: 1.2rem;
-        }
-        
-        .driver-content {
-            display: none;
-            animation: fadeIn 0.5s ease;
-        }
-        
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(10px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        
-        .driver-content.active {
-            display: block;
-        }
-        
-        .driver-content h3 {
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
-            color: var(--dark-color);
-        }
-        
-        .driver-content p {
-            color: var(--text-light);
-            margin-bottom: 1.5rem;
-            line-height: 1.6;
-        }
-        
-        .policy-points {
-            display: flex;
-            flex-direction: column;
-            gap: 1rem;
-        }
-        
-        .policy-point {
-            display: flex;
-            align-items: flex-start;
-            gap: 1rem;
-        }
-        
-        .policy-point i {
-            color: #4ECDC4;
-            margin-top: 0.2rem;
-        }
-        
-        .tech-features {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
-        }
-        
-        .tech-feature {
-            text-align: center;
-        }
-        
-        .tech-icon {
-            width: 70px;
-            height: 70px;
-            background: linear-gradient(135deg, #2D3047, #4ECDC4);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 1rem;
-        }
-        
-        .tech-icon i {
-            font-size: 1.8rem;
-            color: white;
-        }
-        
-        .tech-feature h4 {
-            font-size: 1.2rem;
-            margin-bottom: 0.5rem;
-            color: var(--dark-color);
-        }
-        
-        .tech-feature p {
-            font-size: 0.95rem;
-            color: var(--text-light);
-            margin-bottom: 0;
-        }
-        
-        .social-impact {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
-        }
-        
-        .impact-stat {
-            text-align: center;
-            padding: 1.5rem;
-            background: white;
-            border-radius: var(--radius-lg);
-            box-shadow: var(--shadow-sm);
-        }
-        
-        .impact-number {
-            font-size: 2.5rem;
-            font-weight: 800;
-            color: #2D3047;
-            margin-bottom: 0.5rem;
-        }
-        
-        .impact-label {
-            font-size: 0.9rem;
-            color: var(--text-light);
-            font-weight: 600;
-        }
-        
-        /* 家庭旅行进化时间线 */
-        .evolution-timeline {
-            display: flex;
-            justify-content: space-between;
-            position: relative;
-            margin: 3rem 0;
-        }
-        
-        .evolution-timeline::before {
-            content: '';
-            position: absolute;
-            top: 40px;
-            left: 0;
-            right: 0;
-            height: 3px;
-            background: linear-gradient(to right, var(--border-color), #4ECDC4, var(--border-color));
-            z-index: 1;
-        }
-        
-        .evolution-phase {
-            position: relative;
-            z-index: 2;
-            flex: 1;
-            text-align: center;
-            padding: 0 1rem;
-        }
-        
-        .phase-year {
-            width: 100px;
-            height: 40px;
-            background: white;
-            border: 3px solid var(--border-color);
-            border-radius: var(--radius-full);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: 700;
-            margin: 0 auto 2rem;
-            position: relative;
-        }
-        
-        .evolution-phase.active .phase-year {
-            border-color: #4ECDC4;
-            background: #4ECDC4;
-            color: white;
-        }
-        
-        .evolution-phase.future .phase-year {
-            border-color: #2D3047;
-            background: #2D3047;
-            color: white;
-        }
-        
-        .phase-content {
-            padding: 1.5rem;
-            background: white;
-            border-radius: var(--radius-lg);
-            box-shadow: var(--shadow-md);
-            margin-top: 1rem;
-        }
-        
-        .phase-content h3 {
-            font-size: 1.2rem;
-            margin-bottom: 0.75rem;
-            color: var(--dark-color);
-        }
-        
-        .phase-content p {
-            color: var(--text-light);
-            font-size: 0.95rem;
-            line-height: 1.5;
-        }
-        
-        .family-data {
-            margin-top: 3rem;
-            gap: 2rem;
-        }
-        
-        .data-point {
-            text-align: center;
-            padding: 1.5rem;
-            background: white;
-            border-radius: var(--radius-lg);
-            box-shadow: var(--shadow-sm);
-        }
-        
-        .data-value {
-            font-size: 2.5rem;
-            font-weight: 800;
-            color: #2D3047;
-            margin-bottom: 0.5rem;
-        }
-        
-        .data-label {
-            font-size: 1rem;
-            color: var(--text-light);
-            font-weight: 600;
-        }
-        
-        /* 消费洞察卡片 */
-        .insights-grid {
-            margin-top: 2rem;
-            gap: 2rem;
-        }
-        
-        .insight-card {
-            background: white;
-            border-radius: var(--radius-lg);
-            box-shadow: var(--shadow-md);
-            overflow: hidden;
-        }
-        
-        .insight-header {
-            padding: 1.5rem;
-            background: linear-gradient(135deg, #2D3047, #4ECDC4);
-            color: white;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        
-        .insight-header h3 {
-            margin: 0;
-            font-size: 1.3rem;
-        }
-        
-        .insight-tag {
-            padding: 0.4rem 1rem;
-            background: rgba(255, 255, 255, 0.2);
-            border-radius: var(--radius-full);
-            font-size: 0.85rem;
-            font-weight: 600;
-        }
-        
-        .insight-list {
-            list-style: none;
-            padding: 1.5rem;
-            margin: 0;
-        }
-        
-        .insight-list li {
-            display: flex;
-            align-items: flex-start;
-            gap: 1rem;
-            margin-bottom: 1rem;
-            padding-bottom: 1rem;
-            border-bottom: 1px solid var(--border-color);
-        }
-        
-        .insight-list li:last-child {
-            margin-bottom: 0;
-            padding-bottom: 0;
-            border-bottom: none;
-        }
-        
-        .insight-list i {
-            color: #4ECDC4;
-            margin-top: 0.2rem;
-            flex-shrink: 0;
-        }
-        
-        /* 未来预测 */
-        .predictions-grid {
-            margin-top: 2rem;
-            gap: 2rem;
-        }
-        
-        .prediction-card {
-            background: white;
-            padding: 2rem;
-            border-radius: var(--radius-lg);
-            box-shadow: var(--shadow-md);
-            border-top: 4px solid #4ECDC4;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .prediction-year {
-            position: absolute;
-            top: 0;
-            right: 0;
-            background: #2D3047;
-            color: white;
-            padding: 0.5rem 1rem;
-            border-bottom-left-radius: var(--radius-md);
-            font-size: 0.9rem;
-            font-weight: 600;
-        }
-        
-        .prediction-card h3 {
-            font-size: 1.3rem;
-            margin-bottom: 1rem;
-            color: var(--dark-color);
-        }
-        
-        .prediction-card p {
-            color: var(--text-light);
-            margin-bottom: 1.5rem;
-            line-height: 1.6;
-        }
-        
-        .prediction-impact {
-            padding-top: 1rem;
-            border-top: 1px solid var(--border-color);
-            font-size: 0.95rem;
-        }
-        
-        .impact-label {
-            font-weight: 600;
-            color: var(--dark-color);
-        }
-        
-        .impact-value {
-            color: #4ECDC4;
-            font-weight: 500;
-        }
-        
-        /* 响应式设计 */
-        @media (max-width: 992px) {
-            .trends-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .grid-3, .grid-2 {
-                grid-template-columns: 1fr;
-            }
-            
-            .driver-tab {
-                min-width: 150px;
-            }
-            
-            .evolution-timeline {
-                flex-direction: column;
-                gap: 3rem;
-            }
-            
-            .evolution-timeline::before {
+        // 顶部导航栏完整样式
+        const style = document.createElement('style');
+        style.textContent = `
+            .top-nav {
+                position: fixed;
                 top: 0;
-                left: 40px;
-                right: auto;
-                width: 3px;
-                height: 100%;
-            }
-            
-            .evolution-phase {
-                display: flex;
-                text-align: left;
-                padding-left: 4rem;
-            }
-            
-            .phase-year {
-                margin: 0;
-                position: absolute;
                 left: 0;
-                top: 0;
+                right: 0;
+                background: linear-gradient(to right, 
+                    rgba(255, 255, 255, 0.98) 0%,
+                    rgba(255, 255, 255, 0.95) 30%,
+                    rgba(255, 255, 255, 0.95) 70%,
+                    rgba(255, 255, 255, 0.98) 100%);
+                backdrop-filter: blur(15px);
+                box-shadow: 0 4px 30px rgba(0, 0, 0, 0.08);
+                z-index: 1000;
+                padding: 0;
             }
-        }
-        
-        @media (max-width: 768px) {
-            .driver-tabs {
+            
+            .top-nav-container {
+                max-width: 1400px;
+                margin: 0 auto;
+                padding: 0 40px;
+                display: grid;
+                grid-template-columns: 280px 1fr 300px;
+                align-items: center;
+                gap: 40px;
+                height: 80px;
+            }
+            
+            .nav-brand-section {
+                display: flex;
+                align-items: center;
+                justify-content: flex-start;
+            }
+            
+            .brand-container {
+                display: flex;
+                align-items: center;
+                gap: 15px;
+                padding: 10px 15px;
+                background: rgba(255, 255, 255, 0.7);
+                border-radius: 12px;
+                border: 1px solid rgba(78, 205, 196, 0.1);
+                box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            }
+            
+            .brand-logo {
+                width: 45px;
+                height: 45px;
+                background: linear-gradient(135deg, #4ECDC4 0%, #2D3047 100%);
+                border-radius: 10px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                position: relative;
+                overflow: hidden;
+            }
+            
+            .brand-logo::after {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background: linear-gradient(45deg, transparent 50%, rgba(255, 255, 255, 0.1) 50%);
+                background-size: 5px 5px;
+            }
+            
+            .brand-logo .logo-text {
+                font-size: 22px;
+                font-weight: 900;
+                color: white;
+                font-family: 'Montserrat', sans-serif;
+                text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+            }
+            
+            .brand-vertical-divider {
+                width: 1px;
+                height: 30px;
+                background: linear-gradient(to bottom, transparent, rgba(78, 205, 196, 0.3), transparent);
+            }
+            
+            .brand-text {
+                display: flex;
                 flex-direction: column;
+                justify-content: center;
+            }
+            
+            .brand-title {
+                font-size: 20px;
+                font-weight: 800;
+                color: var(--dark-color);
+                margin: 0;
+                line-height: 1.2;
+                font-family: 'Montserrat', sans-serif;
+                letter-spacing: -0.5px;
+            }
+            
+            .brand-tagline {
+                font-size: 11px;
+                color: var(--secondary-color);
+                margin: 2px 0 0 0;
+                text-transform: uppercase;
+                letter-spacing: 0.8px;
+                font-weight: 600;
+            }
+            
+            .nav-center-section {
+                display: flex;
+                justify-content: center;
+            }
+            
+            .nav-menu-wrapper {
+                background: rgba(255, 255, 255, 0.7);
+                border-radius: 12px;
+                padding: 5px 15px;
+                border: 1px solid rgba(78, 205, 196, 0.1);
+                box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            }
+            
+            .top-nav-menu {
+                display: flex;
+                list-style: none;
+                margin: 0;
+                padding: 0;
+                gap: 25px;
+            }
+            
+            .nav-item {
+                position: relative;
+            }
+            
+            .nav-link {
+                display: flex;
+                align-items: center;
+                gap: 8px;
+                color: var(--dark-color);
+                text-decoration: none;
+                font-weight: 600;
+                font-size: 13px;
+                text-transform: uppercase;
+                letter-spacing: 0.8px;
+                padding: 12px 15px;
+                border-radius: 8px;
+                transition: all 0.3s ease;
+                position: relative;
+            }
+            
+            .nav-icon {
+                font-size: 14px;
+                color: var(--primary-color);
+                opacity: 0.8;
+                transition: all 0.3s ease;
+            }
+            
+            .nav-text {
+                position: relative;
+            }
+            
+            .nav-link:hover {
+                background: rgba(78, 205, 196, 0.08);
+                color: var(--primary-color);
+                transform: translateY(-1px);
+            }
+            
+            .nav-link:hover .nav-icon {
+                opacity: 1;
+                transform: scale(1.1);
+            }
+            
+            .nav-item.active .nav-link {
+                background: linear-gradient(135deg, rgba(78, 205, 196, 0.15) 0%, rgba(45, 48, 71, 0.08) 100%);
+                color: var(--primary-color);
+            }
+            
+            .nav-item.active .nav-link::before {
+                content: '';
+                position: absolute;
+                bottom: -3px;
+                left: 50%;
+                transform: translateX(-50%);
+                width: 20px;
+                height: 3px;
+                background: var(--primary-color);
+                border-radius: 2px;
+            }
+            
+            .dropdown-arrow {
+                font-size: 10px;
+                margin-left: 3px;
+                opacity: 0.6;
+                transition: transform 0.3s ease;
+            }
+            
+            .dropdown:hover .dropdown-arrow {
+                transform: rotate(180deg);
+            }
+            
+            .dropdown-menu {
+                position: absolute;
+                top: calc(100% + 10px);
+                left: 50%;
+                transform: translateX(-50%) translateY(10px);
+                background: white;
+                min-width: 220px;
+                box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+                border-radius: 12px;
+                padding: 20px;
+                opacity: 0;
+                visibility: hidden;
+                transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+                z-index: 1001;
+                border: 1px solid rgba(78, 205, 196, 0.1);
+            }
+            
+            .dropdown-wide {
+                min-width: 450px;
+            }
+            
+            .dropdown-grid {
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                gap: 20px;
+            }
+            
+            .dropdown-section {
+                display: flex;
+                flex-direction: column;
+                gap: 8px;
+            }
+            
+            .dropdown-section h4 {
+                font-size: 12px;
+                color: var(--text-light);
+                text-transform: uppercase;
+                letter-spacing: 1px;
+                margin: 0 0 10px 0;
+                font-weight: 600;
+            }
+            
+            .dropdown-menu a {
+                display: flex;
+                align-items: center;
+                gap: 12px;
+                color: var(--dark-color);
+                text-decoration: none;
+                font-size: 13px;
+                padding: 10px 12px;
+                border-radius: 6px;
+                transition: all 0.3s ease;
+            }
+            
+            .dropdown-menu a i {
+                color: var(--primary-color);
+                font-size: 14px;
+                width: 16px;
+                text-align: center;
+            }
+            
+            .dropdown-menu a:hover {
+                background: rgba(78, 205, 196, 0.08);
+                color: var(--primary-color);
+                transform: translateX(3px);
+            }
+            
+            .dropdown-menu a.active {
+                background: rgba(78, 205, 196, 0.1);
+                color: var(--primary-color);
+            }
+            
+            .nav-right-section {
+                display: flex;
+                justify-content: flex-end;
+            }
+            
+            .action-container {
+                display: flex;
+                align-items: center;
+                gap: 15px;
+                background: rgba(255, 255, 255, 0.7);
+                border-radius: 12px;
+                padding: 10px 15px;
+                border: 1px solid rgba(78, 205, 196, 0.1);
+                box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            }
+            
+            .language-switcher {
+                position: relative;
+            }
+            
+            .language-current {
+                display: flex;
+                align-items: center;
+                gap: 8px;
+                padding: 8px 15px;
+                background: rgba(78, 205, 196, 0.1);
+                border-radius: 8px;
+                cursor: pointer;
+                transition: all 0.3s ease;
+            }
+            
+            .language-current:hover {
+                background: rgba(78, 205, 196, 0.15);
+            }
+            
+            .language-current i {
+                color: var(--primary-color);
+                font-size: 14px;
+            }
+            
+            .language-current span {
+                font-size: 13px;
+                font-weight: 600;
+                color: var(--dark-color);
+            }
+            
+            .language-options {
+                position: absolute;
+                top: calc(100% + 10px);
+                left: 0;
+                background: white;
+                min-width: 180px;
+                box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+                border-radius: 12px;
+                padding: 15px;
+                opacity: 0;
+                visibility: hidden;
+                transform: translateY(10px);
+                transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+                z-index: 1001;
+                border: 1px solid rgba(78, 205, 196, 0.1);
+            }
+            
+            .language-switcher.active .language-options {
+                opacity: 1;
+                visibility: visible;
+                transform: translateY(0);
+            }
+            
+            .lang-btn {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                width: 100%;
+                padding: 10px 12px;
+                border: none;
+                background: transparent;
+                color: var(--dark-color);
+                font-size: 13px;
+                font-weight: 500;
+                cursor: pointer;
+                border-radius: 6px;
+                transition: all 0.3s ease;
+                text-align: left;
+            }
+            
+            .lang-name {
+                opacity: 0.6;
+                font-size: 12px;
+            }
+            
+            .lang-btn.active,
+            .lang-btn:hover {
+                background: rgba(78, 205, 196, 0.08);
+                color: var(--primary-color);
+            }
+            
+            .cta-button {
+                display: flex;
+                align-items: center;
+                gap: 8px;
+                background: linear-gradient(135deg, #4ECDC4 0%, #2D3047 100%);
+                color: white;
+                text-decoration: none;
+                padding: 10px 20px;
+                border-radius: 8px;
+                font-size: 13px;
+                font-weight: 600;
+                text-transform: uppercase;
+                letter-spacing: 0.8px;
+                transition: all 0.3s ease;
+                box-shadow: 0 4px 15px rgba(78, 205, 196, 0.2);
+            }
+            
+            .cta-button:hover {
+                transform: translateY(-2px);
+                box-shadow: 0 6px 20px rgba(78, 205, 196, 0.3);
+                color: white;
+            }
+            
+            .cta-button i {
+                font-size: 14px;
+            }
+            
+            .nav-bottom-line {
+                height: 4px;
+                background: linear-gradient(90deg, transparent, rgba(78, 205, 196, 0.3), transparent);
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                opacity: 0.7;
+            }
+            
+            .line-gradient {
+                height: 100%;
+                background: linear-gradient(90deg, 
+                    rgba(78, 205, 196, 0) 0%, 
+                    rgba(78, 205, 196, 0.8) 50%, 
+                    rgba(78, 205, 196, 0) 100%);
+                animation: lineFlow 3s ease-in-out infinite;
+            }
+            
+            @keyframes lineFlow {
+                0%, 100% { opacity: 0.7; }
+                50% { opacity: 1; }
+            }
+            
+            /* 响应式适配 */
+            @media (max-width: 1200px) {
+                .top-nav-container {
+                    grid-template-columns: 220px 1fr 250px;
+                    padding: 0 20px;
+                    gap: 20px;
+                }
+                
+                .top-nav-menu {
+                    gap: 15px;
+                }
+                
+                .nav-link {
+                    padding: 10px 12px;
+                    font-size: 12px;
+                }
+                
+                .brand-title {
+                    font-size: 18px;
+                }
+                
+                .dropdown-wide {
+                    min-width: 380px;
+                }
+            }
+            
+            @media (max-width: 992px) {
+                .nav-center-section {
+                    display: none;
+                }
+                
+                .top-nav-container {
+                    grid-template-columns: 1fr auto;
+                }
+                
+                .mobile-menu-btn {
+                    display: block;
+                    position: fixed;
+                    top: 20px;
+                    right: 20px;
+                    z-index: 1002;
+                    width: 45px;
+                    height: 45px;
+                    border-radius: 50%;
+                    background: white;
+                    border: none;
+                    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+                    font-size: 20px;
+                    color: var(--primary-color);
+                    cursor: pointer;
+                    transition: all 0.3s ease;
+                }
+                
+                .mobile-menu-btn:hover {
+                    transform: scale(1.05);
+                    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+                }
+            }
+
+            /* 市场趋势页面特定样式 */
+            .trends-grid {
+                margin-top: 3rem;
+                gap: 2rem;
+            }
+            
+            .trend-card {
+                background: white;
+                padding: 2rem;
+                border-radius: var(--radius-lg);
+                box-shadow: var(--shadow-md);
+                transition: all var(--transition-normal);
+            }
+            
+            .trend-card:hover {
+                transform: translateY(-10px);
+                box-shadow: var(--shadow-xl);
+            }
+            
+            .trend-icon {
+                width: 70px;
+                height: 70px;
+                background: linear-gradient(135deg, #2D3047, #4ECDC4);
+                border-radius: var(--radius-lg);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                margin-bottom: 1.5rem;
+            }
+            
+            .trend-icon i {
+                font-size: 2rem;
+                color: white;
+            }
+            
+            .trend-card h3 {
+                font-size: 1.4rem;
+                margin-bottom: 1rem;
+                color: var(--dark-color);
+            }
+            
+            .trend-card p {
+                color: var(--text-light);
+                margin-bottom: 1.5rem;
+                line-height: 1.6;
+            }
+            
+            .trend-stats {
+                border-top: 1px solid var(--border-color);
+                padding-top: 1rem;
+            }
+            
+            .stat-number {
+                font-size: 2.2rem;
+                font-weight: 800;
+                color: #2D3047;
+                margin-bottom: 0.25rem;
+            }
+            
+            .stat-label {
+                font-size: 0.9rem;
+                color: var(--text-light);
+            }
+            
+            /* 图表样式 */
+            .trends-chart img,
+            .policy-image img,
+            .tech-visual img,
+            .social-chart img,
+            .trend-visual img,
+            .consumer-chart img,
+            .future-chart img {
+                width: 100%;
+                height: auto;
+                border-radius: var(--radius-lg);
+                box-shadow: var(--shadow-md);
+            }
+            
+            .text-center {
+                text-align: center;
+            }
+            
+            .text-muted {
+                color: #6c757d;
+            }
+            
+            .mt-2 {
+                margin-top: 0.5rem;
+            }
+            
+            .mt-4 {
+                margin-top: 1.5rem;
+            }
+            
+            .mb-4 {
+                margin-bottom: 1.5rem;
+            }
+            
+            .img-fluid {
+                max-width: 100%;
+                height: auto;
+            }
+            
+            .rounded {
+                border-radius: var(--radius-lg);
+            }
+            
+            .shadow {
+                box-shadow: var(--shadow-md);
+            }
+            
+            /* 驱动力标签页 */
+            .driver-tabs {
+                display: flex;
+                gap: 1rem;
+                margin-bottom: 2rem;
+                flex-wrap: wrap;
             }
             
             .driver-tab {
-                width: 100%;
+                padding: 1rem 1.5rem;
+                background: white;
+                border: 2px solid var(--border-color);
+                border-radius: var(--radius-lg);
+                font-weight: 600;
+                color: var(--text-light);
+                cursor: pointer;
+                transition: all var(--transition-normal);
+                display: flex;
+                align-items: center;
+                gap: 0.75rem;
+                flex: 1;
+                min-width: 200px;
+                justify-content: center;
+            }
+            
+            .driver-tab:hover {
+                border-color: var(--primary-color);
+                color: var(--primary-color);
+            }
+            
+            .driver-tab.active {
+                background: linear-gradient(135deg, #2D3047, #4ECDC4);
+                color: white;
+                border-color: transparent;
+            }
+            
+            .driver-tab i {
+                font-size: 1.2rem;
+            }
+            
+            .driver-content {
+                display: none;
+                animation: fadeIn 0.5s ease;
+            }
+            
+            @keyframes fadeIn {
+                from { opacity: 0; transform: translateY(10px); }
+                to { opacity: 1; transform: translateY(0); }
+            }
+            
+            .driver-content.active {
+                display: block;
+            }
+            
+            .driver-content h3 {
+                font-size: 1.5rem;
+                margin-bottom: 1rem;
+                color: var(--dark-color);
+            }
+            
+            .driver-content p {
+                color: var(--text-light);
+                margin-bottom: 1.5rem;
+                line-height: 1.6;
+            }
+            
+            .policy-points {
+                display: flex;
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
+            .policy-point {
+                display: flex;
+                align-items: flex-start;
+                gap: 1rem;
+            }
+            
+            .policy-point i {
+                color: #4ECDC4;
+                margin-top: 0.2rem;
             }
             
             .tech-features {
-                grid-template-columns: 1fr;
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+                gap: 2rem;
+                margin-top: 2rem;
+            }
+            
+            .tech-feature {
+                text-align: center;
+            }
+            
+            .tech-icon {
+                width: 70px;
+                height: 70px;
+                background: linear-gradient(135deg, #2D3047, #4ECDC4);
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                margin: 0 auto 1rem;
+            }
+            
+            .tech-icon i {
+                font-size: 1.8rem;
+                color: white;
+            }
+            
+            .tech-feature h4 {
+                font-size: 1.2rem;
+                margin-bottom: 0.5rem;
+                color: var(--dark-color);
+            }
+            
+            .tech-feature p {
+                font-size: 0.95rem;
+                color: var(--text-light);
+                margin-bottom: 0;
             }
             
             .social-impact {
-                grid-template-columns: repeat(2, 1fr);
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+                gap: 2rem;
+                margin-top: 2rem;
             }
             
-            .phase-content {
-                padding: 1.25rem;
-            }
-            
-            .insight-card {
-                margin-bottom: 1.5rem;
-            }
-        }
-        
-        @media (max-width: 480px) {
-            .trend-card {
+            .impact-stat {
+                text-align: center;
                 padding: 1.5rem;
-            }
-            
-            .social-impact {
-                grid-template-columns: 1fr;
+                background: white;
+                border-radius: var(--radius-lg);
+                box-shadow: var(--shadow-sm);
             }
             
             .impact-number {
-                font-size: 2rem;
+                font-size: 2.5rem;
+                font-weight: 800;
+                color: #2D3047;
+                margin-bottom: 0.5rem;
             }
             
-            .data-value {
-                font-size: 2rem;
+            .impact-label {
+                font-size: 0.9rem;
+                color: var(--text-light);
+                font-weight: 600;
             }
             
-            .prediction-card {
-                padding: 1.5rem;
+            /* 家庭旅行进化时间线 */
+            .evolution-timeline {
+                display: flex;
+                justify-content: space-between;
+                position: relative;
+                margin: 3rem 0;
+            }
+            
+            .evolution-timeline::before {
+                content: '';
+                position: absolute;
+                top: 40px;
+                left: 0;
+                right: 0;
+                height: 3px;
+                background: linear-gradient(to right, var(--border-color), #4ECDC4, var(--border-color));
+                z-index: 1;
             }
             
             .evolution-phase {
-                padding-left: 3rem;
+                position: relative;
+                z-index: 2;
+                flex: 1;
+                text-align: center;
+                padding: 0 1rem;
             }
-        }
-    </style>
+            
+            .phase-year {
+                width: 100px;
+                height: 40px;
+                background: white;
+                border: 3px solid var(--border-color);
+                border-radius: var(--radius-full);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-weight: 700;
+                margin: 0 auto 2rem;
+                position: relative;
+            }
+            
+            .evolution-phase.active .phase-year {
+                border-color: #4ECDC4;
+                background: #4ECDC4;
+                color: white;
+            }
+            
+            .evolution-phase.future .phase-year {
+                border-color: #2D3047;
+                background: #2D3047;
+                color: white;
+            }
+            
+            .phase-content {
+                padding: 1.5rem;
+                background: white;
+                border-radius: var(--radius-lg);
+                box-shadow: var(--shadow-md);
+                margin-top: 1rem;
+            }
+            
+            .phase-content h3 {
+                font-size: 1.2rem;
+                margin-bottom: 0.75rem;
+                color: var(--dark-color);
+            }
+            
+            .phase-content p {
+                color: var(--text-light);
+                font-size: 0.95rem;
+                line-height: 1.5;
+            }
+            
+            .family-data {
+                margin-top: 3rem;
+                gap: 2rem;
+            }
+            
+            .data-point {
+                text-align: center;
+                padding: 1.5rem;
+                background: white;
+                border-radius: var(--radius-lg);
+                box-shadow: var(--shadow-sm);
+            }
+            
+            .data-value {
+                font-size: 2.5
+                rem;
+font-weight: 800;
+color: #2D3047;
+margin-bottom: 0.5rem;
+}
+ 
+.data-label {
+font-size: 1rem;
+color: var(--text-light);
+font-weight: 600;
+}
+ 
+/* 消费洞察卡片 */
+.insights-grid {
+margin-top: 2rem;
+gap: 2rem;
+}
+ 
+.insight-card {
+background: white;
+border-radius: var(--radius-lg);
+box-shadow: var(--shadow-md);
+overflow: hidden;
+}
+ 
+.insight-header {
+padding: 1.5rem;
+background: linear-gradient(135deg, #2D3047, #4ECDC4);
+color: white;
+display: flex;
+justify-content: space-between;
+align-items: center;
+}
+ 
+.insight-header h3 {
+margin: 0;
+font-size: 1.3rem;
+}
+ 
+.insight-tag {
+padding: 0.4rem 1rem;
+background: rgba(255, 255, 255, 0.2);
+border-radius: var(--radius-md);
+font-size: 0.85rem;
+font-weight: 600;
+}
+ 
+.insight-list {
+padding: 1.5rem;
+margin: 0;
+}
+ 
+.insight-list li {
+display: flex;
+align-items: flex-start;
+gap: 1rem;
+margin-bottom: 1rem;
+padding-bottom: 1rem;
+border-bottom: 1px solid var(--border-color);
+}
+ 
+.insight-list li:last-child {
+margin-bottom: 0;
+padding-bottom: 0;
+border-bottom: none;
+}
+ 
+.insight-list i {
+color: #4ECDC4;
+margin-top: 0.2rem;
+flex-shrink: 0;
+}
+ 
+/* 未来预测 */
+.predictions-grid {
+margin-top: 2rem;
+gap: 2rem;
+}
+ 
+.prediction-card {
+background: white;
+padding: 2rem;
+border-radius: var(--radius-lg);
+box-shadow: var(--shadow-md);
+border-top: 4px solid #4ECDC4;
+position: relative;
+overflow: hidden;
+}
+ 
+.prediction-year {
+position: absolute;
+top: 0;
+right: 0;
+background: #2D3047;
+color: white;
+padding: 0.5rem 1rem;
+border-bottom-left-radius: var(--radius-md);
+font-size: 0.9rem;
+font-weight: 600;
+}
+ 
+.prediction-card h3 {
+font-size: 1.3rem;
+margin-bottom: 1rem;
+color: var(--dark-color);
+}
+ 
+.prediction-card p {
+color: var(--text-light);
+margin-bottom: 1.5rem;
+line-height: 1.6;
+}
+ 
+.prediction-impact {
+padding-top: 1rem;
+border-top: 1px solid var(--border-color);
+font-size: 0.95rem;
+}
+ 
+.impact-label {
+font-weight: 600;
+color: var(--dark-color);
+}
+ 
+.impact-value {
+color: #4ECDC4;
+font-weight: 500;
+}
+ 
+/* 响应式设计 */
+@media (max-width: 992px) {
+.trends-grid {
+grid-template-columns: 1fr;
+}
+ 
+.grid-3, .grid-2 {
+grid-template-columns: 1fr;
+}
+ 
+.driver-tab {
+min-width: 150px;
+}
+ 
+.evolution-timeline {
+flex-direction: column;
+gap: 3rem;
+}
+ 
+.evolution-timeline::before {
+top: 0;
+left: 40px;
+right: auto;
+width: 3px;
+height: 100%;
+}
+ 
+.evolution-phase {
+display: flex;
+text-align: left;
+padding-left: 4rem;
+}
+ 
+.phase-year {
+margin: 0;
+position: absolute;
+left: 0;
+top: 0;
+}
+}
+ 
+@media (max-width: 768px) {
+.driver-tabs {
+flex-direction: column;
+}
+ 
+.driver-tab {
+width: 100%;
+}
+ 
+.tech-features {
+grid-template-columns: 1fr;
+}
+ 
+.social-impact {
+grid-template-columns: repeat(2, 1fr);
+}
+ 
+.phase-content {
+padding: 1.25rem;
+}
+ 
+.insight-card {
+margin-bottom: 1.5rem;
+}
+}
+ 
+@media (max-width: 480px) {
+.trend-card {
+padding: 1.5rem;
+}
+ 
+.social-impact {
+grid-template-columns: 1fr;
+}
+ 
+.impact-number {
+font-size: 2rem;
+}
+ 
+.data-value {
+font-size: 2rem;
+}
+ 
+.prediction-card {
+padding: 1.5rem;
+}
+ 
+.evolution-phase {
+padding-left: 3rem;
+}
+}
+`;
+document.head.appendChild(style);
+</script>
 </body>
 </html>

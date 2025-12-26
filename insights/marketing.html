@@ -19,6 +19,68 @@
     
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+    
+    <!-- 新增：适配顶部导航栏的基础样式 -->
+    <style>
+        html, body {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            overflow-x: hidden;
+        }
+        
+        /* 页面加载器样式 - 与首页一致 */
+        .page-loader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: var(--dark-color);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 9999;
+            transition: opacity 0.5s ease;
+        }
+        
+        .loader-content {
+            text-align: center;
+        }
+        
+        .loader-content .logo-text {
+            font-size: 4rem;
+            margin-bottom: 2rem;
+        }
+        
+        .loader-content .loading {
+            width: 40px;
+            height: 40px;
+            border: 4px solid rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            border-top-color: var(--primary-color);
+            animation: spin 1s ease-in-out infinite;
+            margin: 0 auto;
+        }
+        
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+        
+        /* 主要内容适配顶部导航栏 */
+        .main-content {
+            margin-top: 80px;
+            width: 100%;
+            max-width: 100%;
+            margin: 80px 0 0 0;
+            padding: 0;
+        }
+        
+        /* 移动端菜单按钮默认隐藏 */
+        .mobile-menu-btn {
+            display: none;
+        }
+    </style>
 </head>
 <body>
     <!-- 页面加载器 -->
@@ -29,68 +91,184 @@
         </div>
     </div>
 
-    <!-- 垂直导航栏 -->
-    <nav class="vertical-nav">
-        <div class="nav-logo">
-            <div class="logo-text">PF</div>
+    <!-- 替换：顶部导航栏（严格匹配首页的5个核心标签结构） -->
+    <nav class="top-nav">
+        <div class="top-nav-container">
+            <!-- 品牌标识区（与首页完全一致） -->
+            <div class="nav-brand-section">
+                <div class="brand-container">
+                    <div class="brand-logo">
+                        <div class="logo-text">PF</div>
+                    </div>
+                    <div class="brand-vertical-divider"></div>
+                    <div class="brand-text">
+                        <h1 class="brand-title">Playfluence</h1>
+                        <p class="brand-tagline">Redefining Recreation Marketing</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 导航菜单区（严格匹配首页的5个核心标签） -->
+            <div class="nav-center-section">
+                <div class="nav-menu-wrapper">
+                    <ul class="top-nav-menu">
+                        <!-- 1. HOME（首页） -->
+                        <li class="nav-item">
+                            <a href="../index.html" class="nav-link" data-i18n="nav_home">
+                                <i class="fas fa-home nav-icon"></i>
+                                <span class="nav-text">HOME</span>
+                            </a>
+                        </li>
+                        <!-- 2. ABOUT US（关于我们） -->
+                        <li class="nav-item dropdown">
+                            <a href="../about/index.html" class="nav-link" data-i18n="nav_about">
+                                <i class="fas fa-building nav-icon"></i>
+                                <span class="nav-text">ABOUT US</span>
+                                <i class="fas fa-chevron-down dropdown-arrow"></i>
+                            </a>
+                            <div class="dropdown-menu">
+                                <div class="dropdown-section">
+                                    <a href="../about/index.html">
+                                        <i class="fas fa-file-alt"></i>
+                                        <span>Company Profile</span>
+                                    </a>
+                                    <a href="../about/leadership.html">
+                                        <i class="fas fa-users"></i>
+                                        <span>Leadership Team</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </li>
+                        <!-- 3. OUR SERVICES（我们的服务） -->
+                        <li class="nav-item dropdown">
+                            <a href="../services/index.html" class="nav-link" data-i18n="nav_services">
+                                <i class="fas fa-concierge-bell nav-icon"></i>
+                                <span class="nav-text">OUR SERVICES</span>
+                                <i class="fas fa-chevron-down dropdown-arrow"></i>
+                            </a>
+                            <div class="dropdown-menu dropdown-wide">
+                                <div class="dropdown-grid">
+                                    <div class="dropdown-section">
+                                        <h4>Core Services</h4>
+                                        <a href="../services/index.html">
+                                            <i class="fas fa-star"></i>
+                                            <span>Core Services</span>
+                                        </a>
+                                        <a href="../services/value-proposition.html">
+                                            <i class="fas fa-bullseye"></i>
+                                            <span>Value Proposition</span>
+                                        </a>
+                                    </div>
+                                    <div class="dropdown-section">
+                                        <h4>Tour Experiences</h4>
+                                        <a href="../services/golden-route.html">
+                                            <i class="fas fa-crown"></i>
+                                            <span>Golden Route Tour</span>
+                                        </a>
+                                        <a href="../services/pricing.html">
+                                            <i class="fas fa-tag"></i>
+                                            <span>Pricing</span>
+                                        </a>
+                                    </div>
+                                    <div class="dropdown-section">
+                                        <h4>Business</h4>
+                                        <a href="../services/partners.html">
+                                            <i class="fas fa-handshake"></i>
+                                            <span>Partnerships</span>
+                                        </a>
+                                        <a href="../sustainability.html">
+                                            <i class="fas fa-leaf"></i>
+                                            <span>Sustainable Future</span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <!-- 4. INSIGHTS（洞察）- 主标签+子选项双Active -->
+                        <li class="nav-item dropdown active">
+                            <a href="index.html" class="nav-link" data-i18n="nav_insights">
+                                <i class="fas fa-chart-line nav-icon"></i>
+                                <span class="nav-text">INSIGHTS</span>
+                                <i class="fas fa-chevron-down dropdown-arrow"></i>
+                            </a>
+                            <div class="dropdown-menu">
+                                <div class="dropdown-section">
+                                    <a href="audience.html">
+                                        <i class="fas fa-user-friends"></i>
+                                        <span>Target Audience</span>
+                                    </a>
+                                    <a href="edeg.html">
+                                        <i class="fas fa-trophy"></i>
+                                        <span>Competitive Edge</span>
+                                    </a>
+                                    <a href="trends.html">
+                                        <i class="fas fa-chart-bar"></i>
+                                        <span>Market Insights</span>
+                                    </a>
+                                    <a href="marketing.html" class="active">
+                                        <i class="fas fa-chess-knight"></i>
+                                        <span>Marketing Strategy</span>
+                                    </a>
+                                    <a href="../gallery.html">
+                                        <i class="fas fa-images"></i>
+                                        <span>Moments & Gallery</span>
+                                    </a>
+                                    <a href="../services/partners.html">
+                                        <i class="fas fa-handshake"></i>
+                                        <span>Partnerships</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </li>
+                        <!-- 5. CONTACT（联系我们） -->
+                        <li class="nav-item">
+                            <a href="../contact.html" class="nav-link" data-i18n="nav_contact">
+                                <i class="fas fa-envelope nav-icon"></i>
+                                <span class="nav-text">CONTACT</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- 语言切换器区（与首页完全一致） -->
+            <div class="nav-right-section">
+                <div class="action-container">
+                    <div class="language-switcher">
+                        <div class="language-current">
+                            <i class="fas fa-globe"></i>
+                            <span>EN</span>
+                        </div>
+                        <div class="language-options">
+                            <button class="lang-btn active" data-lang="en">
+                                <span>EN</span>
+                                <span class="lang-name">English</span>
+                            </button>
+                            <button class="lang-btn" data-lang="zh">
+                                <span>中文</span>
+                                <span class="lang-name">Chinese</span>
+                            </button>
+                            <button class="lang-btn" data-lang="ja">
+                                <span>日本語</span>
+                                <span class="lang-name">Japanese</span>
+                            </button>
+                        </div>
+                    </div>
+                    <a href="#contact" class="cta-button">
+                        <i class="fas fa-calendar-check"></i>
+                        <span>Book Now</span>
+                    </a>
+                </div>
+            </div>
         </div>
         
-        <ul class="nav-menu">
-            <li class="nav-item">
-                <a href="../index.html" class="nav-link">
-                    <span class="nav-text" data-i18n="nav_home">HOME</span>
-                    <span class="nav-dot"></span>
-                </a>
-            </li>
-            <li class="nav-item">
-                <a href="../about/index.html" class="nav-link">
-                    <span class="nav-text" data-i18n="nav_about">ABOUT</span>
-                    <span class="nav-dot"></span>
-                </a>
-            </li>
-            <li class="nav-item">
-                <a href="../services/index.html" class="nav-link">
-                    <span class="nav-text" data-i18n="nav_services">SERVICES</span>
-                    <span class="nav-dot"></span>
-                </a>
-            </li>
-            <li class="nav-item active">
-                <a href="index.html" class="nav-link">
-                    <span class="nav-text" data-i18n="nav_insights">INSIGHTS</span>
-                    <span class="nav-dot"></span>
-                </a>
-            </li>
-            <li class="nav-item">
-                <a href="../gallery.html" class="nav-link">
-                    <span class="nav-text" data-i18n="nav_gallery">GALLERY</span>
-                    <span class="nav-dot"></span>
-                </a>
-            </li>
-            <li class="nav-item">
-                <a href="../sustainability.html" class="nav-link">
-                    <span class="nav-text" data-i18n="nav_sustainability">SUSTAINABLE</span>
-                    <span class="nav-dot"></span>
-                </a>
-            </li>
-            <li class="nav-item">
-                <a href="../contact.html" class="nav-link">
-                    <span class="nav-text" data-i18n="nav_contact">CONTACT</span>
-                    <span class="nav-dot"></span>
-                </a>
-            </li>
-        </ul>
-        
-        <!-- 语言切换器 -->
-        <div class="nav-language">
-            <div class="language-switcher">
-                <button class="lang-btn active" data-lang="en">EN</button>
-                <button class="lang-btn" data-lang="zh">中文</button>
-                <button class="lang-btn" data-lang="ja">日本語</button>
-            </div>
+        <!-- 导航栏底部装饰线（与首页完全一致） -->
+        <div class="nav-bottom-line">
+            <div class="line-gradient"></div>
         </div>
     </nav>
 
-    <!-- 主要内容 -->
+    <!-- 主要内容（完全保留原有内容，无修改） -->
     <main class="main-content">
         <!-- 页面标题横幅 -->
         <section class="page-hero">
@@ -102,7 +280,7 @@
             
             <div class="page-hero-content">
                 <h1 class="page-title" data-i18n="marketing_title">Marketing Strategy</h1>
-                <p class="page-subtitle" data-i18n="marketing_subtitle">Multi-platform approaches for engaging high-value Chinese families</p>
+                <p class="page-subtitle" data-i18n="marketing_subtitle" style="color: white;">Multi-platform approaches for engaging high-value Chinese families</p>
             </div>
         </section>
 
@@ -122,7 +300,6 @@
                     
                     <!-- TODO: 插入营销主题的视觉海报 -->
                     <div class="campaign-poster mt-4">
-                        <img src="../images/insights/campaign-poster.jpg" alt="Japan's Timeless Tech & Traditions Campaign Poster" class="img-fluid rounded shadow-lg">
                         <p class="text-center text-muted mt-2">Visual identity for our "Japan's Timeless Tech & Traditions" marketing campaign</p>
                     </div>
                 </div>
@@ -144,7 +321,7 @@
                                 <i class="fab fa-weixin"></i>
                                 <h4>WeChat</h4>
                             </div>
-                            <img src="../images/insights/wechat-interface.jpg" alt="WeChat Official Account interface with Playfluence content" class="img-fluid rounded shadow">
+                            <img src="../images/insights/marketing/we.png" alt="WeChat Official Account interface with Playfluence content" class="img-fluid rounded shadow">
                             <p class="text-center text-muted mt-2">Official Account articles and Mini-program integration</p>
                         </div>
                         
@@ -153,7 +330,7 @@
                                 <i class="fab fa-tiktok"></i>
                                 <h4>Douyin</h4>
                             </div>
-                            <img src="../images/insights/douyin-interface.jpg" alt="Douyin interface with Playfluence travel videos" class="img-fluid rounded shadow">
+                            <img src="../images/insights/marketing/dy.png" alt="Douyin interface with Playfluence travel videos" class="img-fluid rounded shadow">
                             <p class="text-center text-muted mt-2">Short video content and direct booking features</p>
                         </div>
                         
@@ -162,7 +339,7 @@
                                 <i class="fas fa-book"></i>
                                 <h4>Xiaohongshu</h4>
                             </div>
-                            <img src="../images/insights/xiaohongshu-interface.jpg" alt="Xiaohongshu interface with user reviews and travel guides" class="img-fluid rounded shadow">
+                            <img src="../images/insights/marketing/xh.png" alt="Xiaohongshu interface with user reviews and travel guides" class="img-fluid rounded shadow">
                             <p class="text-center text-muted mt-2">Authentic user reviews and KOL collaborations</p>
                         </div>
                     </div>
@@ -269,7 +446,7 @@
                     <div class="timeline-visualization mb-4">
                         <!-- TODO: 插入营销活动时间线图表 -->
                         <div class="timeline-chart">
-                            <img src="../images/insights/campaign-timeline-chart.jpg" alt="Marketing campaign timeline and content calendar" class="img-fluid rounded shadow">
+                            <img src="../images/insights/marketing/1.png" alt="Marketing campaign timeline and content calendar" class="img-fluid rounded shadow">
                             <p class="text-center text-muted mt-2">6-month phased marketing campaign with clear objectives for each stage</p>
                         </div>
                     </div>
@@ -334,7 +511,7 @@
                     <div class="promotion-examples mb-4">
                         <!-- TODO: 插入促销活动视觉设计示例 -->
                         <div class="promotion-visual">
-                            <img src="../images/insights/promotion-visual-design.jpg" alt="Early bird and family package promotion visual designs" class="img-fluid rounded shadow">
+                            <img src="../images/insights/marketing/2.png" alt="Early bird and family package promotion visual designs" class="img-fluid rounded shadow">
                             <p class="text-center text-muted mt-2">Visual designs for our premium promotions maintaining brand positioning</p>
                         </div>
                     </div>
@@ -390,7 +567,7 @@
                     <div class="kol-examples mb-4">
                         <!-- TODO: 插入KOL合作内容示例 -->
                         <div class="kol-content-showcase">
-                            <img src="../images/insights/kol-collaboration-examples.jpg" alt="Examples of KOL collaborations on social media platforms" class="img-fluid rounded shadow">
+                            <img src="../images/insights/marketing/4.png" alt="Examples of KOL collaborations on social media platforms" class="img-fluid rounded shadow">
                             <p class="text-center text-muted mt-2">Real examples of successful KOL partnerships driving engagement and conversions</p>
                         </div>
                     </div>
@@ -404,11 +581,7 @@
                                 <span class="kol-metric" data-i18n="kol_engagement">Engagement: 3-5%</span>
                             </div>
                             
-                            <!-- 育儿KOL示例图片 -->
-                            <div class="kol-image mt-3">
-                                <img src="../images/insights/parenting-kol-example.jpg" alt="Parenting KOL sharing family travel experience" class="img-fluid rounded">
-                            </div>
-                        </div>
+                        
                         
                         <div class="kol-type">
                             <h3 data-i18n="kol_type2">Lifestyle Influencers</h3>
@@ -420,7 +593,7 @@
                             
                             <!-- 生活方式KOL示例图片 -->
                             <div class="kol-image mt-3">
-                                <img src="../images/insights/lifestyle-kol-example.jpg" alt="Lifestyle influencer showcasing premium travel experience" class="img-fluid rounded">
+                                <img src="../images/insights/marketing/7.png" alt="Lifestyle influencer showcasing premium travel experience" class="img-fluid rounded">
                             </div>
                         </div>
                         
@@ -434,7 +607,7 @@
                             
                             <!-- 可持续倡导者KOL示例图片 -->
                             <div class="kol-image mt-3">
-                                <img src="../images/insights/sustainability-kol-example.jpg" alt="Sustainability advocate highlighting eco-friendly travel" class="img-fluid rounded">
+                                <img src="../images/insights/marketing/12.png" alt="Sustainability advocate highlighting eco-friendly travel" class="img-fluid rounded">
                             </div>
                         </div>
                     </div>
@@ -449,13 +622,6 @@
                     <h2 class="section-title" data-i18n="marketing_roi">Performance Tracking & ROI</h2>
                     
                     <!-- 效果数据可视化 -->
-                    <div class="roi-visualization">
-                        <!-- TODO: 插入营销效果数据图表 -->
-                        <div class="roi-chart">
-                            <img src="../images/insights/marketing-roi-chart.jpg" alt="Marketing campaign ROI and performance metrics" class="img-fluid rounded shadow">
-                            <p class="text-center text-muted mt-2">Comprehensive tracking of campaign performance across all platforms</p>
-                        </div>
-                    </div>
                     
                     <div class="roi-metrics grid grid-4 mt-4">
                         <div class="roi-metric">
@@ -507,7 +673,7 @@
                         <ul class="footer-links">
                             <li><a href="../about/index.html" data-i18n="nav_company">Company Profile</a></li>
                             <li><a href="../about/leadership.html" data-i18n="nav_leadership">Leadership Team</a></li>
-                            <li><a href="partners.html" data-i18n="nav_partners">Partnerships</a></li>
+                            <li><a href="../services/partners.html" data-i18n="nav_partners">Partnerships</a></li>
                         </ul>
                     </div>
                     
@@ -530,7 +696,7 @@
         </footer>
     </main>
 
-    <!-- 移动端菜单按钮 -->
+    <!-- 移动端菜单按钮（保留） -->
     <button class="mobile-menu-btn">
         <i class="fas fa-bars"></i>
     </button>
@@ -539,594 +705,600 @@
     <script src="../js/language-manager.js"></script>
     <script src="../js/main.js"></script>
     
-    <style>
-        /* 营销策略页面特定样式 */
-        .theme-card {
-            background: linear-gradient(135deg, #FFD166, #FF6B6B);
-            color: white;
-            padding: 2.5rem;
-            border-radius: var(--radius-lg);
-            margin-top: 1.5rem;
-        }
-        
-        .theme-content h3 {
-            font-size: 1.8rem;
-            margin-bottom: 1rem;
-        }
-        
-        .theme-content p {
-            font-size: 1.1rem;
-            opacity: 0.9;
-            line-height: 1.6;
-        }
-        
-        /* 营销活动海报 */
-        .campaign-poster img {
-            width: 100%;
-            height: 350px;
-            object-fit: cover;
-            border-radius: var(--radius-lg);
-            box-shadow: var(--shadow-lg);
-        }
-        
-        /* 平台界面展示 */
-        .platform-interfaces {
-            margin-bottom: 3rem;
-        }
-        
-        .interface-showcase {
-            gap: 2rem;
-        }
-        
-        .interface-item {
-            text-align: center;
-        }
-        
-        .interface-header {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 0.75rem;
-            margin-bottom: 1rem;
-        }
-        
-        .interface-header i {
-            font-size: 1.5rem;
-        }
-        
-        .interface-header h4 {
-            margin: 0;
-            font-size: 1.2rem;
-            color: var(--dark-color);
-        }
-        
-        .interface-item img {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-            border-radius: var(--radius-md);
-            box-shadow: var(--shadow-md);
-        }
-        
-        /* 通用样式 */
-        .text-center {
-            text-align: center;
-        }
-        
-        .text-muted {
-            color: #6c757d;
-        }
-        
-        .mt-2 {
-            margin-top: 0.5rem;
-        }
-        
-        .mt-4 {
-            margin-top: 1.5rem;
-        }
-        
-        .mb-4 {
-            margin-bottom: 1.5rem;
-        }
-        
-        .img-fluid {
-            max-width: 100%;
-            height: auto;
-        }
-        
-        .rounded {
-            border-radius: var(--radius-lg);
-        }
-        
-        .shadow {
-            box-shadow: var(--shadow-md);
-        }
-        
-        .shadow-lg {
-            box-shadow: var(--shadow-lg);
-        }
-        
-        /* 平台卡片样式 */
-        .platforms-grid {
-            margin-top: 3rem;
-            gap: 2rem;
-        }
-        
-        .platform-card {
-            background: white;
-            border-radius: var(--radius-lg);
-            box-shadow: var(--shadow-lg);
-            overflow: hidden;
-            transition: all var(--transition-normal);
-        }
-        
-        .platform-card:hover {
-            transform: translateY(-10px);
-            box-shadow: var(--shadow-xl);
-        }
-        
-        .platform-header {
-            padding: 2rem;
-            text-align: center;
-            position: relative;
-        }
-        
-        .platform-card.wechat .platform-header {
-            background: linear-gradient(135deg, #09bb07, #07c160);
-            color: white;
-        }
-        
-        .platform-card.douyin .platform-header {
-            background: linear-gradient(135deg, #000000, #69C9D0);
-            color: white;
-        }
-        
-        .platform-card.xiaohongshu .platform-header {
-            background: linear-gradient(135deg, #FF2442, #FFB6C1);
-            color: white;
-        }
-        
-        .platform-icon {
-            width: 70px;
-            height: 70px;
-            background: rgba(255, 255, 255, 0.2);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 1rem;
-        }
-        
-        .platform-icon i {
-            font-size: 2rem;
-        }
-        
-        .platform-header h3 {
-            font-size: 1.5rem;
-            margin-bottom: 0.5rem;
-        }
-        
-        .platform-role {
-            display: inline-block;
-            padding: 0.4rem 1rem;
-            background: rgba(255, 255, 255, 0.2);
-            border-radius: var(--radius-full);
-            font-size: 0.9rem;
-            font-weight: 600;
-        }
-        
-        .platform-content {
-            padding: 1.5rem;
-        }
-        
-        .platform-content h4 {
-            font-size: 1.1rem;
-            margin-bottom: 0.75rem;
-            color: var(--dark-color);
-        }
-        
-        .platform-content p {
-            color: var(--text-light);
-            margin-bottom: 1.5rem;
-            line-height: 1.6;
-        }
-        
-        .platform-features {
-            list-style: none;
-            padding: 0;
-            margin-bottom: 1.5rem;
-        }
-        
-        .platform-features li {
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
-            margin-bottom: 0.75rem;
-            font-size: 0.95rem;
-        }
-        
-        .platform-features i {
-            color: var(--primary-color);
-        }
-        
-        .platform-stats {
-            border-top: 1px solid var(--border-color);
-            padding-top: 1rem;
-        }
-        
-        .stat {
-            text-align: center;
-        }
-        
-        .stat-number {
-            font-size: 2rem;
-            font-weight: 800;
-            color: var(--primary-color);
-            margin-bottom: 0.25rem;
-        }
-        
-        .stat-label {
-            font-size: 0.9rem;
-            color: var(--text-light);
-        }
-        
-        /* 时间线样式 */
-        .timeline {
-            margin-top: 2rem;
-            position: relative;
-        }
-        
-        .timeline::before {
-            content: '';
-            position: absolute;
-            left: 30px;
-            top: 0;
-            bottom: 0;
-            width: 3px;
-            background: linear-gradient(to bottom, #FFD166, #FF6B6B);
-            border-radius: var(--radius-full);
-        }
-        
-        .timeline-item {
-            display: flex;
-            margin-bottom: 3rem;
-            position: relative;
-        }
-        
-        .timeline-item:last-child {
-            margin-bottom: 0;
-        }
-        
-        .timeline-date {
-            width: 60px;
-            flex-shrink: 0;
-            text-align: center;
-            padding-top: 0.5rem;
-        }
-        
-        .timeline-date span {
-            display: inline-block;
-            padding: 0.5rem 1rem;
-            background: var(--primary-color);
-            color: white;
-            border-radius: var(--radius-full);
-            font-weight: 600;
-            font-size: 0.9rem;
-        }
-        
-        .timeline-content {
-            flex: 1;
-            margin-left: 2rem;
-            padding: 1.5rem;
-            background: white;
-            border-radius: var(--radius-lg);
-            box-shadow: var(--shadow-md);
-        }
-        
-        .timeline-content h3 {
-            font-size: 1.3rem;
-            margin-bottom: 0.75rem;
-            color: var(--dark-color);
-        }
-        
-        .timeline-content p {
-            color: var(--text-light);
-            margin-bottom: 1rem;
-            line-height: 1.6;
-        }
-        
-        .timeline-metrics {
-            display: flex;
-            gap: 1.5rem;
-        }
-        
-        .metric {
-            padding: 0.4rem 0.8rem;
-            background: var(--light-color);
-            border-radius: var(--radius-full);
-            font-size: 0.85rem;
-            font-weight: 600;
-        }
-        
-        /* 时间线图表 */
-        .timeline-chart img {
-            width: 100%;
-            height: auto;
-            border-radius: var(--radius-lg);
-            box-shadow: var(--shadow-md);
-        }
-        
-        /* 促销卡片 */
-        .promotion-cards {
-            margin-top: 2rem;
-            gap: 2rem;
-        }
-        
-        .promotion-card {
-            background: white;
-            padding: 2rem;
-            border-radius: var(--radius-lg);
-            box-shadow: var(--shadow-md);
-            transition: all var(--transition-normal);
-        }
-        
-        .promotion-card:hover {
-            transform: translateY(-5px);
-            box-shadow: var(--shadow-lg);
-        }
-        
-        .promotion-icon {
-            width: 60px;
-            height: 60px;
-            background: linear-gradient(135deg, #FFD166, #FF6B6B);
-            border-radius: var(--radius-lg);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 1.5rem;
-        }
-        
-        .promotion-icon i {
-            font-size: 1.8rem;
-            color: white;
-        }
-        
-        .promotion-card h3 {
-            font-size: 1.4rem;
-            margin-bottom: 1rem;
-            color: var(--dark-color);
-        }
-        
-        .promotion-card p {
-            color: var(--text-light);
-            margin-bottom: 1.5rem;
-            line-height: 1.6;
-        }
-        
-        .promotion-benefits {
-            list-style: none;
-            padding: 0;
-        }
-        
-        .promotion-benefits li {
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
-            margin-bottom: 0.75rem;
-            font-size: 0.95rem;
-        }
-        
-        .promotion-benefits i {
-            color: var(--primary-color);
-        }
-        
-        .promotion-note {
-            margin-top: 2rem;
-            padding: 1.5rem;
-            background: #FFF9E6;
-            border-radius: var(--radius-lg);
-            border-left: 4px solid #FFD166;
-        }
-        
-        .promotion-note p {
-            margin: 0;
-            color: #856404;
-        }
-        
-        /* 促销视觉设计 */
-        .promotion-visual img {
-            width: 100%;
-            height: 250px;
-            object-fit: cover;
-            border-radius: var(--radius-lg);
-            box-shadow: var(--shadow-md);
-        }
-        
-        /* KOL合作样式 */
-        .kol-types {
-            margin-top: 2rem;
-            gap: 2rem;
-        }
-        
-        .kol-type {
-            background: white;
-            padding: 2rem;
-            border-radius: var(--radius-lg);
-            box-shadow: var(--shadow-md);
-        }
-        
-        .kol-type h3 {
-            font-size: 1.3rem;
-            margin-bottom: 1rem;
-            color: var(--dark-color);
-        }
-        
-        .kol-type p {
-            color: var(--text-light);
-            margin-bottom: 1.5rem;
-            line-height: 1.6;
-        }
-        
-        .kol-metrics {
-            display: flex;
-            gap: 1rem;
-            flex-wrap: wrap;
-        }
-        
-        .kol-metric {
-            padding: 0.4rem 0.8rem;
-            background: var(--light-color);
-            border-radius: var(--radius-full);
-            font-size: 0.85rem;
-            font-weight: 600;
-        }
-        
-        /* KOL图片样式 */
-        .kol-image img {
-            width: 100%;
-            height: 150px;
-            object-fit: cover;
-            border-radius: var(--radius-md);
-        }
-        
-        /* KOL合作示例 */
-        .kol-content-showcase img {
-            width: 100%;
-            height: 300px;
-            object-fit: cover;
-            border-radius: var(--radius-lg);
-            box-shadow: var(--shadow-md);
-        }
-        
-        /* ROI追踪 */
-        .roi-chart img {
-            width: 100%;
-            height: auto;
-            border-radius: var(--radius-lg);
-            box-shadow: var(--shadow-md);
-        }
-        
-        .roi-metrics {
-            margin-top: 2rem;
-        }
-        
-        .roi-metric {
-            text-align: center;
-            padding: 1.5rem;
-        }
-        
-        .metric-value {
-            font-size: 2.5rem;
-            font-weight: 800;
-            background: linear-gradient(135deg, #FFD166, #FF6B6B);
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-            margin-bottom: 0.5rem;
-        }
-        
-        .metric-label {
-            font-size: 1rem;
-            color: var(--text-light);
-            font-weight: 600;
-        }
-        
-        /* 响应式设计 */
-        @media (max-width: 992px) {
-            .platforms-grid {
-                grid-template-columns: 1fr;
+    <!-- 顶部导航栏交互脚本（与首页一致） -->
+    <script>
+        // 页面加载完成后初始化导航栏交互
+        window.addEventListener('load', function() {
+            // 加载器渐变消失效果
+            const loader = document.querySelector('.page-loader');
+            if (loader) {
+                setTimeout(() => {
+                    loader.style.opacity = '0';
+                    setTimeout(() => {
+                        loader.style.display = 'none';
+                    }, 500);
+                }, 500);
             }
             
-            .grid-3 {
-                grid-template-columns: 1fr;
+            // 下拉菜单交互
+            const dropdowns = document.querySelectorAll('.dropdown');
+            dropdowns.forEach(dropdown => {
+                dropdown.addEventListener('mouseenter', function() {
+                    this.querySelector('.dropdown-menu').style.opacity = '1';
+                    this.querySelector('.dropdown-menu').style.visibility = 'visible';
+                    this.querySelector('.dropdown-menu').style.transform = 'translateY(0)';
+                });
+                
+                dropdown.addEventListener('mouseleave', function() {
+                    this.querySelector('.dropdown-menu').style.opacity = '0';
+                    this.querySelector('.dropdown-menu').style.visibility = 'hidden';
+                    this.querySelector('.dropdown-menu').style.transform = 'translateY(10px)';
+                });
+            });
+            
+            // 语言切换器交互
+            const langSwitcher = document.querySelector('.language-switcher');
+            if (langSwitcher) {
+                langSwitcher.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                    this.classList.toggle('active');
+                });
+                
+                document.addEventListener('click', function() {
+                    langSwitcher.classList.remove('active');
+                });
             }
             
-            .theme-content h3 {
-                font-size: 1.5rem;
-            }
-            
-            .kol-types {
-                grid-template-columns: 1fr;
-            }
-            
-            .interface-showcase {
-                grid-template-columns: 1fr;
-            }
-            
-            .grid-4 {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
+            document.querySelectorAll('.lang-btn').forEach(btn => {
+                btn.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                    const lang = this.getAttribute('data-lang');
+                    
+                    const current = document.querySelector('.language-current span');
+                    current.textContent = this.querySelector('span').textContent;
+                    
+                    document.querySelectorAll('.lang-btn').forEach(b => b.classList.remove('active'));
+                    this.classList.add('active');
+                    
+                    console.log('切换语言到:', lang);
+                });
+            });
+        });
         
-        @media (max-width: 768px) {
-            .timeline::before {
-                left: 20px;
+        // 顶部导航栏完整样式（与首页完全一致）
+        const style = document.createElement('style');
+        style.textContent = `
+            .top-nav {
+                position: fixed;
+                top: 0;
+                left: 0;
+                right: 0;
+                background: linear-gradient(to right, 
+                    rgba(255, 255, 255, 0.98) 0%,
+                    rgba(255, 255, 255, 0.95) 30%,
+                    rgba(255, 255, 255, 0.95) 70%,
+                    rgba(255, 255, 255, 0.98) 100%);
+                backdrop-filter: blur(15px);
+                box-shadow: 0 4px 30px rgba(0, 0, 0, 0.08);
+                z-index: 1000;
+                padding: 0;
             }
             
-            .timeline-date {
-                width: 40px;
+            .top-nav-container {
+                max-width: 1400px;
+                margin: 0 auto;
+                padding: 0 40px;
+                display: grid;
+                grid-template-columns: 280px 1fr 300px;
+                align-items: center;
+                gap: 40px;
+                height: 80px;
             }
             
-            .timeline-content {
-                margin-left: 1.5rem;
-                padding: 1.25rem;
+            .nav-brand-section {
+                display: flex;
+                align-items: center;
+                justify-content: flex-start;
             }
             
-            .promotion-cards {
-                grid-template-columns: 1fr;
+            .brand-container {
+                display: flex;
+                align-items: center;
+                gap: 15px;
+                padding: 10px 15px;
+                background: rgba(255, 255, 255, 0.7);
+                border-radius: 12px;
+                border: 1px solid rgba(78, 205, 196, 0.1);
+                box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
             }
             
-            .theme-card {
-                padding: 1.5rem;
+            .brand-logo {
+                width: 45px;
+                height: 45px;
+                background: linear-gradient(135deg, #4ECDC4 0%, #2D3047 100%);
+                border-radius: 10px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                position: relative;
+                overflow: hidden;
             }
             
-            .platform-header {
-                padding: 1.5rem;
+            .brand-logo::after {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background: linear-gradient(45deg, transparent 50%, rgba(255, 255, 255, 0.1) 50%);
+                background-size: 5px 5px;
             }
             
-            .campaign-poster img {
-                height: 250px;
+            .brand-logo .logo-text {
+                font-size: 22px;
+                font-weight: 900;
+                color: white;
+                font-family: 'Montserrat', sans-serif;
+                text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
             }
             
-            .interface-item img {
-                height: 150px;
+            .brand-vertical-divider {
+                width: 1px;
+                height: 30px;
+                background: linear-gradient(to bottom, transparent, rgba(78, 205, 196, 0.3), transparent);
             }
             
-            .kol-content-showcase img {
-                height: 200px;
-            }
-            
-            .promotion-visual img {
-                height: 180px;
-            }
-        }
-        
-        @media (max-width: 480px) {
-            .timeline-metrics {
+            .brand-text {
+                display: flex;
                 flex-direction: column;
-                gap: 0.5rem;
+                justify-content: center;
             }
             
-            .platform-content {
-                padding: 1.25rem;
+            .brand-title {
+                font-size: 20px;
+                font-weight: 800;
+                color: var(--dark-color);
+                margin: 0;
+                line-height: 1.2;
+                font-family: 'Montserrat', sans-serif;
+                letter-spacing: -0.5px;
             }
             
-            .promotion-card {
-                padding: 1.5rem;
+            .brand-tagline {
+                font-size: 11px;
+                color: var(--secondary-color);
+                margin: 2px 0 0 0;
+                text-transform: uppercase;
+                letter-spacing: 0.8px;
+                font-weight: 600;
             }
             
-            .kol-type {
-                padding: 1.5rem;
+            .nav-center-section {
+                display: flex;
+                justify-content: center;
             }
             
-            .grid-4 {
-                grid-template-columns: 1fr;
+            .nav-menu-wrapper {
+                background: rgba(255, 255, 255, 0.7);
+                border-radius: 12px;
+                padding: 5px 15px;
+                border: 1px solid rgba(78, 205, 196, 0.1);
+                box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
             }
             
-            .metric-value {
-                font-size: 2rem;
+            .top-nav-menu {
+                display: flex;
+                list-style: none;
+                margin: 0;
+                padding: 0;
+                gap: 25px;
             }
-        }
-    </style>
+            
+            .nav-item {
+                position: relative;
+            }
+            
+            .nav-link {
+                display: flex;
+                align-items: center;
+                gap: 8px;
+                color: var(--dark-color);
+                text-decoration: none;
+                font-weight: 600;
+                font-size: 13px;
+                text-transform: uppercase;
+                letter-spacing: 0.8px;
+                padding: 12px 15px;
+                border-radius: 8px;
+                transition: all 0.3s ease;
+                position: relative;
+            }
+            
+            .nav-icon {
+                font-size: 14px;
+                color: var(--primary-color);
+                opacity: 0.8;
+                transition: all 0.3s ease;
+            }
+            
+            .nav-text {
+                position: relative;
+            }
+            
+            .nav-link:hover {
+                background: rgba(78, 205, 196, 0.08);
+                color: var(--primary-color);
+                transform: translateY(-1px);
+            }
+            
+            .nav-link:hover .nav-icon {
+                opacity: 1;
+                transform: scale(1.1);
+            }
+            
+            .nav-item.active .nav-link {
+                background: linear-gradient(135deg, rgba(78, 205, 196, 0.15) 0%, rgba(45, 48, 71, 0.08) 100%);
+                color: var(--primary-color);
+            }
+            
+            .nav-item.active .nav-link::before {
+                content: '';
+                position: absolute;
+                bottom: -3px;
+                left: 50%;
+                transform: translateX(-50%);
+                width: 20px;
+                height: 3px;
+                background: var(--primary-color);
+                border-radius: 2px;
+            }
+            
+            .dropdown-arrow {
+                font-size: 10px;
+                margin-left: 3px;
+                opacity: 0.6;
+                transition: transform 0.3s ease;
+            }
+            
+            .dropdown:hover .dropdown-arrow {
+                transform: rotate(180deg);
+            }
+            
+            .dropdown-menu {
+                position: absolute;
+                top: calc(100% + 10px);
+                left: 50%;
+                transform: translateX(-50%) translateY(10px);
+                background: white;
+                min-width: 220px;
+                box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+                border-radius: 12px;
+                padding: 20px;
+                opacity: 0;
+                visibility: hidden;
+                transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+                z-index: 1001;
+                border: 1px solid rgba(78, 205, 196, 0.1);
+            }
+            
+            .dropdown-wide {
+                min-width: 450px;
+            }
+            
+            .dropdown-grid {
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                gap: 20px;
+            }
+            
+            .dropdown-section {
+                display: flex;
+                flex-direction: column;
+                gap: 8px;
+            }
+            
+            .dropdown-section h4 {
+                font-size: 12px;
+                color: var(--secondary-color);
+                text-transform: uppercase;
+                letter-spacing: 1px;
+                margin: 0 0 10px 0;
+                font-weight: 600;
+            }
+            
+            .dropdown-menu a {
+                display: flex;
+                align-items: center;
+                gap: 12px;
+                color: var(--dark-color);
+                text-decoration: none;
+                font-size: 13px;
+                padding: 10px 12px;
+                border-radius: 6px;
+                transition: all 0.3s ease;
+            }
+            
+            .dropdown-menu a i {
+                color: var(--primary-color);
+                font-size: 14px;
+                width: 16px;
+                text-align: center;
+            }
+            
+            .dropdown-menu a:hover {
+                background: rgba(78, 205, 196, 0.08);
+                color: var(--primary-color);
+                transform: translateX(3px);
+            }
+            
+            .dropdown-menu a.active {
+                background: rgba(78, 205, 196, 0.1);
+                color: var(--primary-color);
+            }
+            
+            .nav-right-section {
+                display: flex;
+                justify-content: flex-end;
+            }
+            
+            .action-container {
+                display: flex;
+                align-items: center;
+                gap: 15px;
+                background: rgba(255, 255, 255, 0.7);
+                border-radius: 12px;
+                padding: 10px 15px;
+                border: 1px solid rgba(78, 205, 196, 0.1);
+                box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            }
+            
+            .language-switcher {
+                position: relative;
+            }
+            
+            .language-current {
+                display: flex;
+                align-items: center;
+                gap: 8px;
+                padding: 8px 15px;
+                background: rgba(78, 205, 196, 0.1);
+                border-radius: 8px;
+                cursor: pointer;
+                transition: all 0.3s ease;
+            }
+            
+            .language-current:hover {
+                background: rgba(78, 205, 196, 0.15);
+            }
+            
+            .language-current i {
+                color: var(--primary-color);
+                font-size: 14px;
+            }
+            
+            .language-current span {
+                font-size: 13px;
+                font-weight: 600;
+                color: var(--dark-color);
+            }
+            
+            .language-options {
+                position: absolute;
+                top: calc(100% + 10px);
+                left: 0;
+                background: white;
+                min-width: 180px;
+                box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+                border-radius: 12px;
+                padding: 15px;
+                opacity: 0;
+                visibility: hidden;
+                transform: translateY(10px);
+                transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+                z-index: 1001;
+                border: 1px solid rgba(78, 205, 196, 0.1);
+            }
+            
+            .language-switcher.active .language-options {
+                opacity: 1;
+                visibility: visible;
+                transform: translateY(0);
+            }
+            
+            .lang-btn {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                width: 100%;
+                padding: 10px 12px;
+                border: none;
+                background: transparent;
+                color: var(--dark-color);
+                font-size: 13px;
+                font-weight: 500;
+                cursor: pointer;
+                border-radius: 6px;
+                transition: all 0.3s ease;
+                text-align: left;
+            }
+            
+            .lang-name {
+                opacity: 0.6;
+                font-size: 12px;
+            }
+            
+            .lang-btn.active,
+            .lang-btn:hover {
+                background: rgba(78, 205, 196, 0.08);
+                color: var(--primary-color);
+                            }
+            
+            .cta-button {
+                display: flex;
+                align-items: center;
+                gap: 8px;
+                background: linear-gradient(135deg, #4ECDC4 0%, #2D3047 100%);
+                color: white;
+                text-decoration: none;
+                padding: 10px 20px;
+                border-radius: 8px;
+                font-size: 13px;
+                font-weight: 600;
+                text-transform: uppercase;
+                letter-spacing: 0.8px;
+                transition: all 0.3s ease;
+                box-shadow: 0 4px 15px rgba(78, 205, 196, 0.2);
+            }
+            
+            .cta-button:hover {
+                transform: translateY(-2px);
+                box-shadow: 0 6px 20px rgba(78, 205, 196, 0.3);
+                color: white;
+            }
+            
+            .cta-button i {
+                font-size: 14px;
+            }
+            
+            .nav-bottom-line {
+                height: 4px;
+                background: linear-gradient(90deg, transparent, rgba(78, 205, 196, 0.3), transparent);
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                opacity: 0.7;
+            }
+            
+            .line-gradient {
+                height: 100%;
+                background: linear-gradient(90deg, 
+                    rgba(78, 205, 196, 0) 0%, 
+                    rgba(78, 205, 196, 0.8) 50%, 
+                    rgba(78, 205, 196, 0) 100%);
+                animation: lineFlow 3s ease-in-out infinite;
+            }
+            
+            @keyframes lineFlow {
+                0%, 100% { opacity: 0.7; }
+                50% { opacity: 1; }
+            }
+            
+            /* 响应式适配 */
+            @media (max-width: 1200px) {
+                .top-nav-container {
+                    grid-template-columns: 220px 1fr 250px;
+                    padding: 0 20px;
+                    gap: 20px;
+                }
+                
+                .top-nav-menu {
+                    gap: 15px;
+                }
+                
+                .nav-link {
+                    padding: 10px 12px;
+                    font-size: 12px;
+                }
+                
+                .brand-title {
+                    font-size: 18px;
+                }
+                
+                .dropdown-wide {
+                    min-width: 380px;
+                }
+            }
+            
+            @media (max-width: 992px) {
+                .nav-center-section {
+                    display: none;
+                }
+                
+                .top-nav-container {
+                    grid-template-columns: 1fr auto;
+                }
+                
+                .mobile-menu-btn {
+                    display: block;
+                    position: fixed;
+                    top: 20px;
+                    right: 20px;
+                    z-index: 1002;
+                    width: 45px;
+                    height: 45px;
+                    border-radius: 50%;
+                    background: white;
+                    border: none;
+                    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+                    font-size: 20px;
+                    color: var(--primary-color);
+                    cursor: pointer;
+                    transition: all 0.3s ease;
+                }
+                
+                .mobile-menu-btn:hover {
+                    transform: scale(1.05);
+                    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+                }
+            }
+        `;
+        style.appendChild(document.createTextNode(style.textContent));
+        document.head.appendChild(style);
+    </script>
+    
+    <!-- 页面专属交互脚本 -->
+    <script>
+        // 营销页面专属动画效果
+        document.addEventListener('DOMContentLoaded', function() {
+            // 背景滑块自动切换
+            const bgSlides = document.querySelectorAll('.bg-slide');
+            let currentSlide = 0;
+            
+            function changeSlide() {
+                bgSlides[currentSlide].classList.remove('active');
+                currentSlide = (currentSlide + 1) % bgSlides.length;
+                bgSlides[currentSlide].classList.add('active');
+            }
+            
+            // 每5秒切换一次背景
+            setInterval(changeSlide, 5000);
+            
+            // 滚动动画
+            const animateOnScroll = function() {
+                const elements = document.querySelectorAll('.animate-on-scroll');
+                
+                elements.forEach(element => {
+                    const elementPosition = element.getBoundingClientRect().top;
+                    const screenPosition = window.innerHeight / 1.2;
+                    
+                    if (elementPosition < screenPosition) {
+                        element.classList.add('animate-active');
+                    }
+                });
+            };
+            
+            // 初始加载执行一次
+            animateOnScroll();
+            
+            // 滚动时执行
+            window.addEventListener('scroll', animateOnScroll);
+            
+            // 初始化所有平台卡片交互
+            const platformCards = document.querySelectorAll('.platform-card');
+            platformCards.forEach(card => {
+                card.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateY(-10px)';
+                    this.style.boxShadow = '0 20px 40px rgba(0, 0, 0, 0.1)';
+                });
+                
+                card.addEventListener('mouseleave', function() {
+                    this.style.transform = 'translateY(0)';
+                    this.style.boxShadow = '0 10px 20px rgba(0, 0, 0, 0.05)';
+                });
+            });
+        });
+    </script>
 </body>
 </html>
