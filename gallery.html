@@ -1,0 +1,812 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-i18n="nav_gallery">Moments & Gallery - Playfluence</title>
+    <meta name="description" content="Capture the essence of experiences curated by Playfluence. Explore our gallery of unforgettable moments.">
+    
+    <!-- 字体和图标 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- CSS文件 -->
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/design.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+</head>
+<body>
+    <!-- 页面加载器 -->
+    <div class="page-loader">
+        <div class="loader-content">
+            <div class="logo-text">PF</div>
+            <div class="loading"></div>
+        </div>
+    </div>
+
+    <!-- 垂直导航栏 -->
+    <nav class="vertical-nav">
+        <div class="nav-logo">
+            <div class="logo-text">PF</div>
+        </div>
+        
+        <ul class="nav-menu">
+            <li class="nav-item">
+                <a href="index.html" class="nav-link">
+                    <span class="nav-text" data-i18n="nav_home">HOME</span>
+                    <span class="nav-dot"></span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="about/index.html" class="nav-link">
+                    <span class="nav-text" data-i18n="nav_about">ABOUT</span>
+                    <span class="nav-dot"></span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="services/index.html" class="nav-link">
+                    <span class="nav-text" data-i18n="nav_services">SERVICES</span>
+                    <span class="nav-dot"></span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="insights/index.html" class="nav-link">
+                    <span class="nav-text" data-i18n="nav_insights">INSIGHTS</span>
+                    <span class="nav-dot"></span>
+                </a>
+            </li>
+            <li class="nav-item active">
+                <a href="gallery.html" class="nav-link">
+                    <span class="nav-text" data-i18n="nav_gallery">GALLERY</span>
+                    <span class="nav-dot"></span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="sustainability.html" class="nav-link">
+                    <span class="nav-text" data-i18n="nav_sustainability">SUSTAINABLE</span>
+                    <span class="nav-dot"></span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="contact.html" class="nav-link">
+                    <span class="nav-text" data-i18n="nav_contact">CONTACT</span>
+                    <span class="nav-dot"></span>
+                </a>
+            </li>
+        </ul>
+        
+        <!-- 语言切换器 -->
+        <div class="nav-language">
+            <div class="language-switcher">
+                <button class="lang-btn active" data-lang="en">EN</button>
+                <button class="lang-btn" data-lang="zh">中文</button>
+                <button class="lang-btn" data-lang="ja">日本語</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 主要内容 -->
+    <main class="main-content">
+        <!-- 页面标题横幅 -->
+        <section class="page-hero">
+            <div class="bg-slider">
+                <div class="bg-slide active" style="background: linear-gradient(135deg, var(--primary-color), var(--dark-color));"></div>
+                <!-- TODO: 可以在此处添加一张图库相关的背景图 -->
+                <!-- <div class="bg-slide" style="background-image: url('images/backgrounds/gallery-bg.jpg');"></div> -->
+            </div>
+            
+            <div class="page-hero-content">
+                <h1 class="page-title" data-i18n="gallery_title">Moments & Gallery</h1>
+                <p class="page-subtitle" data-i18n="gallery_subtitle">Capturing the essence of experiences curated by Playfluence</p>
+            </div>
+        </section>
+
+        <!-- 图库分类 -->
+        <section class="section">
+            <div class="container">
+                <div class="gallery-filters animate-on-scroll">
+                    <div class="filter-buttons">
+                        <button class="filter-btn active" data-filter="all">
+                            <i class="fas fa-th"></i>
+                            <span data-i18n="gallery_all">All Photos</span>
+                        </button>
+                        <button class="filter-btn" data-filter="family">
+                            <i class="fas fa-users"></i>
+                            <span data-i18n="gallery_family">Family Joy</span>
+                        </button>
+                        <button class="filter-btn" data-filter="cultural">
+                            <i class="fas fa-landmark"></i>
+                            <span data-i18n="gallery_cultural">Cultural Immersion</span>
+                        </button>
+                        <button class="filter-btn" data-filter="nature">
+                            <i class="fas fa-tree"></i>
+                            <span data-i18n="gallery_nature">Nature & Discovery</span>
+                        </button>
+                        <button class="filter-btn" data-filter="events">
+                            <i class="fas fa-calendar-alt"></i>
+                            <span data-i18n="gallery_events">Events & Celebrations</span>
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- 图库网格 -->
+                <div class="gallery-grid animate-on-scroll">
+                    <!-- 图片1: 家庭欢乐 -->
+                    <div class="gallery-item" data-category="family">
+                        <div class="gallery-image">
+                            <!-- TODO: 插入京都家庭茶道体验的图片 -->
+                            <img src="images/gallery/family-tea-ceremony-kyoto.jpg" alt="Three generations enjoying traditional Japanese tea ceremony together in Kyoto" class="gallery-img">
+                        </div>
+                        <div class="gallery-caption">
+                            <h3 data-i18n="gallery_family_kyoto">Family Happiness in Kyoto</h3>
+                            <p data-i18n="gallery_family_kyoto_desc">京都，私密茶道体验中的宁静一刻 | A moment of serenity during a private tea ceremony in Kyoto.</p>
+                            <span class="photo-category">Family Joy</span>
+                        </div>
+                    </div>
+                    
+                    <!-- 图片2: 文化沉浸 -->
+                    <div class="gallery-item" data-category="cultural">
+                        <div class="gallery-image">
+                            <!-- TODO: 插入传统茶道学习的图片 -->
+                            <img src="images/gallery/traditional-tea-ceremony.jpg" alt="Learning the art of Japanese tea preparation from a master tea ceremony practitioner" class="gallery-img">
+                        </div>
+                        <div class="gallery-caption">
+                            <h3 data-i18n="gallery_tea_ceremony">Traditional Tea Ceremony</h3>
+                            <p data-i18n="gallery_tea_ceremony_desc">Learning the ancient art of Japanese tea preparation from a master tea ceremony practitioner.</p>
+                            <span class="photo-category">Cultural Immersion</span>
+                        </div>
+                    </div>
+                    
+                    <!-- 图片3: 自然发现 -->
+                    <div class="gallery-item" data-category="nature">
+                        <div class="gallery-image">
+                            <!-- TODO: 插入岚山竹林的图片 -->
+                            <img src="images/gallery/arashiyama-bamboo-forest.jpg" alt="Walking through the mesmerizing bamboo groves of Arashiyama, Kyoto" class="gallery-img">
+                        </div>
+                        <div class="gallery-caption">
+                            <h3 data-i18n="gallery_arashiyama">Arashiyama Bamboo Forest</h3>
+                            <p data-i18n="gallery_arashiyama_desc">Walking through the mesmerizing bamboo groves of Arashiyama, Kyoto with family.</p>
+                            <span class="photo-category">Nature & Discovery</span>
+                        </div>
+                    </div>
+                    
+                    <!-- 图片4: 活动庆典 -->
+                    <div class="gallery-item" data-category="events">
+                        <div class="gallery-image">
+                            <!-- TODO: 插入大阪环球影城任天堂世界的图片 -->
+                            <img src="images/gallery/usj-nintendo-world.jpg" alt="Family fun at Nintendo World in Universal Studios Japan, Osaka" class="gallery-img">
+                        </div>
+                        <div class="gallery-caption">
+                            <h3 data-i18n="gallery_nintendo_world">Universal Studios Japan Celebration</h3>
+                            <p data-i18n="gallery_nintendo_world_desc">Family fun at Nintendo World in Universal Studios Japan, Osaka.</p>
+                            <span class="photo-category">Events & Celebrations</span>
+                        </div>
+                    </div>
+                    
+                    <!-- 图片5: 家庭欢乐 -->
+                    <div class="gallery-item" data-category="family">
+                        <div class="gallery-image">
+                            <!-- TODO: 插入东京城市观光中代际交流的图片 -->
+                            <img src="images/gallery/tokyo-generational-bonding.jpg" alt="Grandparents sharing stories with grandchildren during Tokyo city tour" class="gallery-img">
+                        </div>
+                        <div class="gallery-caption">
+                            <h3 data-i18n="gallery_tokyo_bonding">Generational Bonding</h3>
+                            <p data-i18n="gallery_tokyo_bonding_desc">Grandparents sharing stories with grandchildren during Tokyo city tour.</p>
+                            <span class="photo-category">Family Joy</span>
+                        </div>
+                    </div>
+                    
+                    <!-- 图片6: 文化沉浸 -->
+                    <div class="gallery-item" data-category="cultural">
+                        <div class="gallery-image">
+                            <!-- TODO: 插入伏见稻荷大社鸟居的图片 -->
+                            <img src="images/gallery/fushimi-inari-shrine.jpg" alt="Walking through the iconic torii gates of Fushimi Inari Taisha in Kyoto" class="gallery-img">
+                        </div>
+                        <div class="gallery-caption">
+                            <h3 data-i18n="gallery_fushimi_inari">Fushimi Inari Shrine</h3>
+                            <p data-i18n="gallery_fushimi_inari_desc">Walking through the iconic torii gates of Fushimi Inari Taisha in Kyoto.</p>
+                            <span class="photo-category">Cultural Immersion</span>
+                        </div>
+                    </div>
+                    
+                    <!-- 图片7: 自然发现 -->
+                    <div class="gallery-item" data-category="nature">
+                        <div class="gallery-image">
+                            <!-- TODO: 插入富士山景观的图片 -->
+                            <img src="images/gallery/mount-fuji-view.jpg" alt="Breathtaking view of Mount Fuji from the shores of Lake Kawaguchi" class="gallery-img">
+                        </div>
+                        <div class="gallery-caption">
+                            <h3 data-i18n="gallery_mount_fuji">Mount Fuji View</h3>
+                            <p data-i18n="gallery_mount_fuji_desc">Breathtaking view of Mount Fuji from the shores of Lake Kawaguchi.</p>
+                            <span class="photo-category">Nature & Discovery</span>
+                        </div>
+                    </div>
+                    
+                    <!-- 图片8: 活动庆典 -->
+                    <div class="gallery-item" data-category="events">
+                        <div class="gallery-image">
+                            <!-- TODO: 插入日本夏日祭典的图片 -->
+                            <img src="images/gallery/japanese-summer-festival.jpg" alt="Participating in traditional Japanese summer festival with yukata wearing" class="gallery-img">
+                        </div>
+                        <div class="gallery-caption">
+                            <h3 data-i18n="gallery_summer_festival">Summer Festival Experience</h3>
+                            <p data-i18n="gallery_summer_festival_desc">Participating in traditional Japanese summer festival with yukata wearing.</p>
+                            <span class="photo-category">Events & Celebrations</span>
+                        </div>
+                    </div>
+                    
+                    <!-- 图片9: 家庭欢乐 -->
+                    <div class="gallery-item" data-category="family">
+                        <div class="gallery-image">
+                            <!-- TODO: 插入大阪任天堂世界体验的图片 -->
+                            <img src="images/gallery/super-nintendo-world.jpg" alt="Children experiencing the magic of Super Nintendo World in Osaka" class="gallery-img">
+                        </div>
+                        <div class="gallery-caption">
+                            <h3 data-i18n="gallery_nintendo_adventure">Nintendo World Adventure</h3>
+                            <p data-i18n="gallery_nintendo_adventure_desc">Children experiencing the magic of Super Nintendo World in Osaka.</p>
+                            <span class="photo-category">Family Joy</span>
+                        </div>
+                    </div>
+                    
+                    <!-- 图片10: 文化沉浸 -->
+                    <div class="gallery-item" data-category="cultural">
+                        <div class="gallery-image">
+                            <!-- TODO: 插入传统工艺工作坊的图片 -->
+                            <img src="images/gallery/traditional-craft-workshop.jpg" alt="Learning traditional Japanese drum making from local artisans" class="gallery-img">
+                        </div>
+                        <div class="gallery-caption">
+                            <h3 data-i18n="gallery_craft_workshop">Traditional Craft Workshop</h3>
+                            <p data-i18n="gallery_craft_workshop_desc">Learning traditional Japanese drum making from local artisans.</p>
+                            <span class="photo-category">Cultural Immersion</span>
+                        </div>
+                    </div>
+                    
+                    <!-- 图片11: 自然发现 -->
+                    <div class="gallery-item" data-category="nature">
+                        <div class="gallery-image">
+                            <!-- TODO: 插入大阪海游馆海洋生物学习的图片 -->
+                            <img src="images/gallery/osaka-aquarium-discovery.jpg" alt="Children learning about marine life at Osaka Aquarium Kaiyukan" class="gallery-img">
+                        </div>
+                        <div class="gallery-caption">
+                            <h3 data-i18n="gallery_ocean_discovery">Ocean Park Discovery</h3>
+                            <p data-i18n="gallery_ocean_discovery_desc">Children learning about marine life at Osaka Aquarium Kaiyukan.</p>
+                            <span class="photo-category">Nature & Discovery</span>
+                        </div>
+                    </div>
+                    
+                    <!-- 图片12: 活动庆典 -->
+                    <div class="gallery-item" data-category="events">
+                        <div class="gallery-image">
+                            <!-- TODO: 插入文化学习证书授予仪式的图片 -->
+                            <img src="images/gallery/cultural-learning-ceremony.jpg" alt="Certificate presentation after completing traditional Japanese arts workshop" class="gallery-img">
+                        </div>
+                        <div class="gallery-caption">
+                            <h3 data-i18n="gallery_learning_ceremony">Cultural Learning Ceremony</h3>
+                            <p data-i18n="gallery_learning_ceremony_desc">Certificate presentation after completing traditional Japanese arts workshop.</p>
+                            <span class="photo-category">Events & Celebrations</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 加载更多按钮 -->
+                <div class="text-center mt-5">
+                    <button class="btn btn-outline" id="load-more-btn">
+                        <i class="fas fa-plus"></i>
+                        <span data-i18n="explore_more">Load More Photos</span>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- 图库描述 -->
+        <section class="section bg-light">
+            <div class="container">
+                <div class="gallery-description">
+                    <h2 class="section-title">Visual Standards Note</h2>
+                    <p class="section-subtitle" style="max-width: 800px; margin: 0 auto;">
+                        All images in this gallery are carefully curated to ensure high definition, professional composition, genuine emotion, and strict adherence to our brand ethos. They represent our commitment to "high-quality, high-relevance" experiences. Each moment captures authentic joy, cultural immersion, and family connection.
+                    </p>
+                    
+                    <div class="gallery-stats grid grid-4 mt-5">
+                        <div class="stat-item">
+                            <div class="stat-number">500+</div>
+                            <div class="stat-text">Curated Moments</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">47</div>
+                            <div class="stat-text">Destinations Covered</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">100%</div>
+                            <div class="stat-text">Authentic Experiences</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">24/7</div>
+                            <div class="stat-text">Professional Capture</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 页脚 -->
+        <footer class="main-footer">
+            <div class="container">
+                <div class="footer-grid">
+                    <div class="footer-col">
+                        <div class="footer-logo">Playfluence</div>
+                        <p data-i18n="hero_description">Pioneering recreation marketing through creativity and data intelligence</p>
+                        <div class="social-links">
+                            <a href="#" class="social-link"><i class="fab fa-weixin"></i></a>
+                            <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                        </div>
+                    </div>
+                    
+                    <div class="footer-col">
+                        <h4 data-i18n="nav_services">Our Services</h4>
+                        <ul class="footer-links">
+                            <li><a href="services/index.html" data-i18n="nav_core_services">Core Services</a></li>
+                            <li><a href="services/golden-route.html" data-i18n="nav_golden_route">Golden Route Tour</a></li>
+                            <li><a href="services/pricing.html" data-i18n="nav_pricing">Pricing</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-col">
+                        <h4 data-i18n="nav_about">About Us</h4>
+                        <ul class="footer-links">
+                            <li><a href="about/index.html" data-i18n="nav_company">Company Profile</a></li>
+                            <li><a href="about/leadership.html" data-i18n="nav_leadership">Leadership Team</a></li>
+                            <li><a href="insights/partners.html" data-i18n="nav_partners">Partnerships</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-col">
+                        <h4 data-i18n="nav_contact">Contact</h4>
+                        <p><i class="fas fa-envelope"></i> info@playfluence.com</p>
+                        <p><i class="fas fa-map-marker-alt"></i> Shanghai, China</p>
+                        <p><i class="fas fa-globe"></i> Global Focus</p>
+                    </div>
+                </div>
+                
+                <div class="footer-bottom">
+                    <p data-i18n="footer_rights">© 2023 Playfluence. All rights reserved.</p>
+                    <p>
+                        <a href="#" data-i18n="footer_privacy">Privacy Policy</a> | 
+                        <a href="#" data-i18n="footer_terms">Terms of Service</a>
+                    </p>
+                </div>
+            </div>
+        </footer>
+    </main>
+
+    <!-- 移动端菜单按钮 -->
+    <button class="mobile-menu-btn">
+        <i class="fas fa-bars"></i>
+    </button>
+
+    <!-- 图库模态框 -->
+    <div id="gallery-modal" class="gallery-modal">
+        <div class="modal-content">
+            <button class="modal-close">
+                <i class="fas fa-times"></i>
+            </button>
+            <div class="modal-image-container">
+                <img src="" alt="" id="modal-image">
+            </div>
+            <div class="modal-caption">
+                <h3 id="modal-title"></h3>
+                <p id="modal-description"></p>
+                <span class="modal-category" id="modal-category"></span>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript文件 -->
+    <script src="js/language-manager.js"></script>
+    <script src="js/main.js"></script>
+    
+    <!-- 图库特定脚本和样式 -->
+    <script>
+        // 图库功能
+        document.addEventListener('DOMContentLoaded', function() {
+            // 过滤器功能
+            const filterButtons = document.querySelectorAll('.filter-btn');
+            const galleryItems = document.querySelectorAll('.gallery-item');
+            
+            filterButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    // 更新活动按钮
+                    filterButtons.forEach(btn => btn.classList.remove('active'));
+                    this.classList.add('active');
+                    
+                    const filter = this.getAttribute('data-filter');
+                    
+                    // 过滤图库项目
+                    galleryItems.forEach(item => {
+                        if (filter === 'all' || item.getAttribute('data-category') === filter) {
+                            item.style.display = 'block';
+                            setTimeout(() => {
+                                item.style.opacity = '1';
+                                item.style.transform = 'scale(1)';
+                            }, 100);
+                        } else {
+                            item.style.opacity = '0';
+                            item.style.transform = 'scale(0.8)';
+                            setTimeout(() => {
+                                item.style.display = 'none';
+                            }, 300);
+                        }
+                    });
+                });
+            });
+            
+            // 加载更多功能
+            const loadMoreBtn = document.getElementById('load-more-btn');
+            if (loadMoreBtn) {
+                loadMoreBtn.addEventListener('click', function() {
+                    // 模拟加载更多图片
+                    const loadingText = this.querySelector('span');
+                    const originalText = loadingText.textContent;
+                    
+                    loadingText.textContent = 'Loading...';
+                    this.disabled = true;
+                    
+                    setTimeout(() => {
+                        // 这里可以添加实际加载更多图片的逻辑
+                        alert('More photos would be loaded in a real implementation');
+                        
+                        loadingText.textContent = originalText;
+                        this.disabled = false;
+                    }, 1000);
+                });
+            }
+            
+            // 图片点击模态框
+            const modal = document.getElementById('gallery-modal');
+            const modalImage = document.getElementById('modal-image');
+            const modalTitle = document.getElementById('modal-title');
+            const modalDescription = document.getElementById('modal-description');
+            const modalCategory = document.getElementById('modal-category');
+            const modalClose = document.querySelector('.modal-close');
+            
+            galleryItems.forEach(item => {
+                item.addEventListener('click', function() {
+                    const galleryImg = this.querySelector('.gallery-img');
+                    const caption = this.querySelector('.gallery-caption');
+                    const title = caption.querySelector('h3').textContent;
+                    const description = caption.querySelector('p').textContent;
+                    const category = caption.querySelector('.photo-category').textContent;
+                    
+                    // 设置模态框内容
+                    modalImage.src = galleryImg.src;
+                    modalTitle.textContent = title;
+                    modalDescription.textContent = description;
+                    modalCategory.textContent = category;
+                    
+                    // 显示模态框
+                    modal.style.display = 'flex';
+                    document.body.style.overflow = 'hidden';
+                });
+            });
+            
+            // 关闭模态框
+            modalClose.addEventListener('click', function() {
+                modal.style.display = 'none';
+                document.body.style.overflow = '';
+            });
+            
+            // 点击模态框背景关闭
+            modal.addEventListener('click', function(e) {
+                if (e.target === modal) {
+                    modal.style.display = 'none';
+                    document.body.style.overflow = '';
+                }
+            });
+            
+            // ESC键关闭模态框
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape' && modal.style.display === 'flex') {
+                    modal.style.display = 'none';
+                    document.body.style.overflow = '';
+                }
+            });
+            
+            // 页面加载完成后移除加载器
+            window.addEventListener('load', function() {
+                const loader = document.querySelector('.page-loader');
+                if (loader) {
+                    loader.style.display = 'none';
+                }
+            });
+        });
+    </script>
+    
+    <style>
+        /* 图库特定样式 */
+        .gallery-filters {
+            margin-bottom: 3rem;
+            text-align: center;
+        }
+        
+        .filter-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            justify-content: center;
+        }
+        
+        .filter-btn {
+            padding: 0.75rem 1.5rem;
+            background: white;
+            border: 2px solid var(--border-color);
+            border-radius: var(--radius-full);
+            font-weight: 600;
+            color: var(--text-light);
+            cursor: pointer;
+            transition: all var(--transition-normal);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .filter-btn:hover {
+            border-color: var(--primary-color);
+            color: var(--primary-color);
+            transform: translateY(-2px);
+        }
+        
+        .filter-btn.active {
+            background: var(--gradient-primary);
+            color: white;
+            border-color: transparent;
+        }
+        
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .gallery-item {
+            background: white;
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            box-shadow: var(--shadow-md);
+            transition: all var(--transition-normal);
+            cursor: pointer;
+            position: relative;
+        }
+        
+        .gallery-item:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-xl);
+        }
+        
+        .gallery-image {
+            height: 250px;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        /* 图库图片样式 */
+        .gallery-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform var(--transition-slow);
+        }
+        
+        .gallery-item:hover .gallery-img {
+            transform: scale(1.1);
+        }
+        
+        .gallery-caption {
+            padding: 1.5rem;
+            position: relative;
+        }
+        
+        .gallery-caption h3 {
+            margin-bottom: 0.5rem;
+            color: var(--dark-color);
+            font-size: 1.25rem;
+        }
+        
+        .gallery-caption p {
+            color: var(--text-light);
+            font-size: 0.95rem;
+            margin-bottom: 1rem;
+            line-height: 1.5;
+        }
+        
+        .photo-category {
+            display: inline-block;
+            padding: 0.25rem 0.75rem;
+            background: var(--primary-color);
+            color: white;
+            border-radius: var(--radius-full);
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+        
+        .gallery-stats {
+            margin-top: 3rem;
+        }
+        
+        .stat-item {
+            text-align: center;
+            padding: 1.5rem;
+        }
+        
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 800;
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            margin-bottom: 0.5rem;
+        }
+        
+        .stat-text {
+            font-size: 1rem;
+            color: var(--text-light);
+            font-weight: 600;
+        }
+        
+        /* 模态框样式 */
+        .gallery-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.9);
+            z-index: 2000;
+            align-items: center;
+            justify-content: center;
+            padding: 1rem;
+        }
+        
+        .gallery-modal.active {
+            display: flex;
+        }
+        
+        .modal-content {
+            background: white;
+            border-radius: var(--radius-lg);
+            max-width: 800px;
+            width: 100%;
+            max-height: 90vh;
+            overflow-y: auto;
+            position: relative;
+            animation: modalIn 0.3s ease;
+        }
+        
+        @keyframes modalIn {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .modal-close {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: var(--primary-color);
+            color: white;
+            border: none;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            cursor: pointer;
+            z-index: 2001;
+            transition: all var(--transition-normal);
+        }
+        
+        .modal-close:hover {
+            background: var(--secondary-color);
+            transform: rotate(90deg);
+        }
+        
+        .modal-image-container {
+            width: 100%;
+            height: 400px;
+            overflow: hidden;
+        }
+        
+        #modal-image {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            background: #f5f5f5;
+        }
+        
+        .modal-caption {
+            padding: 2rem;
+        }
+        
+        .modal-caption h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--dark-color);
+        }
+        
+        .modal-caption p {
+            color: var(--text-light);
+            margin-bottom: 1rem;
+            line-height: 1.6;
+        }
+        
+        .modal-category {
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            background: var(--primary-color);
+            color: white;
+            border-radius: var(--radius-full);
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+        
+        /* 响应式设计 */
+        @media (max-width: 768px) {
+            .gallery-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+            
+            .filter-buttons {
+                flex-direction: column;
+                align-items: stretch;
+            }
+            
+            .filter-btn {
+                width: 100%;
+                justify-content: center;
+            }
+            
+            .gallery-stats {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .modal-content {
+                max-height: 95vh;
+            }
+            
+            .modal-image-container {
+                height: 300px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .gallery-stats {
+                grid-template-columns: 1fr;
+            }
+            
+            .modal-caption {
+                padding: 1.5rem;
+            }
+            
+            .modal-caption h3 {
+                font-size: 1.25rem;
+            }
+        }
+    </style>
+</body>
+</html>

@@ -1,0 +1,520 @@
+/* ===== 大屏幕设备 (1200px以上) ===== */
+@media (min-width: 1200px) {
+    .container {
+        max-width: 1140px;
+    }
+    
+    .hero-title {
+        font-size: 5rem;
+    }
+}
+
+/* ===== 平板设备 (768px-1024px) ===== */
+@media (max-width: 1024px) {
+    /* 导航栏调整 */
+    .vertical-nav {
+        left: 1rem;
+        width: 70px;
+        padding: 1.5rem 0.75rem;
+    }
+    
+    .main-content {
+        margin-left: 100px;
+    }
+    
+    .logo-text {
+        font-size: 1.5rem;
+    }
+    
+    .nav-text {
+        font-size: 0.65rem;
+    }
+    
+    /* 英雄区域调整 */
+    .hero-title {
+        font-size: 3.5rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 1.5rem;
+    }
+    
+    .hero-description {
+        font-size: 1.1rem;
+    }
+    
+    /* 页面标题调整 */
+    .page-title {
+        font-size: 3rem;
+    }
+    
+    /* 网格系统调整 */
+    .grid-4 {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    /* 旅程亮点调整 */
+    .journey-highlights {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    /* 使命愿景网格 */
+    .mission-vision-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+}
+
+/* ===== 平板设备 (768px以下) ===== */
+@media (max-width: 768px) {
+    /* 导航栏调整为移动端菜单 */
+    .vertical-nav {
+        left: -100%;
+        top: 0;
+        transform: none;
+        height: 100vh;
+        width: 280px;
+        padding: 2rem;
+        background: var(--dark-color);
+        box-shadow: var(--shadow-xl);
+        transition: left var(--transition-normal);
+    }
+    
+    .vertical-nav.active {
+        left: 0;
+    }
+    
+    .nav-text {
+        font-size: 0.9rem;
+        color: rgba(255, 255, 255, 0.8);
+    }
+    
+    .nav-link:hover .nav-text {
+        color: white;
+    }
+    
+    .nav-dot {
+        background-color: rgba(255, 255, 255, 0.3);
+    }
+    
+    .nav-item.active .nav-dot,
+    .nav-link:hover .nav-dot {
+        background-color: var(--primary-color);
+        box-shadow: 0 0 0 3px rgba(78, 205, 196, 0.3);
+    }
+    
+    /* 显示移动端菜单按钮 */
+    .mobile-menu-btn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    /* 主要内容区域调整 */
+    .main-content {
+        margin-left: 0;
+        padding-top: 80px; /* 为移动菜单按钮留出空间 */
+    }
+    
+    /* 英雄区域调整 */
+    .hero-section {
+        height: 90vh;
+        min-height: 600px;
+    }
+    
+    .hero-content {
+        padding: 1rem;
+    }
+    
+    .hero-title {
+        font-size: 2.5rem;
+        margin-bottom: 1rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 1.3rem;
+        margin-bottom: 1.5rem;
+    }
+    
+    .hero-description {
+        font-size: 1rem;
+        margin-bottom: 2rem;
+    }
+    
+    /* 按钮组调整 */
+    .btn-group {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    .btn {
+        width: 100%;
+        margin: 0;
+    }
+    
+    /* 页面标题调整 */
+    .page-hero {
+        height: 50vh;
+        min-height: 300px;
+    }
+    
+    .page-title {
+        font-size: 2.5rem;
+    }
+    
+    .page-subtitle {
+        font-size: 1.2rem;
+    }
+    
+    /* 容器内边距调整 */
+    .container {
+        padding: 0 1.5rem;
+    }
+    
+    .section {
+        padding: 3rem 0;
+    }
+    
+    .section-lg {
+        padding: 5rem 0;
+    }
+    
+    /* 网格系统调整 */
+    .grid-2,
+    .grid-3,
+    .grid-4 {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    /* 卡片内容调整 */
+    .card {
+        margin-bottom: 1.5rem;
+    }
+    
+    /* 服务卡片调整 */
+    .service-card {
+        padding: 2rem 1.5rem;
+    }
+    
+    /* 团队卡片调整 */
+    .team-avatar {
+        width: 100px;
+        height: 100px;
+    }
+    
+    /* 图库调整 */
+    .gallery-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    /* 合作伙伴网格调整 */
+    .partners-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+    }
+    
+    .partner-logo {
+        padding: 1rem;
+    }
+    
+    /* 旅程亮点调整 */
+    .journey-highlights {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .highlight-card {
+        padding: 1.5rem;
+    }
+    
+    /* 价格卡片调整 */
+    .pricing-card.featured {
+        transform: none;
+        margin: 2rem 0;
+    }
+    
+    .price {
+        font-size: 3rem;
+    }
+    
+    /* 页脚调整 */
+    .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    /* 品牌解释调整 */
+    .brand-explanation {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    .logo-visual img {
+        max-width: 200px;
+    }
+    
+    /* 语言切换器调整为水平 */
+    .language-switcher {
+        flex-direction: row;
+        justify-content: center;
+    }
+    
+    .lang-btn {
+        width: 60px;
+    }
+}
+
+/* ===== 小屏幕手机 (480px以下) ===== */
+@media (max-width: 480px) {
+    .container {
+        padding: 0 1rem;
+    }
+    
+    .hero-title {
+        font-size: 2rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 1.1rem;
+    }
+    
+    .page-title {
+        font-size: 2rem;
+    }
+    
+    .page-subtitle {
+        font-size: 1rem;
+    }
+    
+    .section-title {
+        font-size: 2rem;
+    }
+    
+    .section-subtitle {
+        font-size: 1.1rem;
+    }
+    
+    h1 {
+        font-size: 2.5rem;
+    }
+    
+    h2 {
+        font-size: 2rem;
+    }
+    
+    h3 {
+        font-size: 1.5rem;
+    }
+    
+    p {
+        font-size: 1rem;
+    }
+    
+    /* 垂直导航栏宽度调整 */
+    .vertical-nav {
+        width: 250px;
+    }
+    
+    /* 合作伙伴网格调整为1列 */
+    .partners-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    /* 页脚文本大小调整 */
+    .footer-bottom {
+        font-size: 0.8rem;
+    }
+    
+    /* 按钮大小调整 */
+    .btn {
+        padding: 0.8rem 1.5rem;
+        font-size: 0.9rem;
+    }
+    
+    /* 卡片内边距调整 */
+    .card-body {
+        padding: 1rem;
+    }
+    
+    .mission-card,
+    .vision-card {
+        padding: 2rem 1.5rem;
+    }
+    
+    /* 价格卡片调整 */
+    .pricing-card {
+        padding: 2rem 1rem;
+    }
+    
+    .price {
+        font-size: 2.5rem;
+    }
+}
+
+/* ===== 超小屏幕手机 (360px以下) ===== */
+@media (max-width: 360px) {
+    .hero-title {
+        font-size: 1.8rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 1rem;
+    }
+    
+    .btn {
+        padding: 0.7rem 1rem;
+        font-size: 0.85rem;
+    }
+    
+    .container {
+        padding: 0 0.75rem;
+    }
+    
+    .section {
+        padding: 2rem 0;
+    }
+    
+    .page-hero {
+        min-height: 250px;
+    }
+}
+
+/* ===== 打印样式 ===== */
+@media print {
+    .vertical-nav,
+    .mobile-menu-btn,
+    .bg-slider,
+    .scroll-indicator,
+    .btn-group,
+    .social-links {
+        display: none !important;
+    }
+    
+    .main-content {
+        margin-left: 0;
+        padding-top: 0;
+    }
+    
+    body {
+        background: white;
+        color: black;
+        font-size: 12pt;
+    }
+    
+    a {
+        color: black;
+        text-decoration: underline;
+    }
+    
+    .container {
+        max-width: 100%;
+        padding: 0;
+    }
+    
+    .section {
+        padding: 1rem 0;
+        break-inside: avoid;
+    }
+    
+    .card {
+        box-shadow: none;
+        border: 1px solid #ddd;
+    }
+    
+    .footer-bottom {
+        border-top: 1px solid #ddd;
+    }
+}
+
+/* ===== 高对比度模式支持 ===== */
+@media (prefers-contrast: high) {
+    :root {
+        --primary-color: #0066cc;
+        --secondary-color: #cc3300;
+        --accent-color: #ff9900;
+        --dark-color: #000000;
+        --light-color: #ffffff;
+        --text-color: #000000;
+        --text-light: #333333;
+        --border-color: #000000;
+    }
+    
+    .gradient-text {
+        background: none;
+        color: var(--primary-color);
+    }
+    
+    .btn-primary {
+        background: var(--primary-color);
+    }
+    
+    .glass-effect {
+        background: white;
+        border: 2px solid black;
+    }
+}
+
+/* ===== 减少动画偏好 ===== */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+    
+    .float-animation,
+    .scroll-line,
+    .gallery-item img {
+        animation: none;
+        transition: none;
+    }
+    
+    html {
+        scroll-behavior: auto;
+    }
+}
+
+/* ===== 深色模式支持 ===== */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --light-color: #1a1a1a;
+        --dark-color: #ffffff;
+        --text-color: #e0e0e0;
+        --text-light: #b0b0b0;
+        --border-color: #444444;
+    }
+    
+    body {
+        background-color: #121212;
+        color: var(--text-color);
+    }
+    
+    .card,
+    .service-card,
+    .highlight-card,
+    .mission-card,
+    .vision-card,
+    .partner-logo,
+    .pricing-card {
+        background: #2a2a2a;
+        color: var(--text-color);
+    }
+    
+    .form-control {
+        background: #2a2a2a;
+        border-color: #444444;
+        color: var(--text-color);
+    }
+    
+    .form-control:focus {
+        border-color: var(--primary-color);
+        background: #333333;
+    }
+    
+    .footer-bottom {
+        border-top-color: #444444;
+    }
+}

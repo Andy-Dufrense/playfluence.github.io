@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-i18n="nav_insights">Insights - Playfluence</title>
+    <meta name="description" content="Explore Playfluence's industry insights, target audience analysis, competitive advantages, and market trends in recreation marketing.">
+    
+    <!-- 字体和图标 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- CSS文件 -->
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/design.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+</head>
+<body>
+    <!-- 页面加载器 -->
+    <div class="page-loader">
+        <div class="loader-content">
+            <div class="logo-text">PF</div>
+            <div class="loading"></div>
+        </div>
+    </div>
+
+    <!-- 垂直导航栏 -->
+    <nav class="vertical-nav">
+        <div class="nav-logo">
+            <div class="logo-text">PF</div>
+        </div>
+        
+        <ul class="nav-menu">
+            <li class="nav-item">
+                <a href="../index.html" class="nav-link">
+                    <span class="nav-text" data-i18n="nav_home">HOME</span>
+                    <span class="nav-dot"></span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="../about/index.html" class="nav-link">
+                    <span class="nav-text" data-i18n="nav_about">ABOUT</span>
+                    <span class="nav-dot"></span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="../services/index.html" class="nav-link">
+                    <span class="nav-text" data-i18n="nav_services">SERVICES</span>
+                    <span class="nav-dot"></span>
+                </a>
+            </li>
+            <li class="nav-item active">
+                <a href="index.html" class="nav-link">
+                    <span class="nav-text" data-i18n="nav_insights">INSIGHTS</span>
+                    <span class="nav-dot"></span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="../gallery.html" class="nav-link">
+                    <span class="nav-text" data-i18n="nav_gallery">GALLERY</span>
+                    <span class="nav-dot"></span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="../sustainability.html" class="nav-link">
+                    <span class="nav-text" data-i18n="nav_sustainability">SUSTAINABLE</span>
+                    <span class="nav-dot"></span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="../contact.html" class="nav-link">
+                    <span class="nav-text" data-i18n="nav_contact">CONTACT</span>
+                    <span class="nav-dot"></span>
+                </a>
+            </li>
+        </ul>
+        
+        <!-- 语言切换器 -->
+        <div class="nav-language">
+            <div class="language-switcher">
+                <button class="lang-btn active" data-lang="en">EN</button>
+                <button class="lang-btn" data-lang="zh">中文</button>
+                <button class="lang-btn" data-lang="ja">日本語</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 主要内容 -->
+    <main class="main-content">
+        <!-- 页面标题横幅 -->
+        <section class="page-hero">
+            <div class="bg-slider">
+                <div class="bg-slide active" style="background: linear-gradient(135deg, var(--primary-color), var(--dark-color));"></div>
+                <!-- TODO: 可以在此处添加数据分析相关的背景图 -->
+                <!-- <div class="bg-slide" style="background-image: url('../images/backgrounds/insights-bg.jpg');"></div> -->
+            </div>
+            
+            <div class="page-hero-content">
+                <h1 class="page-title" data-i18n="insights_title">Industry Insights</h1>
+                <p class="page-subtitle" data-i18n="insights_subtitle">Data-driven perspectives on recreation marketing and family travel</p>
+            </div>
+        </section>
+
+        <!-- 洞察导航 -->
+        <section class="section">
+            <div class="container">
+                <div class="insights-navigation animate-on-scroll">
+                    <div class="nav-cards grid grid-4">
+                        <a href="audience.html" class="nav-card">
+                            <div class="nav-icon">
+                                <!-- TODO: 可以替换为高收入家庭图片 -->
+                                <img src="../images/insights/audience-icon.jpg" alt="High-income multi-generational family" class="nav-icon-img">
+                            </div>
+                            <h3 data-i18n="insights_nav_audience">Target Audience</h3>
+                            <p data-i18n="insights_nav_audience_desc">High-income multi-generational Chinese families</p>
+                        </a>
+                        
+                        <a href="edeg.html" class="nav-card">
+                            <div class="nav-icon">
+                                <!-- TODO: 可以替换为竞争优势图表图片 -->
+                                <img src="../images/insights/edge-icon.jpg" alt="Competitive advantage chart" class="nav-icon-img">
+                            </div>
+                            <h3 data-i18n="insights_nav_edge">Competitive Edge</h3>
+                            <p data-i18n="insights_nav_edge_desc">Our unique advantages in the market</p>
+                        </a>
+                        
+                        <a href="trends.html" class="nav-card">
+                            <div class="nav-icon">
+                                <!-- TODO: 可以替换为市场趋势图表图片 -->
+                                <img src="../images/insights/trends-icon.jpg" alt="Market trends chart" class="nav-icon-img">
+                            </div>
+                            <h3 data-i18n="insights_nav_trends">Market Trends</h3>
+                            <p data-i18n="insights_nav_trends_desc">Latest developments in recreation tourism</p>
+                        </a>
+                        
+                        <a href="marketing.html" class="nav-card">
+                            <div class="nav-icon">
+                                <!-- TODO: 可以替换为社交媒体营销图片 -->
+                                <img src="../images/insights/marketing-icon.jpg" alt="Social media marketing" class="nav-icon-img">
+                            </div>
+                            <h3 data-i18n="insights_nav_marketing">Marketing Strategy</h3>
+                            <p data-i18n="insights_nav_marketing_desc">Platform-specific approaches and campaigns</p>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 洞察图片展示 -->
+        <section class="section bg-light">
+            <div class="container">
+                <div class="insights-visualization animate-on-scroll">
+                    <!-- TODO: 插入家庭旅游数据图表演示 -->
+                    <div class="data-visualization">
+                        <img src="../images/insights/family-travel-data.jpg" alt="Family travel growth data visualization" class="img-fluid rounded shadow">
+                        <p class="text-center text-muted mt-2">Family travel spending has grown by 80% in the past 3 years</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 特色洞察 -->
+        <section class="section bg-light">
+            <div class="container">
+                <h2 class="section-title text-center" data-i18n="insights_featured">Featured Insights</h2>
+                <p class="section-subtitle text-center" data-i18n="insights_featured_sub">Key findings from our research and analysis</p>
+                
+                <div class="featured-insights animate-on-scroll">
+                    <div class="insight-card">
+                        <div class="insight-image">
+                            <!-- TODO: 插入多代同堂旅行图片 -->
+                            <img src="../images/insights/multi-gen-travel.jpg" alt="Multi-generational family traveling together" class="insight-img">
+                        </div>
+                        <div class="insight-header">
+                            <span class="insight-category" data-i18n="insight_category_demographic">Demographics</span>
+                            <span class="insight-date">2023</span>
+                        </div>
+                        <h3 class="insight-title" data-i18n="insight_title1">The Rise of Multi-Generational Travel</h3>
+                        <p class="insight-excerpt" data-i18n="insight_excerpt1">Chinese families are increasingly traveling with grandparents, creating demand for experiences that cater to all age groups simultaneously.</p>
+                        <a href="audience.html" class="insight-link" data-i18n="insight_readmore">Read More →</a>
+                    </div>
+                    
+                    <div class="insight-card">
+                        <div class="insight-image">
+                            <!-- TODO: 插入寓教于乐体验图片 -->
+                            <img src="../images/insights/edutainment-experience.jpg" alt="Children learning through play in educational setting" class="insight-img">
+                        </div>
+                        <div class="insight-header">
+                            <span class="insight-category" data-i18n="insight_category_trend">Trends</span>
+                            <span class="insight-date">2023</span>
+                        </div>
+                        <h3 class="insight-title" data-i18n="insight_title2">Edutainment as Market Differentiator</h3>
+                        <p class="insight-excerpt" data-i18n="insight_excerpt2">Families are prioritizing experiences that combine education with entertainment, willing to pay premium for meaningful learning.</p>
+                        <a href="trends.html" class="insight-link" data-i18n="insight_readmore">Read More →</a>
+                    </div>
+                    
+                    <div class="insight-card">
+                        <div class="insight-image">
+                            <!-- TODO: 插入社交媒体影响图片 -->
+                            <img src="../images/insights/social-media-influence.jpg" alt="Social media apps influencing travel decisions" class="insight-img">
+                        </div>
+                        <div class="insight-header">
+                            <span class="insight-category" data-i18n="insight_category_strategy">Strategy</span>
+                            <span class="insight-date">2023</span>
+                        </div>
+                        <h3 class="insight-title" data-i18n="insight_title3">Social Media's Role in Travel Decisions</h3>
+                        <p class="insight-excerpt" data-i18n="insight_excerpt3">85% of affluent Chinese families use Xiaohongshu and Douyin for travel inspiration and planning, transforming the marketing landscape.</p>
+                        <a href="marketing.html" class="insight-link" data-i18n="insight_readmore">Read More →</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 数据统计 -->
+        <section class="section">
+            <div class="container">
+                <h2 class="section-title text-center" data-i18n="insights_data">Data Points</h2>
+                <p class="section-subtitle text-center" data-i18n="insights_data_sub">Quantitative insights from our research</p>
+                
+                <div class="data-stats grid grid-4 animate-on-scroll">
+                    <div class="data-item">
+                        <div class="data-number">80%</div>
+                        <div class="data-text" data-i18n="data_text1">Growth in family travel</div>
+                    </div>
+                    <div class="data-item">
+                        <div class="data-number">¥800K</div>
+                        <div class="data-text" data-i18n="data_text2">Average household income</div>
+                    </div>
+                    <div class="data-item">
+                        <div class="data-number">3x</div>
+                        <div class="data-text" data-i18n="data_text3">Higher spending on experiences</div>
+                    </div>
+                    <div class="data-item">
+                        <div class="data-number">25%</div>
+                        <div class="data-text" data-i18n="data_text4">Higher revisit rates with us</div>
+                    </div>
+                </div>
+                
+                <!-- 数据图表展示 -->
+                <div class="data-charts mt-5 animate-on-scroll">
+                    <!-- TODO: 插入家庭旅游支出增长图表 -->
+                    <div class="data-chart">
+                        <img src="../images/insights/travel-spending-chart.jpg" alt="Family travel spending growth chart" class="img-fluid rounded shadow">
+                        <p class="text-center text-muted mt-2">Family travel spending has shifted from goods to immersive experiences</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 页脚 -->
+        <footer class="main-footer">
+            <div class="container">
+                <div class="footer-grid">
+                    <div class="footer-col">
+                        <div class="footer-logo">Playfluence</div>
+                        <p data-i18n="hero_description">Pioneering recreation marketing through creativity and data intelligence</p>
+                        <div class="social-links">
+                            <a href="#" class="social-link"><i class="fab fa-weixin"></i></a>
+                            <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                        </div>
+                    </div>
+                    
+                    <div class="footer-col">
+                        <h4 data-i18n="nav_services">Our Services</h4>
+                        <ul class="footer-links">
+                            <li><a href="../services/index.html" data-i18n="nav_core_services">Core Services</a></li>
+                            <li><a href="../services/golden-route.html" data-i18n="nav_golden_route">Golden Route Tour</a></li>
+                            <li><a href="../services/pricing.html" data-i18n="nav_pricing">Pricing</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-col">
+                        <h4 data-i18n="nav_about">About Us</h4>
+                        <ul class="footer-links">
+                            <li><a href="../about/index.html" data-i18n="nav_company">Company Profile</a></li>
+                            <li><a href="../about/leadership.html" data-i18n="nav_leadership">Leadership Team</a></li>
+                            <li><a href="partners.html" data-i18n="nav_partners">Partnerships</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-col">
+                        <h4 data-i18n="nav_contact">Contact</h4>
+                        <p><i class="fas fa-envelope"></i> info@playfluence.com</p>
+                        <p><i class="fas fa-map-marker-alt"></i> Shanghai, China</p>
+                        <p><i class="fas fa-globe"></i> Global Focus</p>
+                    </div>
+                </div>
+                
+                <div class="footer-bottom">
+                    <p data-i18n="footer_rights">© 2023 Playfluence. All rights reserved.</p>
+                    <p>
+                        <a href="#" data-i18n="footer_privacy">Privacy Policy</a> | 
+                        <a href="#" data-i18n="footer_terms">Terms of Service</a>
+                    </p>
+                </div>
+            </div>
+        </footer>
+    </main>
+
+    <!-- 移动端菜单按钮 -->
+    <button class="mobile-menu-btn">
+        <i class="fas fa-bars"></i>
+    </button>
+
+    <!-- JavaScript文件 -->
+    <script src="../js/language-manager.js"></script>
+    <script src="../js/main.js"></script>
+    
+    <style>
+        /* 洞察页面特定样式 */
+        .insights-navigation {
+            margin-top: 2rem;
+        }
+        
+        .nav-cards {
+            gap: 2rem;
+        }
+        
+        .nav-card {
+            background: white;
+            padding: 2rem;
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-md);
+            text-align: center;
+            transition: all var(--transition-normal);
+            display: block;
+            color: inherit;
+            text-decoration: none;
+        }
+        
+        .nav-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-xl);
+            color: inherit;
+        }
+        
+        .nav-icon {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+            overflow: hidden;
+        }
+        
+        /* 导航图标图片样式 */
+        .nav-icon-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .nav-card h3 {
+            font-size: 1.4rem;
+            margin-bottom: 0.75rem;
+            color: var(--dark-color);
+        }
+        
+        .nav-card p {
+            color: var(--text-light);
+            line-height: 1.6;
+        }
+        
+        /* 洞察可视化 */
+        .insights-visualization {
+            margin: 3rem 0;
+            text-align: center;
+        }
+        
+        .data-visualization img {
+            max-width: 100%;
+            height: auto;
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-lg);
+        }
+        
+        .text-center {
+            text-align: center;
+        }
+        
+        .text-muted {
+            color: #6c757d;
+        }
+        
+        .mt-2 {
+            margin-top: 0.5rem;
+        }
+        
+        .img-fluid {
+            max-width: 100%;
+            height: auto;
+        }
+        
+        .rounded {
+            border-radius: var(--radius-lg);
+        }
+        
+        .shadow {
+            box-shadow: var(--shadow-md);
+        }
+        
+        /* 特色洞察卡片 */
+        .featured-insights {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .insight-card {
+            background: white;
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-md);
+            transition: all var(--transition-normal);
+            overflow: hidden;
+        }
+        
+        .insight-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+        
+        .insight-image {
+            height: 200px;
+            overflow: hidden;
+        }
+        
+        .insight-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform var(--transition-slow);
+        }
+        
+        .insight-card:hover .insight-img {
+            transform: scale(1.05);
+        }
+        
+        .insight-content {
+            padding: 1.5rem;
+        }
+        
+        .insight-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+            padding: 1.5rem 1.5rem 0;
+        }
+        
+        .insight-category {
+            padding: 0.25rem 0.75rem;
+            background: var(--primary-color);
+            color: white;
+            border-radius: var(--radius-full);
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+        
+        .insight-date {
+            color: var(--text-light);
+            font-size: 0.9rem;
+        }
+        
+        .insight-title {
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            color: var(--dark-color);
+            line-height: 1.4;
+            padding: 0 1.5rem;
+        }
+        
+        .insight-excerpt {
+            color: var(--text-light);
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+            padding: 0 1.5rem;
+        }
+        
+        .insight-link {
+            color: var(--primary-color);
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0 1.5rem 1.5rem;
+        }
+        
+        .insight-link:hover {
+            color: var(--secondary-color);
+        }
+        
+        /* 数据统计 */
+        .data-stats {
+            margin-top: 3rem;
+        }
+        
+        .data-item {
+            text-align: center;
+            padding: 2rem;
+        }
+        
+        .data-number {
+            font-size: 3rem;
+            font-weight: 800;
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            margin-bottom: 0.5rem;
+        }
+        
+        .data-text {
+            font-size: 1.1rem;
+            color: var(--text-light);
+            font-weight: 600;
+        }
+        
+        /* 数据图表 */
+        .data-charts {
+            margin-top: 3rem;
+        }
+        
+        .data-chart {
+            text-align: center;
+        }
+        
+        .data-chart img {
+            max-width: 100%;
+            height: auto;
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-md);
+        }
+        
+        .mt-5 {
+            margin-top: 3rem;
+        }
+        
+        /* 响应式设计 */
+        @media (max-width: 992px) {
+            .nav-cards {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .grid-4 {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .nav-cards {
+                grid-template-columns: 1fr;
+            }
+            
+            .featured-insights {
+                grid-template-columns: 1fr;
+            }
+            
+            .grid-4 {
+                grid-template-columns: 1fr;
+            }
+            
+            .nav-card {
+                padding: 1.5rem;
+            }
+            
+            .nav-icon {
+                width: 70px;
+                height: 70px;
+            }
+            
+            .insight-image {
+                height: 180px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .insight-card {
+                padding: 0;
+            }
+            
+            .data-number {
+                font-size: 2.5rem;
+            }
+            
+            .insight-header,
+            .insight-title,
+            .insight-excerpt,
+            .insight-link {
+                padding-left: 1rem;
+                padding-right: 1rem;
+            }
+        }
+    </style>
+</body>
+</html>

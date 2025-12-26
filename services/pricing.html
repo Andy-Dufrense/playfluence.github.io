@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-i18n="nav_pricing">Pricing - Playfluence</title>
+    <meta name="description" content="Discover the value of our premium Golden Route Tour experience">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/design.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+    
+    <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+    
+    <!-- 定价页面专用样式 -->
+    <style>
+        /* 价格卡片样式 */
+        .pricing-card {
+            border: 2px solid rgba(255, 215, 0, 0.2);
+            border-radius: 16px;
+            overflow: hidden;
+            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+            background: white;
+        }
+        
+        .pricing-card.featured {
+            border: 2px solid #ff9500;
+            box-shadow: 0 10px 30px rgba(255, 149, 0, 0.15);
+            transform: scale(1.02);
+        }
+        
+        .pricing-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+        }
+        
+        .pricing-header {
+            background: linear-gradient(135deg, #00b4d8 0%, #0077b6 100%);
+            color: white;
+            padding: 2rem;
+            text-align: center;
+        }
+        
+        .pricing-header.featured {
+            background: linear-gradient(135deg, #ff9500 0%, #ff6b35 100%);
+        }
+        
+        .price-amount {
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin: 1rem 0;
+            font-family: 'Montserrat', sans-serif;
+        }
+        
+        .price-period {
+            font-size: 1rem;
+            opacity: 0.9;
+        }
+        
+        .price-badge {
+            background: #ffd700;
+            color: #333;
+            padding: 0.5rem 1.5rem;
+            border-radius: 20px;
+            font-weight: 600;
+            display: inline-block;
+            margin-top: 1rem;
+        }
+        
+        /* 价值组成信息图样式 */
+        .value-infographic {
+            max-width: 800px;
+            margin: 2rem auto 3rem;
+            text-align: center;
+        }
+        
+        .infographic-image {
+            width: 100%;
+            height: auto;
+            border-radius: 12px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+        }
+        
+        /* 无形价值图片区域 */
+        .intangible-value {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            padding: 3rem 1rem;
+            border-radius: 16px;
+            margin: 3rem 0;
+        }
+        
+        .value-image-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .value-image-item {
+            text-align: center;
+        }
+        
+        .value-img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .value-img:hover {
+            transform: scale(1.05);
+        }
+        
+        .value-caption {
+            margin-top: 1rem;
+            font-weight: 600;
+            color: #333;
+        }
+        
+        /* 季节性定价表格 */
+        .seasonal-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 2rem 0;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        
+        .seasonal-table th {
+            background: linear-gradient(135deg, #00b4d8 0%, #0077b6 100%);
+            color: white;
+            padding: 1rem;
+            text-align: left;
+        }
+        
+        .seasonal-table td {
+            padding: 1rem;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .seasonal-table tr:last-child td {
+            border-bottom: none;
+        }
+        
+        .seasonal-table tr:hover {
+            background-color: #f8f9fa;
+        }
+        
+        /* 按钮样式 */
+        .btn-group {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 2rem;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 14px 32px;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 16px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            min-width: 180px;
+            text-align: center;
+        }
+        
+        .btn-primary {
+            background: linear-gradient(135deg, #00b4d8 0%, #0077b6 100%);
+            color: white;
+            box-shadow: 0 4px 15px rgba(0, 116, 217, 0.3);
+        }
+        
+        .btn-secondary {
+            background: linear-gradient(135deg, #ff9500 0%, #ff6b35 100%);
+            color: white;
+            box-shadow: 0 4px 15px rgba(255, 107, 53, 0.3);
+        }
+        
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+        }
+        
+        .btn-primary:hover {
+            background: linear-gradient(135deg, #0096c7 0%, #005f8a 100%);
+        }
+        
+        .btn-secondary:hover {
+            background: linear-gradient(135deg, #ff8500 0%, #ff5500 100%);
+        }
+        
+        /* 响应式设计 */
+        @media (max-width: 768px) {
+            .price-amount {
+                font-size: 2.5rem;
+            }
+            
+            .btn-group {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .btn {
+                width: 100%;
+                max-width: 280px;
+            }
+            
+            .value-image-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        /* 动画效果 */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .pricing-card, .value-infographic, .intangible-value {
+            animation: fadeInUp 0.6s ease-out forwards;
+            opacity: 0;
+        }
+        
+        .pricing-card:nth-child(1) { animation-delay: 0.2s; }
+        .pricing-card:nth-child(2) { animation-delay: 0.3s; }
+        .pricing-card:nth-child(3) { animation-delay: 0.4s; }
+        .value-infographic { animation-delay: 0.5s; }
+        .intangible-value { animation-delay: 0.6s; }
+        
+        /* 价值主张样式 */
+        .value-proposition {
+            background: linear-gradient(135deg, #fff9db 0%, #fff3bf 100%);
+            padding: 2rem;
+            border-radius: 12px;
+            border-left: 5px solid #ffd700;
+            margin: 2rem 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="page-loader">
+        <div class="loader-content">
+            <div class="logo-text">PF</div>
+            <div class="loading"></div>
+        </div>
+    </div>
+
+    <!-- 垂直导航栏 -->
+    <nav class="vertical-nav">
+        <div class="nav-logo">
+            <div class="logo-text">PF</div>
+        </div>
+        
+        <ul class="nav-menu">
+            <li class="nav-item">
+                <a href="../index.html" class="nav-link">
+                    <span class="nav-text" data-i18n="nav_home">HOME</span>
+                    <span class="nav-dot"></span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="../about/index.html" class="nav-link">
+                    <span class="nav-text" data-i18n="nav_about">ABOUT</span>
+                    <span class="nav-dot"></span>
+                </a>
+            </li>
+            <li class="nav-item active">
+                <a href="index.html" class="nav-link">
+                    <span class="nav-text" data-i18n="nav_services">SERVICES</span>
+                    <span class="nav-dot"></span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="../insights/index.html" class="nav-link">
+                    <span class="nav-text" data-i18n="nav_insights">INSIGHTS</span>
+                    <span class="nav-dot"></span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="../gallery.html" class="nav-link">
+                    <span class="nav-text" data-i18n="nav_gallery">GALLERY</span>
+                    <span class="nav-dot"></span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="../sustainability.html" class="nav-link">
+                    <span class="nav-text" data-i18n="nav_sustainability">SUSTAINABLE</span>
+                    <span class="nav-dot"></span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="../contact.html" class="nav-link">
+                    <span class="nav-text" data-i18n="nav_contact">CONTACT</span>
+                    <span class="nav-dot"></span>
+                </a>
+            </li>
+        </ul>
+        
+        <!-- 语言切换器 -->
+        <div class="nav-language">
+            <div class="language-switcher">
+                <button class="lang-btn active" data-lang="en">EN</button>
+                <button class="lang-btn" data-lang="zh">中文</button>
+                <button class="lang-btn" data-lang="ja">日本語</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 主要内容 -->
+    <main class="main-content">
+        <!-- 页面标题横幅 -->
+        <section class="page-hero">
+            <div class="bg-slider">
+                <div class="bg-slide active" style="background-image: url('../images/backgrounds/bg-pricing.jpg');"></div>
+            </div>
+            
+            <div class="page-hero-content">
+                <h1 class="page-title" data-i18n="pricing_title">The Golden Route Tour Pricing</h1>
+                <p class="page-subtitle" data-i18n="pricing_subtitle">Premium experience tailored for multi-generational families</p>
+            </div>
+        </section>
+
+        <!-- 主要定价区域 -->
+        <section class="section">
+            <div class="container">
+                <!-- 最终售价和价值主张 -->
+                <div class="text-center mb-5">
+                    <h2 class="section-title">Final Price: USD $6,188 per person</h2>
+                    <p class="section-subtitle" style="max-width: 800px; margin: 0 auto;">
+                        <em>Includes international flight from Shanghai</em>
+                    </p>
+                </div>
+                
+                <!-- 价值主张 -->
+                <div class="value-proposition">
+                    <h3 class="text-center mb-3">This is not just a trip; it's a hassle-free investment for premium families.</h3>
+                    <p class="text-center" style="font-size: 1.1rem;">
+                        We deliver private, customized, immersive experiences, not standard tours. Every detail is curated to create lasting memories for your family.
+                    </p>
+                </div>
+                
+                <!-- 插入图片：价值构成信息图 -->
+                <div class="value-infographic animate-on-scroll">
+                    <h3 class="text-center mb-3">Price Breakdown - What's Included</h3>
+                    <img src="../images/pricing/value-breakdown-infographic.jpg" alt="Golden Route Tour price breakdown infographic showing accommodation, transport, activities, meals, and services" class="infographic-image">
+                    <p class="image-caption mt-2">Complete breakdown of your investment in premium experiences</p>
+                </div>
+                
+                <!-- 价格构成详情 -->
+                <div class="grid grid-2 gap-4 mt-5 animate-on-scroll">
+                    <div class="pricing-details card">
+                        <h3>What You Get</h3>
+                        <ul class="feature-list">
+                            <li><i class="fas fa-check-circle text-success"></i> Accommodation (5-Star, 9 Nights)</li>
+                            <li><i class="fas fa-check-circle text-success"></i> Transport (Private Van + Shinkansen Green Car)</li>
+                            <li><i class="fas fa-check-circle text-success"></i> Activities (All Entrances + Private Workshops + USJ Express)</li>
+                            <li><i class="fas fa-check-circle text-success"></i> Meals (Curated Dining Experiences)</li>
+                            <li><i class="fas fa-check-circle text-success"></i> Services (Full-time Guide + Travel Insurance)</li>
+                            <li><i class="fas fa-check-circle text-success"></i> International Flight (Shanghai to Japan return)</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="value-explanation card">
+                        <h3>Exclusive Value</h3>
+                        <ul class="feature-list">
+                            <li><i class="fas fa-star text-warning"></i> Private Mandarin-speaking guide throughout</li>
+                            <li><i class="fas fa-star text-warning"></i> Skip-the-line access at all attractions</li>
+                            <li><i class="fas fa-star text-warning"></i> Customized family activities</li>
+                            <li><i class="fas fa-star text-warning"></i> 24/7 concierge service</li>
+                            <li><i class="fas fa-star text-warning"></i> Luxury transportation between cities</li>
+                            <li><i class="fas fa-star text-warning"></i> Premium travel insurance coverage</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- 季节性定价 -->
+                <div class="mt-5 animate-on-scroll">
+                    <h3 class="text-center mb-4">Seasonal Pricing</h3>
+                    <p class="text-center mb-4" style="max-width: 800px; margin: 0 auto;">
+                        We offer seasonal pricing to reflect demand and operational costs, ensuring consistent quality year-round.
+                    </p>
+                    
+                    <div class="grid grid-3 gap-3">
+                        <!-- 淡季定价 -->
+                        <div class="pricing-card animate-delay">
+                            <div class="pricing-header">
+                                <h4>Low Season</h4>
+                                <div class="price-amount">$5,680</div>
+                                <p class="price-period">per person</p>
+                            </div>
+                            <div class="pricing-body p-4">
+                                <p><strong>Best Value Period</strong></p>
+                                <p>January - February, June (excluding holidays)</p>
+                                <ul class="feature-list">
+                                    <li><i class="fas fa-check"></i> Smaller crowds</li>
+                                    <li><i class="fas fa-check"></i> More availability</li>
+                                    <li><i class="fas fa-check"></i> Same premium quality</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <!-- 平季定价 -->
+                        <div class="pricing-card featured animate-delay">
+                            <div class="pricing-header featured">
+                                <h4>Shoulder Season</h4>
+                                <div class="price-amount">$5,880</div>
+                                <p class="price-period">per person</p>
+                                <div class="price-badge">Most Popular</div>
+                            </div>
+                            <div class="pricing-body p-4">
+                                <p><strong>Ideal Balance</strong></p>
+                                <p>March - May, September - November</p>
+                                <ul class="feature-list">
+                                    <li><i class="fas fa-check"></i> Pleasant weather</li>
+                                    <li><i class="fas fa-check"></i> Cherry blossom/Fall foliage</li>
+                                    <li><i class="fas fa-check"></i> Best overall experience</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <!-- 旺季定价 -->
+                        <div class="pricing-card animate-delay">
+                            <div class="pricing-header">
+                                <h4>Peak Season</h4>
+                                <div class="price-amount">$6,180</div>
+                                <p class="price-period">per person</p>
+                            </div>
+                            <div class="pricing-body p-4">
+                                <p><strong>Premium Experience</strong></p>
+                                <p>July - August, December (holiday season)</p>
+                                <ul class="feature-list">
+                                    <li><i class="fas fa-check"></i> Festival seasons</li>
+                                    <li><i class="fas fa-check"></i> Summer/Winter activities</li>
+                                    <li><i class="fas fa-check"></i> Guaranteed availability</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 插入图片："无形价值"场景 -->
+                <div class="intangible-value animate-on-scroll">
+                    <h3 class="text-center mb-3">Beyond the Price Tag: Intangible Value</h3>
+                    <p class="text-center mb-4" style="max-width: 800px; margin: 0 auto;">
+                        Our premium service includes experiences that go beyond standard tour packages, creating priceless memories for your family.
+                    </p>
+                    
+                    <div class="value-image-grid">
+                        <div class="value-image-item">
+                            <img src="../images/pricing/private-dining-experience.jpg" alt="Family enjoying private dining with view" class="value-img">
+                            <div class="value-caption">Private Curated Dining</div>
+                        </div>
+                        <div class="value-image-item">
+                            <img src="../images/pricing/luxury-transport.jpg" alt="Luxury private van transportation" class="value-img">
+                            <div class="value-caption">Exclusive Transportation</div>
+                        </div>
+                        <div class="value-image-item">
+                            <img src="../images/pricing/personal-guide.jpg" alt="Personal guide assisting family" class="value-img">
+                            <div class="value-caption">Dedicated Guide Service</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 行动号召 -->
+                <div class="text-center mt-5">
+                    <div class="btn-group">
+                        <a href="golden-route.html" class="btn btn-secondary" data-i18n="view_tour_details">View Tour Details</a>
+                        <a href="../contact.html" class="btn btn-primary" data-i18n="cta_book">Book Your Journey</a>
+                    </div>
+                    <p class="mt-3" style="color: #666;">
+                        Limited spots available. Secure your family's premium experience today.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 页脚 -->
+        <footer class="main-footer">
+            <div class="container">
+                <div class="footer-grid">
+                    <div class="footer-col">
+                        <div class="footer-logo">Playfluence</div>
+                        <p data-i18n="hero_description">Pioneering recreation marketing through creativity and data intelligence</p>
+                        <div class="social-links">
+                            <a href="#" class="social-link"><i class="fab fa-weixin"></i></a>
+                            <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                        </div>
+                    </div>
+                    
+                    <div class="footer-col">
+                        <h4 data-i18n="nav_services">Our Services</h4>
+                        <ul class="footer-links">
+                            <li><a href="index.html" data-i18n="nav_core_services">Core Services</a></li>
+                            <li><a href="golden-route.html" data-i18n="nav_golden_route">Golden Route Tour</a></li>
+                            <li><a href="pricing.html" data-i18n="nav_pricing">Pricing</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-col">
+                        <h4 data-i18n="nav_about">About Us</h4>
+                        <ul class="footer-links">
+                            <li><a href="../about/index.html" data-i18n="nav_company">Company Profile</a></li>
+                            <li><a href="../about/leadership.html" data-i18n="nav_leadership">Leadership Team</a></li>
+                            <li><a href="../insights/partners.html" data-i18n="nav_partners">Partnerships</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-col">
+                        <h4 data-i18n="nav_contact">Contact</h4>
+                        <p><i class="fas fa-envelope"></i> info@playfluence.com</p>
+                        <p><i class="fas fa-map-marker-alt"></i> Shanghai, China</p>
+                        <p><i class="fas fa-globe"></i> Global Focus</p>
+                    </div>
+                </div>
+                
+                <div class="footer-bottom">
+                    <p data-i18n="footer_rights">© 2023 Playfluence. All rights reserved.</p>
+                    <p>
+                        <a href="#" data-i18n="footer_privacy">Privacy Policy</a> | 
+                        <a href="#" data-i18n="footer_terms">Terms of Service</a>
+                    </p>
+                </div>
+            </div>
+        </footer>
+    </main>
+
+    <!-- 移动端菜单按钮 -->
+    <button class="mobile-menu-btn">
+        <i class="fas fa-bars"></i>
+    </button>
+
+    <!-- JavaScript文件 -->
+    <script src="../js/language-manager.js"></script>
+    <script src="../js/background-slider.js"></script>
+    <script src="../js/main.js"></script>
+</body>
+</html>

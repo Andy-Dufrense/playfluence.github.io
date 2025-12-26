@@ -1,0 +1,972 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-i18n="nav_sustainability">Sustainable Future - Playfluence</title>
+    <meta name="description" content="Playfluence leads sustainable recreation initiatives, integrating environmental protection into every experience we create.">
+    
+    <!-- 字体和图标 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- CSS文件 -->
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/design.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+</head>
+<body>
+    <!-- 页面加载器 -->
+    <div class="page-loader">
+        <div class="loader-content">
+            <div class="logo-text">PF</div>
+            <div class="loading"></div>
+        </div>
+    </div>
+
+    <!-- 垂直导航栏 -->
+    <nav class="vertical-nav">
+        <div class="nav-logo">
+            <div class="logo-text">PF</div>
+        </div>
+        
+        <ul class="nav-menu">
+            <li class="nav-item">
+                <a href="index.html" class="nav-link">
+                    <span class="nav-text" data-i18n="nav_home">HOME</span>
+                    <span class="nav-dot"></span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="about/index.html" class="nav-link">
+                    <span class="nav-text" data-i18n="nav_about">ABOUT</span>
+                    <span class="nav-dot"></span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="services/index.html" class="nav-link">
+                    <span class="nav-text" data-i18n="nav_services">SERVICES</span>
+                    <span class="nav-dot"></span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="insights/index.html" class="nav-link">
+                    <span class="nav-text" data-i18n="nav_insights">INSIGHTS</span>
+                    <span class="nav-dot"></span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="gallery.html" class="nav-link">
+                    <span class="nav-text" data-i18n="nav_gallery">GALLERY</span>
+                    <span class="nav-dot"></span>
+                </a>
+            </li>
+            <li class="nav-item active">
+                <a href="sustainability.html" class="nav-link">
+                    <span class="nav-text" data-i18n="nav_sustainability">SUSTAINABLE</span>
+                    <span class="nav-dot"></span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="contact.html" class="nav-link">
+                    <span class="nav-text" data-i18n="nav_contact">CONTACT</span>
+                    <span class="nav-dot"></span>
+                </a>
+            </li>
+        </ul>
+        
+        <!-- 语言切换器 -->
+        <div class="nav-language">
+            <div class="language-switcher">
+                <button class="lang-btn active" data-lang="en">EN</button>
+                <button class="lang-btn" data-lang="zh">中文</button>
+                <button class="lang-btn" data-lang="ja">日本語</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 主要内容 -->
+    <main class="main-content">
+        <!-- 页面标题横幅 -->
+        <section class="page-hero">
+            <div class="bg-slider">
+                <div class="bg-slide active" style="background: linear-gradient(135deg, #26A69A, #2D3047);"></div>
+                <!-- TODO: 可以在此处添加可持续发展相关的背景图 -->
+                <!-- <div class="bg-slide" style="background-image: url('images/backgrounds/sustainability-bg.jpg');"></div> -->
+            </div>
+            
+            <div class="page-hero-content">
+                <h1 class="page-title" data-i18n="sustainability_title">Leading a Sustainable Future in Recreation</h1>
+                <p class="page-subtitle" data-i18n="sustainability_subtitle">True recreation should delight the present and care for the future</p>
+            </div>
+        </section>
+
+        <!-- 可持续发展理念 -->
+        <section class="section">
+            <div class="container">
+                <div class="sustainability-intro animate-on-scroll">
+                    <h2 class="section-title" data-i18n="sustainability_philosophy">Our Philosophy</h2>
+                    <p class="section-description" data-i18n="sustainability_philosophy_text">
+                        At Playfluence, we believe sustainability is not a marketing tag, but the cornerstone of our business logic and creative narrative. We integrate environmental responsibility into every experience we create.
+                    </p>
+                    
+                    <!-- 可持续发展理念图片 -->
+                    <div class="philosophy-image mt-4">
+                        <!-- TODO: 插入一张展示可持续发展理念的图片，如家庭在自然中学习的场景 -->
+                        <img src="images/sustainability/sustainability-philosophy.jpg" alt="Family learning about nature and sustainability in a natural setting" class="img-fluid rounded shadow-lg">
+                        <p class="text-center text-muted mt-2">Intergenerational learning about environmental conservation and sustainability</p>
+                    </div>
+                    
+                    <div class="philosophy-stats grid grid-3 mt-4">
+                        <div class="stat-card">
+                            <div class="stat-number">100%</div>
+                            <div class="stat-text" data-i18n="sustainability_commitment">Commitment</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number">25+</div>
+                            <div class="stat-text" data-i18n="sustainability_partners">Green Partners</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number">50%</div>
+                            <div class="stat-text" data-i18n="sustainability_reduction">Carbon Reduction Goal</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 我们的承诺 -->
+        <section class="section bg-light">
+            <div class="container">
+                <h2 class="section-title text-center" data-i18n="sustainability_commitments">Our Commitments & Actions</h2>
+                <p class="section-subtitle text-center" data-i18n="sustainability_commitments_sub">Four pillars of our sustainable recreation strategy</p>
+                
+                <div class="commitments-grid grid grid-2 animate-on-scroll">
+                    <!-- 承诺1 -->
+                    <div class="commitment-card">
+                        <div class="commitment-icon">
+                            <i class="fas fa-leaf"></i>
+                        </div>
+                        <div class="commitment-content">
+                            <h3 data-i18n="sustainability_pillar1_title">1. Empowering Green Destinations</h3>
+                            <p data-i18n="sustainability_pillar1_text">
+                                We prioritize partnerships with zoos holding certifications (e.g., AZA) and theme parks practicing green operations. We amplify their efforts through marketing, turning "sustainable options" into consumers' "preferred choices."
+                            </p>
+                            <ul class="commitment-features">
+                                <li><i class="fas fa-check-circle"></i> <span data-i18n="sustainability_pillar1_feature1">Green certification partnerships</span></li>
+                                <li><i class="fas fa-check-circle"></i> <span data-i18n="sustainability_pillar1_feature2">Sustainable venue promotion</span></li>
+                                <li><i class="fas fa-check-circle"></i> <span data-i18n="sustainability_pillar1_feature3">Eco-friendly operation support</span></li>
+                            </ul>
+                            
+                            <!-- TODO: 插入绿色目的地认证的图片 -->
+                            <div class="commitment-image mt-3">
+                                <img src="images/sustainability/green-certification.jpg" alt="Zoo with AZA certification showcasing sustainable practices" class="img-fluid rounded">
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- 承诺2 -->
+                    <div class="commitment-card">
+                        <div class="commitment-icon">
+                            <i class="fas fa-globe-asia"></i>
+                        </div>
+                        <div class="commitment-content">
+                            <h3 data-i18n="sustainability_pillar2_title">2. Curating Responsible Experiences</h3>
+                            <p data-i18n="sustainability_pillar2_text">
+                                In our product design (e.g., the Golden Route Tour), we incorporate low-carbon transport, support local community economies, select hotels and restaurants with sustainable sourcing policies.
+                            </p>
+                            <ul class="commitment-features">
+                                <li><i class="fas fa-check-circle"></i> <span data-i18n="sustainability_pillar2_feature1">Low-carbon transportation</span></li>
+                                <li><i class="fas fa-check-circle"></i> <span data-i18n="sustainability_pillar2_feature2">Local community support</span></li>
+                                <li><i class="fas fa-check-circle"></i> <span data-i18n="sustainability_pillar2_feature3">Sustainable hotel partnerships</span></li>
+                            </ul>
+                            
+                            <!-- TODO: 插入低碳交通工具（如新干线）的图片 -->
+                            <div class="commitment-image mt-3">
+                                <img src="images/sustainability/low-carbon-transport.jpg" alt="Shinkansen bullet train as low-carbon transportation option" class="img-fluid rounded">
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- 承诺3 -->
+                    <div class="commitment-card">
+                        <div class="commitment-icon">
+                            <i class="fas fa-graduation-cap"></i>
+                        </div>
+                        <div class="commitment-content">
+                            <h3 data-i18n="sustainability_pillar3_title">3. Spreading Education & Awareness</h3>
+                            <p data-i18n="sustainability_pillar3_text">
+                                We partner with top NGOs like WWF China to co-develop interactive educational content. We seamlessly integrate knowledge about biodiversity conservation into our campaigns.
+                            </p>
+                            <ul class="commitment-features">
+                                <li><i class="fas fa-check-circle"></i> <span data-i18n="sustainability_pillar3_feature1">WWF China partnership</span></li>
+                                <li><i class="fas fa-check-circle"></i> <span data-i18n="sustainability_pillar3_feature2">Educational content creation</span></li>
+                                <li><i class="fas fa-check-circle"></i> <span data-i18n="sustainability_pillar3_feature3">Biodiversity conservation focus</span></li>
+                            </ul>
+                            
+                            <!-- TODO: 插入教育活动的图片 -->
+                            <div class="commitment-image mt-3">
+                                <img src="images/sustainability/education-awareness.jpg" alt="Children participating in environmental education activity" class="img-fluid rounded">
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- 承诺4 -->
+                    <div class="commitment-card">
+                        <div class="commitment-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <div class="commitment-content">
+                            <h3 data-i18n="sustainability_pillar4_title">4. Measuring Our Footprint</h3>
+                            <p data-i18n="sustainability_pillar4_text">
+                                We are committed to quantifying and reducing the environmental impact of our projects. We explore carbon offset options and regularly report on our progress in driving positive industry change.
+                            </p>
+                            <ul class="commitment-features">
+                                <li><i class="fas fa-check-circle"></i> <span data-i18n="sustainability_pillar4_feature1">Carbon footprint tracking</span></li>
+                                <li><i class="fas fa-check-circle"></i> <span data-i18n="sustainability_pillar4_feature2">Regular impact reporting</span></li>
+                                <li><i class="fas fa-check-circle"></i> <span data-i18n="sustainability_pillar4_feature3">Industry leadership</span></li>
+                            </ul>
+                            
+                            <!-- TODO: 插入碳足迹测量图表的图片 -->
+                            <div class="commitment-image mt-3">
+                                <img src="images/sustainability/carbon-footprint.jpg" alt="Carbon footprint measurement and tracking dashboard" class="img-fluid rounded">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 可持续发展案例 -->
+        <section class="section">
+            <div class="container">
+                <h2 class="section-title text-center" data-i18n="sustainability_cases">Sustainability in Action</h2>
+                <p class="section-subtitle text-center" data-i18n="sustainability_cases_sub">How we integrate sustainability into our Golden Route Tour</p>
+                
+                <div class="sustainability-cases animate-on-scroll">
+                    <div class="case-timeline">
+                        <!-- 案例1 -->
+                        <div class="case-item">
+                            <div class="case-icon">
+                                <i class="fas fa-train"></i>
+                            </div>
+                            <div class="case-content">
+                                <h3 data-i18n="sustainability_case1_title">Low-Carbon Transportation</h3>
+                                <p data-i18n="sustainability_case1_text">
+                                    We prioritize Japan's efficient Shinkansen (bullet trains) for inter-city travel, which produces significantly less carbon per passenger compared to domestic flights. All ground transportation uses hybrid or electric vehicles.
+                                </p>
+                            </div>
+                        </div>
+                        
+                        <!-- 案例2 -->
+                        <div class="case-item">
+                            <div class="case-icon">
+                                <i class="fas fa-hotel"></i>
+                            </div>
+                            <div class="case-content">
+                                <h3 data-i18n="sustainability_case2_title">Green Hotel Partnerships</h3>
+                                <p data-i18n="sustainability_case2_text">
+                                    All hotels in our Golden Route Tour are selected based on their sustainability credentials, including energy efficiency, waste reduction programs, and local sourcing of food and materials.
+                                </p>
+                            </div>
+                        </div>
+                        
+                        <!-- 案例3 -->
+                        <div class="case-item">
+                            <div class="case-icon">
+                                <i class="fas fa-utensils"></i>
+                            </div>
+                            <div class="case-content">
+                                <h3 data-i18n="sustainability_case3_title">Sustainable Dining</h3>
+                                <p data-i18n="sustainability_case3_text">
+                                    We collaborate with restaurants that prioritize seasonal, locally-sourced ingredients and minimize food waste. We also incorporate plant-based meal options to reduce environmental impact.
+                                </p>
+                            </div>
+                        </div>
+                        
+                        <!-- 案例4 -->
+                        <div class="case-item">
+                            <div class="case-icon">
+                                <i class="fas fa-hands-helping"></i>
+                            </div>
+                            <div class="case-content">
+                                <h3 data-i18n="sustainability_case4_title">Community Engagement</h3>
+                                <p data-i18n="sustainability_case4_text">
+                                    Our tours include visits to local artisans and traditional workshops, supporting community economies while preserving cultural heritage through responsible tourism.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- 可持续发展实践图片展示 -->
+                    <div class="sustainability-images grid grid-2 mt-5">
+                        <!-- TODO: 插入可持续发展实践图片1 -->
+                        <div class="sustainability-image-item">
+                            <img src="images/sustainability/practice-1.jpg" alt="Sustainable dining experience with locally sourced ingredients" class="img-fluid rounded shadow">
+                            <p class="text-center mt-2">Locally-sourced, seasonal dining experiences</p>
+                        </div>
+                        
+                        <!-- TODO: 插入可持续发展实践图片2 -->
+                        <div class="sustainability-image-item">
+                            <img src="images/sustainability/practice-2.jpg" alt="Community engagement with local artisans" class="img-fluid rounded shadow">
+                            <p class="text-center mt-2">Supporting local communities and traditional crafts</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 合作伙伴 -->
+        <section class="section bg-light">
+            <div class="container">
+                <h2 class="section-title text-center" data-i18n="sustainability_partners">Our Sustainability Partners</h2>
+                <p class="section-subtitle text-center" data-i18n="sustainability_partners_sub">Collaborating with leaders in environmental conservation</p>
+                
+                <!-- TODO: 这里可以使用合作伙伴的Logo图片墙 -->
+                <!-- 合作伙伴Logo图片墙 -->
+                <div class="partners-logo-wall animate-on-scroll">
+                    <div class="partners-grid">
+                        <!-- WWF -->
+                        <div class="partner-logo">
+                            <div class="logo-placeholder">
+                                <!-- TODO: 插入WWF Logo图片 -->
+                                <img src="images/partners/wwf-logo.png" alt="WWF World Wildlife Fund Logo" class="partner-logo-img">
+                            </div>
+                            <p data-i18n="partner_wwf">World Wildlife Fund China</p>
+                        </div>
+                        
+                        <!-- AZA -->
+                        <div class="partner-logo">
+                            <div class="logo-placeholder">
+                                <!-- TODO: 插入AZA Logo图片 -->
+                                <img src="images/partners/aza-logo.png" alt="Association of Zoos & Aquariums Logo" class="partner-logo-img">
+                            </div>
+                            <p data-i18n="partner_aza">Association of Zoos & Aquariums</p>
+                        </div>
+                        
+                        <!-- GSTC -->
+                        <div class="partner-logo">
+                            <div class="logo-placeholder">
+                                <!-- TODO: 插入GSTC Logo图片 -->
+                                <img src="images/partners/gstc-logo.png" alt="Global Sustainable Tourism Council Logo" class="partner-logo-img">
+                            </div>
+                            <p data-i18n="partner_gstc">Global Sustainable Tourism Council</p>
+                        </div>
+                        
+                        <!-- PURE -->
+                        <div class="partner-logo">
+                            <div class="logo-placeholder">
+                                <!-- TODO: 插入PURE Logo图片 -->
+                                <img src="images/partners/pure-logo.png" alt="Partners for Urgent Response to Earth Logo" class="partner-logo-img">
+                            </div>
+                            <p data-i18n="partner_pure">Partners for Urgent Response to Earth</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 行动号召 -->
+        <section class="section cta-section">
+            <div class="container">
+                <div class="cta-content animate-on-scroll">
+                    <h2 class="cta-title" data-i18n="sustainability_cta_title">Join Our Sustainable Journey</h2>
+                    <p class="cta-description" data-i18n="sustainability_cta_text">
+                        Choosing a trip is also a vote for the world you want to see. Join a Playfluence-curated journey to enjoy hassle-free luxury while contributing to a better planet.
+                    </p>
+                    
+                    <div class="cta-buttons">
+                        <a href="services/golden-route.html" class="btn btn-primary">
+                            <i class="fas fa-globe-asia"></i>
+                            <span data-i18n="sustainability_cta_book">Book a Responsible Journey</span>
+                        </a>
+                        <a href="contact.html" class="btn btn-outline">
+                            <i class="fas fa-handshake"></i>
+                            <span data-i18n="sustainability_cta_partner">Explore Sustainable Partnership</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 可持续发展统计数据 -->
+        <section class="section">
+            <div class="container">
+                <div class="impact-stats grid grid-4 animate-on-scroll">
+                    <div class="impact-item">
+                        <div class="impact-number">5,000+</div>
+                        <div class="impact-text" data-i18n="impact_trees">Trees Planted</div>
+                    </div>
+                    <div class="impact-item">
+                        <div class="impact-number">120T</div>
+                        <div class="impact-text" data-i18n="impact_carbon">Carbon Offset</div>
+                    </div>
+                    <div class="impact-item">
+                        <div class="impact-number">15K</div>
+                        <div class="impact-text" data-i18n="impact_education">Guests Educated</div>
+                    </div>
+                    <div class="impact-item">
+                        <div class="impact-number">100%</div>
+                        <div class="impact-text" data-i18n="impact_commitment">Green Commitment</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 页脚 -->
+        <footer class="main-footer">
+            <div class="container">
+                <div class="footer-grid">
+                    <div class="footer-col">
+                        <div class="footer-logo">Playfluence</div>
+                        <p data-i18n="hero_description">Pioneering recreation marketing through creativity and data intelligence</p>
+                        <div class="social-links">
+                            <a href="#" class="social-link"><i class="fab fa-weixin"></i></a>
+                            <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                        </div>
+                    </div>
+                    
+                    <div class="footer-col">
+                        <h4 data-i18n="nav_services">Our Services</h4>
+                        <ul class="footer-links">
+                            <li><a href="services/index.html" data-i18n="nav_core_services">Core Services</a></li>
+                            <li><a href="services/golden-route.html" data-i18n="nav_golden_route">Golden Route Tour</a></li>
+                            <li><a href="services/pricing.html" data-i18n="nav_pricing">Pricing</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-col">
+                        <h4 data-i18n="nav_about">About Us</h4>
+                        <ul class="footer-links">
+                            <li><a href="about/index.html" data-i18n="nav_company">Company Profile</a></li>
+                            <li><a href="about/leadership.html" data-i18n="nav_leadership">Leadership Team</a></li>
+                            <li><a href="insights/partners.html" data-i18n="nav_partners">Partnerships</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-col">
+                        <h4 data-i18n="nav_contact">Contact</h4>
+                        <p><i class="fas fa-envelope"></i> info@playfluence.com</p>
+                        <p><i class="fas fa-map-marker-alt"></i> Shanghai, China</p>
+                        <p><i class="fas fa-globe"></i> Global Focus</p>
+                    </div>
+                </div>
+                
+                <div class="footer-bottom">
+                    <p data-i18n="footer_rights">© 2023 Playfluence. All rights reserved.</p>
+                    <p>
+                        <a href="#" data-i18n="footer_privacy">Privacy Policy</a> | 
+                        <a href="#" data-i18n="footer_terms">Terms of Service</a>
+                    </p>
+                </div>
+            </div>
+        </footer>
+    </main>
+
+    <!-- 移动端菜单按钮 -->
+    <button class="mobile-menu-btn">
+        <i class="fas fa-bars"></i>
+    </button>
+
+    <!-- JavaScript文件 -->
+    <script src="js/language-manager.js"></script>
+    <script src="js/main.js"></script>
+    
+    <!-- 可持续发展页面特定脚本 -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // 统计数字动画
+            function animateNumbers() {
+                const numbers = document.querySelectorAll('.impact-number, .stat-number');
+                
+                numbers.forEach(number => {
+                    const finalValue = number.textContent;
+                    let startValue = 0;
+                    const duration = 2000;
+                    const increment = finalValue / (duration / 16);
+                    
+                    const timer = setInterval(() => {
+                        startValue += increment;
+                        if (startValue >= finalValue) {
+                            number.textContent = finalValue;
+                            clearInterval(timer);
+                        } else {
+                            number.textContent = Math.floor(startValue);
+                        }
+                    }, 16);
+                });
+            }
+            
+            // 当元素进入视口时触发动画
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        animateNumbers();
+                        observer.unobserve(entry.target);
+                    }
+                });
+            });
+            
+            const impactStats = document.querySelector('.impact-stats');
+            if (impactStats) {
+                observer.observe(impactStats);
+            }
+            
+            // 页面加载完成后移除加载器
+            window.addEventListener('load', function() {
+                const loader = document.querySelector('.page-loader');
+                if (loader) {
+                    loader.style.display = 'none';
+                }
+            });
+        });
+    </script>
+    
+    <style>
+        /* 可持续发展页面特定样式 */
+        .philosophy-stats {
+            margin-top: 2rem;
+        }
+        
+        .stat-card {
+            text-align: center;
+            padding: 2rem;
+            background: white;
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-md);
+            transition: all var(--transition-normal);
+        }
+        
+        .stat-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+        
+        .stat-card .stat-number {
+            font-size: 2.5rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #26A69A, #2D3047);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            margin-bottom: 0.5rem;
+        }
+        
+        .stat-card .stat-text {
+            font-size: 1.1rem;
+            color: var(--text-light);
+            font-weight: 600;
+        }
+        
+        /* 理念图片样式 */
+        .philosophy-image {
+            text-align: center;
+        }
+        
+        .philosophy-image img {
+            max-width: 100%;
+            height: auto;
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-lg);
+        }
+        
+        .text-center {
+            text-align: center;
+        }
+        
+        .text-muted {
+            color: #6c757d;
+        }
+        
+        .mt-2 {
+            margin-top: 0.5rem;
+        }
+        
+        .mt-4 {
+            margin-top: 1.5rem;
+        }
+        
+        .img-fluid {
+            max-width: 100%;
+            height: auto;
+        }
+        
+        .rounded {
+            border-radius: var(--radius-lg);
+        }
+        
+        .shadow-lg {
+            box-shadow: var(--shadow-lg);
+        }
+        
+        /* 承诺卡片样式 */
+        .commitments-grid {
+            margin-top: 3rem;
+            gap: 2rem;
+        }
+        
+        .commitment-card {
+            background: white;
+            padding: 2rem;
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-md);
+            border-top: 4px solid #26A69A;
+            transition: all var(--transition-normal);
+        }
+        
+        .commitment-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-xl);
+        }
+        
+        .commitment-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #26A69A, #4ECDC4);
+            border-radius: var(--radius-lg);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+        }
+        
+        .commitment-icon i {
+            font-size: 1.8rem;
+            color: white;
+        }
+        
+        .commitment-content h3 {
+            font-size: 1.4rem;
+            margin-bottom: 1rem;
+            color: var(--dark-color);
+        }
+        
+        .commitment-content p {
+            color: var(--text-light);
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+        }
+        
+        .commitment-features {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .commitment-features li {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            margin-bottom: 0.75rem;
+        }
+        
+        .commitment-features i {
+            color: #26A69A;
+        }
+        
+        /* 承诺图片样式 */
+        .commitment-image {
+            margin-top: 1.5rem;
+        }
+        
+        .commitment-image img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: var(--radius-md);
+        }
+        
+        .mt-3 {
+            margin-top: 1rem;
+        }
+        
+        /* 案例时间线样式 */
+        .sustainability-cases {
+            margin-top: 3rem;
+        }
+        
+        .case-timeline {
+            position: relative;
+            padding-left: 2rem;
+        }
+        
+        .case-timeline::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 4px;
+            background: linear-gradient(to bottom, #26A69A, #4ECDC4);
+            border-radius: var(--radius-full);
+        }
+        
+        .case-item {
+            position: relative;
+            margin-bottom: 2.5rem;
+        }
+        
+        .case-item:last-child {
+            margin-bottom: 0;
+        }
+        
+        .case-icon {
+            position: absolute;
+            left: -2.5rem;
+            top: 0;
+            width: 50px;
+            height: 50px;
+            background: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: var(--shadow-md);
+            border: 4px solid #26A69A;
+        }
+        
+        .case-icon i {
+            font-size: 1.2rem;
+            color: #26A69A;
+        }
+        
+        .case-content {
+            margin-left: 3rem;
+            padding: 1.5rem;
+            background: white;
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-sm);
+        }
+        
+        .case-content h3 {
+            font-size: 1.3rem;
+            margin-bottom: 0.75rem;
+            color: var(--dark-color);
+        }
+        
+        .case-content p {
+            color: var(--text-light);
+            line-height: 1.6;
+        }
+        
+        /* 可持续发展实践图片 */
+        .sustainability-images {
+            margin-top: 3rem;
+            gap: 2rem;
+        }
+        
+        .sustainability-image-item {
+            text-align: center;
+        }
+        
+        .sustainability-image-item img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-md);
+        }
+        
+        .mt-5 {
+            margin-top: 3rem;
+        }
+        
+        /* 合作伙伴网格 */
+        .partners-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .partner-logo {
+            text-align: center;
+        }
+        
+        .logo-placeholder {
+            width: 150px;
+            height: 150px;
+            border-radius: var(--radius-lg);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1rem;
+            background: white;
+            padding: 1rem;
+            box-shadow: var(--shadow-md);
+        }
+        
+        /* 合作伙伴Logo图片样式 */
+        .partner-logo-img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+        }
+        
+        .partner-logo p {
+            font-weight: 600;
+            color: var(--text-light);
+        }
+        
+        /* CTA区域样式 */
+        .cta-section {
+            background: linear-gradient(135deg, #2D3047, #26A69A);
+            color: white;
+        }
+        
+        .cta-content {
+            text-align: center;
+            padding: 4rem 2rem;
+        }
+        
+        .cta-title {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .cta-description {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto 2rem;
+            opacity: 0.9;
+        }
+        
+        .cta-buttons {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .cta-section .btn {
+            padding: 1rem 2rem;
+            font-size: 1.1rem;
+        }
+        
+        .cta-section .btn-primary {
+            background: white;
+            color: #26A69A;
+        }
+        
+        .cta-section .btn-outline {
+            border-color: white;
+            color: white;
+        }
+        
+        /* 影响力统计 */
+        .impact-stats {
+            margin-top: 2rem;
+        }
+        
+        .impact-item {
+            text-align: center;
+            padding: 2rem;
+        }
+        
+        .impact-number {
+            font-size: 2.8rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #FF6B6B, #FFD166);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            margin-bottom: 0.5rem;
+        }
+        
+        .impact-text {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--text-light);
+        }
+        
+        /* 响应式设计 */
+        @media (max-width: 992px) {
+            .commitments-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .grid-4 {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .sustainability-images {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .philosophy-stats {
+                grid-template-columns: 1fr;
+            }
+            
+            .case-timeline {
+                padding-left: 1.5rem;
+            }
+            
+            .case-icon {
+                left: -2rem;
+                width: 40px;
+                height: 40px;
+            }
+            
+            .case-icon i {
+                font-size: 1rem;
+            }
+            
+            .case-content {
+                margin-left: 2rem;
+                padding: 1.25rem;
+            }
+            
+            .logo-placeholder {
+                width: 120px;
+                height: 120px;
+            }
+            
+            .cta-title {
+                font-size: 2rem;
+            }
+            
+            .cta-description {
+                font-size: 1.1rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .grid-4 {
+                grid-template-columns: 1fr;
+            }
+            
+            .impact-number {
+                font-size: 2.2rem;
+            }
+            
+            .case-timeline::before {
+                left: 0.5rem;
+            }
+            
+            .case-icon {
+                left: -1.25rem;
+            }
+            
+            .case-content {
+                margin-left: 1.5rem;
+            }
+            
+            .partners-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</body>
+</html>

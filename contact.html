@@ -1,0 +1,801 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-i18n="nav_contact">Contact Us - Playfluence</title>
+    <meta name="description" content="Get in touch with Playfluence for professional recreation marketing services and customized family travel experiences.">
+    
+    <!-- 字体和图标 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- CSS文件 -->
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/design.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+</head>
+<body>
+    <!-- 页面加载器 -->
+    <div class="page-loader">
+        <div class="loader-content">
+            <div class="logo-text">PF</div>
+            <div class="loading"></div>
+        </div>
+    </div>
+
+    <!-- 垂直导航栏 -->
+    <nav class="vertical-nav">
+        <div class="nav-logo">
+            <div class="logo-text">PF</div>
+        </div>
+        
+        <ul class="nav-menu">
+            <li class="nav-item">
+                <a href="index.html" class="nav-link">
+                    <span class="nav-text" data-i18n="nav_home">HOME</span>
+                    <span class="nav-dot"></span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="about/index.html" class="nav-link">
+                    <span class="nav-text" data-i18n="nav_about">ABOUT</span>
+                    <span class="nav-dot"></span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="services/index.html" class="nav-link">
+                    <span class="nav-text" data-i18n="nav_services">SERVICES</span>
+                    <span class="nav-dot"></span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="insights/index.html" class="nav-link">
+                    <span class="nav-text" data-i18n="nav_insights">INSIGHTS</span>
+                    <span class="nav-dot"></span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="gallery.html" class="nav-link">
+                    <span class="nav-text" data-i18n="nav_gallery">GALLERY</span>
+                    <span class="nav-dot"></span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="sustainability.html" class="nav-link">
+                    <span class="nav-text" data-i18n="nav_sustainability">SUSTAINABLE</span>
+                    <span class="nav-dot"></span>
+                </a>
+            </li>
+            <li class="nav-item active">
+                <a href="contact.html" class="nav-link">
+                    <span class="nav-text" data-i18n="nav_contact">CONTACT</span>
+                    <span class="nav-dot"></span>
+                </a>
+            </li>
+        </ul>
+        
+        <!-- 语言切换器 -->
+        <div class="nav-language">
+            <div class="language-switcher">
+                <button class="lang-btn active" data-lang="en">EN</button>
+                <button class="lang-btn" data-lang="zh">中文</button>
+                <button class="lang-btn" data-lang="ja">日本語</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 主要内容 -->
+    <main class="main-content">
+        <!-- 页面标题横幅 -->
+        <section class="page-hero">
+            <div class="bg-slider">
+                <div class="bg-slide active" style="background: linear-gradient(135deg, var(--primary-color), var(--dark-color));"></div>
+            </div>
+            
+            <div class="page-hero-content">
+                <h1 class="page-title" data-i18n="contact_title">Contact Us</h1>
+                <p class="page-subtitle" data-i18n="contact_subtitle">Get in touch to start your journey with Playfluence</p>
+            </div>
+        </section>
+
+        <!-- 联系表单和信息 -->
+        <section class="section">
+            <div class="container">
+                <div class="contact-container animate-on-scroll">
+                    <!-- 联系信息 -->
+                    <div class="contact-info">
+                        <div class="info-card">
+                            <div class="info-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <h3 data-i18n="contact_location">Our Location</h3>
+                            <p data-i18n="contact_address">Based in China, focused on the global recreation market</p>
+                        </div>
+                        
+                        <div class="info-card">
+                            <div class="info-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <h3 data-i18n="contact_email">Email Us</h3>
+                            <p><a href="mailto:info@playfluence.com">info@playfluence.com</a></p>
+                        </div>
+                        
+                        <div class="info-card">
+                            <div class="info-icon">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <h3 data-i18n="contact_hours">Consultation Hours</h3>
+                            <p data-i18n="contact_hours_detail">Monday to Friday 9:00-18:00 (GMT+8)</p>
+                        </div>
+                        
+                        <div class="info-card">
+                            <div class="info-icon">
+                                <i class="fas fa-comments"></i>
+                            </div>
+                            <h3 data-i18n="contact_response">Response Time</h3>
+                            <p data-i18n="contact_response_detail">Our travel consultant will contact you within 24 hours</p>
+                        </div>
+                    </div>
+
+                    <!-- 联系表单 -->
+                    <div class="contact-form-wrapper">
+                        <div class="form-header">
+                            <h2 data-i18n="contact_form_title">Send Your Inquiry</h2>
+                            <p data-i18n="contact_form_subtitle">Fill out the form below and our consultant will contact you</p>
+                        </div>
+                        
+                        <form id="contactForm" class="contact-form">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="name" data-i18n="contact_form_name">Name *</label>
+                                    <input type="text" id="name" name="name" required>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="phone" data-i18n="contact_form_phone">Phone *</label>
+                                    <input type="tel" id="phone" name="phone" required>
+                                </div>
+                            </div>
+                            
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="wechat" data-i18n="contact_form_wechat">WeChat</label>
+                                    <input type="text" id="wechat" name="wechat">
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="email" data-i18n="contact_form_email">Email *</label>
+                                    <input type="email" id="email" name="email" required>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label data-i18n="contact_form_family">Family Composition</label>
+                                <div class="family-inputs">
+                                    <div class="input-group">
+                                        <input type="number" id="adults" name="adults" min="1" max="10" value="2" placeholder="Adults">
+                                    </div>
+                                    <div class="input-group">
+                                        <input type="number" id="children" name="children" min="0" max="10" value="1" placeholder="Children">
+                                    </div>
+                                    <div class="input-group">
+                                        <input type="text" id="child_age" name="child_age" placeholder="Children Ages">
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="travel_date" data-i18n="contact_form_travel_date">Desired Travel Time</label>
+                                <input type="text" id="travel_date" name="travel_date" placeholder="YYYY-MM or specific dates">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="interest" data-i18n="contact_form_interest">Your Interest</label>
+                                <select id="interest" name="interest">
+                                    <option value="" data-i18n="contact_form_interest_select">Please select</option>
+                                    <option value="golden_route" data-i18n="contact_form_interest_golden">Golden Route Japan Tour</option>
+                                    <option value="marketing" data-i18n="contact_form_interest_marketing">Marketing Consultation</option>
+                                    <option value="partnership" data-i18n="contact_form_interest_partnership">Partnership Inquiry</option>
+                                    <option value="other" data-i18n="contact_form_interest_other">Other</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="message" data-i18n="contact_form_message">Message</label>
+                                <textarea id="message" name="message" rows="5" placeholder="Please tell us your specific needs or questions..."></textarea>
+                            </div>
+                            
+                            <div class="form-group checkbox-group">
+                                <input type="checkbox" id="consent" name="consent" required>
+                                <label for="consent" data-i18n="contact_form_consent">I agree to Playfluence processing my personal information according to the privacy policy</label>
+                            </div>
+                            
+                            <button type="submit" class="btn btn-primary">
+                                <i class="fas fa-paper-plane"></i>
+                                <span data-i18n="contact_form_submit">Submit Inquiry</span>
+                            </button>
+                        </form>
+                        
+                        <div id="formMessage" class="form-message"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 微信二维码部分 -->
+        <section class="section bg-light">
+            <div class="container">
+                <div class="wechat-section">
+                    <h2 class="section-title" data-i18n="wechat_title">Follow Our WeChat</h2>
+                    <p class="section-subtitle" data-i18n="wechat_subtitle">Get the latest travel inspiration and exclusive offers</p>
+                    
+                    <div class="wechat-container">
+                        <div class="qrcode-card">
+                            <div class="qrcode-placeholder">
+                                <i class="fab fa-weixin"></i>
+                                <div class="scan-text" data-i18n="wechat_scan">Scan to Follow</div>
+                            </div>
+                        </div>
+                        
+                        <div class="wechat-features">
+                            <h3 data-i18n="wechat_features">WeChat Features</h3>
+                            <ul>
+                                <li><i class="fas fa-check-circle"></i> <span data-i18n="wechat_feature1">Exclusive family travel tips</span></li>
+                                <li><i class="fas fa-check-circle"></i> <span data-i18n="wechat_feature2">Sustainable travel guides</span></li>
+                                <li><i class="fas fa-check-circle"></i> <span data-i18n="wechat_feature3">Limited-time offers notification</span></li>
+                                <li><i class="fas fa-check-circle"></i> <span data-i18n="wechat_feature4">Cultural insights and stories</span></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 全球视野部分 -->
+        <section class="section">
+            <div class="container">
+                <div class="global-section">
+                    <h2 class="section-title" data-i18n="global_title">Global Vision, Local Execution</h2>
+                    <p class="section-subtitle" data-i18n="global_subtitle">We serve global recreation market with localized expertise</p>
+                    
+                    <div class="global-map">
+                        <div class="map-point shanghai">
+                            <div class="point-dot"></div>
+                            <div class="point-label" data-i18n="global_shanghai">Shanghai HQ</div>
+                        </div>
+                        <div class="map-point tokyo">
+                            <div class="point-dot"></div>
+                            <div class="point-label" data-i18n="global_tokyo">Tokyo Office</div>
+                        </div>
+                        <div class="map-point singapore">
+                            <div class="point-dot"></div>
+                            <div class="point-label" data-i18n="global_singapore">Singapore Partner</div>
+                        </div>
+                        <div class="map-point london">
+                            <div class="point-dot"></div>
+                            <div class="point-label" data-i18n="global_london">London Partner</div>
+                        </div>
+                    </div>
+                    
+                    <div class="global-stats grid grid-4 mt-5">
+                        <div class="stat-item">
+                            <div class="stat-number">50+</div>
+                            <div class="stat-text" data-i18n="global_clients">Happy Clients</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">15</div>
+                            <div class="stat-text" data-i18n="global_countries">Countries Covered</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">24/7</div>
+                            <div class="stat-text" data-i18n="global_support">Consultation Support</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">100%</div>
+                            <div class="stat-text" data-i18n="global_satisfaction">Client Satisfaction</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 页脚 -->
+        <footer class="main-footer">
+            <div class="container">
+                <div class="footer-grid">
+                    <div class="footer-col">
+                        <div class="footer-logo">Playfluence</div>
+                        <p data-i18n="hero_description">Pioneering recreation marketing through creativity and data intelligence</p>
+                        <div class="social-links">
+                            <a href="#" class="social-link"><i class="fab fa-weixin"></i></a>
+                            <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                        </div>
+                    </div>
+                    
+                    <div class="footer-col">
+                        <h4 data-i18n="nav_services">Our Services</h4>
+                        <ul class="footer-links">
+                            <li><a href="services/index.html" data-i18n="nav_core_services">Core Services</a></li>
+                            <li><a href="services/golden-route.html" data-i18n="nav_golden_route">Golden Route Tour</a></li>
+                            <li><a href="services/pricing.html" data-i18n="nav_pricing">Pricing</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-col">
+                        <h4 data-i18n="nav_about">About Us</h4>
+                        <ul class="footer-links">
+                            <li><a href="about/index.html" data-i18n="nav_company">Company Profile</a></li>
+                            <li><a href="about/leadership.html" data-i18n="nav_leadership">Leadership Team</a></li>
+                            <li><a href="insights/partners.html" data-i18n="nav_partners">Partnerships</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-col">
+                        <h4 data-i18n="nav_contact">Contact</h4>
+                        <p><i class="fas fa-envelope"></i> info@playfluence.com</p>
+                        <p><i class="fas fa-map-marker-alt"></i> Shanghai, China</p>
+                        <p><i class="fas fa-globe"></i> Global Focus</p>
+                    </div>
+                </div>
+                
+                <div class="footer-bottom">
+                    <p data-i18n="footer_rights">© 2023 Playfluence. All rights reserved.</p>
+                    <p>
+                        <a href="#" data-i18n="footer_privacy">Privacy Policy</a> | 
+                        <a href="#" data-i18n="footer_terms">Terms of Service</a>
+                    </p>
+                </div>
+            </div>
+        </footer>
+    </main>
+
+    <!-- 移动端菜单按钮 -->
+    <button class="mobile-menu-btn">
+        <i class="fas fa-bars"></i>
+    </button>
+
+    <!-- JavaScript文件 -->
+    <script src="js/language-manager.js"></script>
+    <script src="js/main.js"></script>
+    
+    <!-- 联系表单特定脚本和样式 -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // 表单提交处理
+            const contactForm = document.getElementById('contactForm');
+            const formMessage = document.getElementById('formMessage');
+            
+            contactForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                // 获取表单数据
+                const formData = {
+                    name: document.getElementById('name').value,
+                    phone: document.getElementById('phone').value,
+                    email: document.getElementById('email').value,
+                    wechat: document.getElementById('wechat').value,
+                    adults: document.getElementById('adults').value,
+                    children: document.getElementById('children').value,
+                    child_age: document.getElementById('child_age').value,
+                    travel_date: document.getElementById('travel_date').value,
+                    interest: document.getElementById('interest').value,
+                    message: document.getElementById('message').value
+                };
+                
+                // 验证表单
+                if (!formData.name || !formData.phone || !formData.email) {
+                    showFormMessage('Please fill in all required fields', 'error');
+                    return;
+                }
+                
+                if (!document.getElementById('consent').checked) {
+                    showFormMessage('Please agree to the privacy policy', 'error');
+                    return;
+                }
+                
+                // 显示加载状态
+                showFormMessage('Sending your inquiry...', 'loading');
+                
+                // 模拟API调用
+                setTimeout(() => {
+                    // 在实际应用中，这里应该是AJAX提交到服务器
+                    console.log('Form submitted:', formData);
+                    
+                    // 显示成功消息
+                    showFormMessage('Thank you for your inquiry! Our travel consultant will contact you within 24 hours.', 'success');
+                    
+                    // 重置表单
+                    contactForm.reset();
+                    
+                    // 3秒后清除消息
+                    setTimeout(() => {
+                        formMessage.style.display = 'none';
+                    }, 3000);
+                }, 1500);
+            });
+            
+            function showFormMessage(message, type) {
+                formMessage.textContent = message;
+                formMessage.className = 'form-message';
+                formMessage.classList.add(type);
+                formMessage.style.display = 'block';
+            }
+            
+            // 页面加载完成后移除加载器
+            window.addEventListener('load', function() {
+                const loader = document.querySelector('.page-loader');
+                if (loader) {
+                    loader.style.display = 'none';
+                }
+            });
+        });
+    </script>
+    
+    <style>
+        /* 联系页面特定样式 */
+        .contact-container {
+            display: grid;
+            grid-template-columns: 1fr 1.5fr;
+            gap: 3rem;
+            align-items: start;
+        }
+        
+        .contact-info {
+            display: grid;
+            gap: 1.5rem;
+        }
+        
+        .info-card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-md);
+            border-left: 4px solid var(--primary-color);
+            transition: all var(--transition-normal);
+        }
+        
+        .info-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+        
+        .info-icon {
+            width: 50px;
+            height: 50px;
+            background: var(--gradient-primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1rem;
+        }
+        
+        .info-icon i {
+            font-size: 1.5rem;
+            color: white;
+        }
+        
+        .info-card h3 {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+            color: var(--dark-color);
+        }
+        
+        .info-card p {
+            color: var(--text-light);
+            line-height: 1.6;
+        }
+        
+        .contact-form-wrapper {
+            background: white;
+            padding: 2.5rem;
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-lg);
+        }
+        
+        .form-header {
+            margin-bottom: 2rem;
+        }
+        
+        .form-header h2 {
+            font-size: 1.8rem;
+            margin-bottom: 0.5rem;
+            color: var(--dark-color);
+        }
+        
+        .form-header p {
+            color: var(--text-light);
+        }
+        
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+        
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+        }
+        
+        .form-group {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .form-group label {
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            color: var(--dark-color);
+        }
+        
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            padding: 0.75rem 1rem;
+            border: 2px solid var(--border-color);
+            border-radius: var(--radius-md);
+            font-size: 1rem;
+            transition: all var(--transition-fast);
+        }
+        
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            border-color: var(--primary-color);
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(var(--primary-color-rgb), 0.1);
+        }
+        
+        .family-inputs {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1rem;
+        }
+        
+        .input-group {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .checkbox-group {
+            flex-direction: row;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .checkbox-group input[type="checkbox"] {
+            width: 18px;
+            height: 18px;
+        }
+        
+        .checkbox-group label {
+            margin-bottom: 0;
+            font-weight: normal;
+            font-size: 0.9rem;
+        }
+        
+        .form-message {
+            display: none;
+            padding: 1rem;
+            border-radius: var(--radius-md);
+            margin-top: 1rem;
+            font-weight: 500;
+        }
+        
+        .form-message.success {
+            background: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+        
+        .form-message.error {
+            background: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+        }
+        
+        .form-message.loading {
+            background: #cce5ff;
+            color: #004085;
+            border: 1px solid #b8daff;
+        }
+        
+        /* 微信部分样式 */
+        .wechat-container {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 3rem;
+            align-items: center;
+        }
+        
+        .qrcode-card {
+            text-align: center;
+        }
+        
+        .qrcode-placeholder {
+            width: 200px;
+            height: 200px;
+            background: linear-gradient(135deg, #09bb07, #07c160);
+            border-radius: var(--radius-lg);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto;
+            color: white;
+        }
+        
+        .qrcode-placeholder i {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+        }
+        
+        .scan-text {
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+        
+        .wechat-features ul {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .wechat-features li {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+        
+        .wechat-features i {
+            color: var(--primary-color);
+        }
+        
+        /* 全球地图样式 */
+        .global-map {
+            position: relative;
+            height: 300px;
+            background: #f5f7fa;
+            border-radius: var(--radius-lg);
+            margin-top: 2rem;
+            overflow: hidden;
+        }
+        
+        .map-point {
+            position: absolute;
+            cursor: pointer;
+        }
+        
+        .point-dot {
+            width: 15px;
+            height: 15px;
+            background: var(--primary-color);
+            border-radius: 50%;
+            border: 3px solid white;
+            box-shadow: 0 0 0 3px rgba(var(--primary-color-rgb), 0.3);
+            animation: pulse 2s infinite;
+        }
+        
+        .point-label {
+            position: absolute;
+            left: 25px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: white;
+            padding: 0.5rem 1rem;
+            border-radius: var(--radius-full);
+            box-shadow: var(--shadow-sm);
+            font-weight: 600;
+            white-space: nowrap;
+            opacity: 0;
+            transition: opacity var(--transition-normal);
+        }
+        
+        .map-point:hover .point-label {
+            opacity: 1;
+        }
+        
+        .map-point.shanghai {
+            left: 30%;
+            top: 40%;
+        }
+        
+        .map-point.tokyo {
+            left: 75%;
+            top: 30%;
+        }
+        
+        .map-point.singapore {
+            left: 65%;
+            top: 60%;
+        }
+        
+        .map-point.london {
+            left: 20%;
+            top: 20%;
+        }
+        
+        @keyframes pulse {
+            0% {
+                box-shadow: 0 0 0 0 rgba(var(--primary-color-rgb), 0.4);
+            }
+            70% {
+                box-shadow: 0 0 0 10px rgba(var(--primary-color-rgb), 0);
+            }
+            100% {
+                box-shadow: 0 0 0 0 rgba(var(--primary-color-rgb), 0);
+            }
+        }
+        
+        .global-stats {
+            margin-top: 3rem;
+        }
+        
+        /* 响应式设计 */
+        @media (max-width: 992px) {
+            .contact-container {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            
+            .wechat-container {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            
+            .qrcode-placeholder {
+                width: 180px;
+                height: 180px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .form-row {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+            
+            .family-inputs {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .contact-form-wrapper {
+                padding: 1.5rem;
+            }
+            
+            .global-map {
+                height: 250px;
+            }
+            
+            .global-stats {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .family-inputs {
+                grid-template-columns: 1fr;
+            }
+            
+            .global-stats {
+                grid-template-columns: 1fr;
+            }
+            
+            .point-label {
+                font-size: 0.9rem;
+                padding: 0.3rem 0.7rem;
+            }
+        }
+    </style>
+</body>
+</html>
